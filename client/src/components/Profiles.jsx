@@ -7,7 +7,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
                 <img
                     src={image}
                     alt={name}
-                    className="w-64 h-64 object-cover rounded-xl shadow-lg border border-gray-300"
+                    className="w-64 h-64 object-cover  rounded-xl shadow-lg border border-gray-300"
                 />
             </div>
             <div className="md:w-2/3 mt-4 md:mt-0 md:pl-8 flex flex-col justify-center">
@@ -34,7 +34,7 @@ const Profiles = () => {
             name: "Mrs. Sameena Begum",
             title: "M.A, M.Ed, Ph.D, D.B.M.",
             designation: "PRINCIPAL",
-            image: "",
+            image: "/Principal.jpg",
             description:
                 "Mrs. Sameena Begum is a visionary leader who inspires excellence in both students and staff. With her unwavering dedication, strong leadership, and compassionate approach, she creates a nurturing and disciplined environment that fosters academic success and personal growth. Her commitment to education, innovation, and the holistic development of every student makes her a guiding force in shaping the future of our school.",
         },
