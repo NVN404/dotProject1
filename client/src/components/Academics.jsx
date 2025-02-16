@@ -28,7 +28,7 @@ const Academics = () => {
 
     return (
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-[1.5em] sm:p-6">
             {sections.map((section, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
                     <img src={section.image} alt={section.title} className="w-full h-150 object-cover" />

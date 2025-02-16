@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileCard = ({ name, title, designation, image, description }) => {
     return (
-        <div className="flex flex-col md:flex-row bg-white shadow-xl rounded-2xl p-8 bt-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+        <div className="mt-[2em] flex flex-col md:flex-row bg-white shadow-xl rounded-2xl p-8 bt-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
             <div className="md:w-1/3 flex justify-center md:justify-start">
                 <img
                     src={image}
@@ -41,7 +41,7 @@ const Profiles = () => {
     ];
 
     return (
-        <div className="space-y-8">
+        <div className="p-[1.5em] space-y-8">
             {profiles.map((profile, index) => (
                 <ProfileCard key={index} {...profile} />
             ))}

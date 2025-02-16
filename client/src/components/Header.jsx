@@ -23,14 +23,14 @@ const Header = () => {
         </div>
       </div>
       <div className='w-[100%] h-[auto] flex justify-center'>
-        <div className='w-[95%] h-[5em] p-[1.5em] bg-[#003cff] text-yellow-400 font-semibold rounded-[5em] flex justify-between items-center'>
-          <ul className='w-[30%] flex text-[xl]  justify-evenly items-center '>
+        <div className='w-[95%] h-[6em] p-[1.5em] bg-[#003cff] text-yellow-400 font-semibold rounded-[5em] flex justify-between items-center'>
+          <ul className='w-[30%] flex text-md  justify-evenly items-center '>
             <li className='mr-[1em] cursor-pointer'>HOME</li>
             <li className='mr-[1em] cursor-pointer'>ABOUT US</li>
             <li className='mr-[1em] cursor-pointer'>ADMISSION</li>
           </ul>
           <h1 className='w-[40%]  text-3xl font-extrabold text-white'>DOBBESPET PUBLIC SCHOOL</h1>
-          <ul className='w-[30%] flex text-[xl] justify-evenly items-center'>
+          <ul className='w-[30%] flex text-md justify-evenly items-center'>
             <li className='mr-[1em] cursor-pointer'>GALLERY</li>
             <li className='mr-[1em] cursor-pointer'>ACADEMICS</li>
             <li className='mr-[1em] cursor-pointer'>CONTACT US</li>
