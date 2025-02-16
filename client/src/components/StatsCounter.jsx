@@ -25,7 +25,7 @@ const Counter = ({ value, label, trigger }) => {
 
     return (
         <div className=" flex flex-col items-center text-white">
-            <h2 className="text-3xl font-bold">{count}+</h2>
+            <h2 className="text-3xl text-yellow-400 font-bold">{count}+</h2>
             <p className="text-sm uppercase tracking-wide">{label}</p>
         </div>
     );

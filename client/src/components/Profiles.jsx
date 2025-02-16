@@ -34,17 +34,19 @@ const Profiles = () => {
             name: "Prof. Dr. michael",
             title: "M.A, M.Ed, Ph.D, D.B.M.",
             designation: "SECRETARY / PRINCIPAL",
-            image: "https://avatars.githubusercontent.com/u/119102587?v=4",
+            image: "https://media.licdn.com/dms/image/v2/D5603AQHJuSLkggIs5w/profile-displayphoto-shrink_400_400/B56ZUHecCxGUAg-/0/1739587176190?e=1745452800&v=beta&t=CnzYXByka9jiA6a96cIk9Ppi6RgYlAi7FRWFGNFpyzY",
             description:
                 "Prof. Dr. Another Name has played a crucial role in education with a strong commitment...",
         },
     ];
 
     return (
-        <div className="p-[1.5em] space-y-8">
+        <div className="md:p-[2em] md:pb-0 md:pt-0">
+            <div className="p-[1.5em] space-y-8">
             {profiles.map((profile, index) => (
                 <ProfileCard key={index} {...profile} />
             ))}
+            </div>
         </div>
     );
 };
