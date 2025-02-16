@@ -8,17 +8,17 @@ const Header = () => {
       <div className='w-[90%] font-semibold flex flex-col md:flex-row justify-between items-center p-4 text-center md:text-left'>
         <div className='w-full md:w-[35%] flex flex-col md:flex-row justify-center items-center mb-4 md:mb-0'>
           <span className='flex items-center space-x-2'>
-            <FaLocationDot className='text-2xl text-[#003cff]' />
-            <p className='text-sm md:text-base'>Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District-562111</p>
+            {/* <FaLocationDot className='text-2xl text-[#003cff]' />
+            <p className='text-sm md:text-base'>Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District-562111</p> */}
           </span>
         </div>
-        <div className='h-24 w-20 md:h-[10em] md:w-[7em]'>
+        <div className='h-[8em] w-20 md:h-[10em] md:w-[7em]'>
           <img src="/DobbespetPublicSchool.png" className='w-full h-full object-contain' alt="School Logo" />
         </div>
         <div className='w-full md:w-[35%] flex flex-col justify-center items-center mt-4 md:mt-0'>
-          <span className='flex items-center space-x-2 cursor-pointer'><FaPhone className='text-[#003cff]' /> <p>9535054460</p></span>
+          {/* <span className='flex items-center space-x-2 cursor-pointer'><FaPhone className='text-[#003cff]' /> <p>9535054460</p></span>
           <span className='flex items-center space-x-2 cursor-pointer'><FaPhone className='text-[#003cff]' /> <p>8553888452</p></span>
-          <span className='flex items-center space-x-2 cursor-pointer'><IoMdMail className='text-xl text-[#003cff]' /> <p>dpslakkur2010@gmail.com</p></span>
+          <span className='flex items-center space-x-2 cursor-pointer'><IoMdMail className='text-xl text-[#003cff]' /> <p>dpslakkur2010@gmail.com</p></span> */}
         </div>
       </div>
       <div className='w-full flex justify-center'>
