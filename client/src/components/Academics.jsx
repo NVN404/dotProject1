@@ -1,12 +1,6 @@
 const Academics = () => {
     const sections = [
-        {
-            title: "Kindergarten (Early Years Program)",
-            link: "/kindergarten",
-            subtitle: "Pre-KG, Prep-1 & 2",
-            description: "St. Paul’s Englisschools in JP Nagar. Focuses on the importance of early childhoodSt. Paul’s English School, one of the best schools in JP Nagar. Focuses on the importance of early childhoodSt. Paul’s English School, one of the best schools in JP Nagar. Focuses on the importance of early childhoodFocuses on the importance of early childhood education.",
-            image: "https://imgs.search.brave.com/Fi7MDkXTMmHld0n92L-VI0kVnwNEq-iI8MPZrBONgI8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTQ1/NDAwMjc5NC9waG90/by9zY2hvb2wtY29y/cmlkb3IuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPU9iNVF1/aUZkRzBHd25EakVn/RnV1N3VxZ2RnTG1r/RVd2SVpKaTV5SDFH/Wmc9", // Replace with actual image URL
-        },
+
         {
             title: "Primary",
             subtitle: "Grades I-IV",
@@ -34,7 +28,7 @@ const Academics = () => {
 
     return (
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 sm:p-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 sm:p-6">
             {sections.map((section, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
                     <img src={section.image} alt={section.title} className="w-full h-150 object-cover" />
