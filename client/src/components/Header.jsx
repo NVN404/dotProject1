@@ -22,7 +22,7 @@ const Header = () => {
         </div>
       </div>
       <div className='w-full flex justify-center'>
-        <div className='w-[95%] md:h-[5em] p-4 bg-[#003cff] text-yellow-400 font-semibold md:rounded-[5em] rounded-[2em] flex flex-col md:flex-row justify-between items-center'>
+        <div className='w-[95%] md:h-[5em] p-4 bg-[#003cff] text-yellow-400 font-semibold md:rounded-[5em] rounded-[1em] flex flex-col md:flex-row justify-between items-center'>
           <ul className='flex flex-wrap justify-center md:justify-evenly w-full md:w-[30%] text-sm md:text-md space-x-4 md:space-x-0'>
             <li className='cursor-pointer'>HOME</li>
             <li className='cursor-pointer'>ABOUT US</li>
