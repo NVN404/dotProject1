@@ -28,7 +28,7 @@ const Header = () => {
             <li className='cursor-pointer'>ABOUT US</li>
             <li className='cursor-pointer'>ADMISSION</li>
           </ul>
-          <h1 className='text-lg md:text-3xl font-extrabold text-white text-center my-4 md:my-0'>DOBBESPET PUBLIC SCHOOL</h1>
+          <h1 className=' text-2xl md:text-3xl font-extrabold text-white text-center my-4 md:my-0'>DOBBESPET PUBLIC SCHOOL</h1>
           <ul className='flex flex-wrap justify-center md:justify-evenly w-full md:w-[30%] text-sm md:text-md space-x-4 md:space-x-0'>
             <li className='cursor-pointer'>GALLERY</li>
             <li className='cursor-pointer'>ACADEMICS</li>

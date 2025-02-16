@@ -23,26 +23,26 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
 const Profiles = () => {
     const profiles = [
         {
-            name: "Prof. Dr. naveen kumar s ",
+            name: "Mr. Zubair Ahamed",
             title: "M.A, M.Ed, M.Sc., MBA, Ph.D, P.G.D.P.M.I.R, F.M.S.P.I, D.B.M.",
-            designation: "CHAIRMAN / DIRECTOR",
-            image: "https://avatars.githubusercontent.com/u/119102587?v=4",
+            designation: "SECRETARY",
+            image: "/Secretory.jpg",
             description:
-                "Prof. Dr. Jayarama Shetty serves as an exemplary figure in the field of education...",
+                "Mr. Zubair Ahamed is a dedicated and hardworking professional who plays a vital role in ensuring the smooth operation of our institution. With his exceptional organizational skills, commitment to excellence, and friendly demeanor, he efficiently manages administrative tasks while always being approachable and supportive to students, teachers, and staff. His dedication to the school's growth and success makes him an invaluable part of our team.",
         },
         {
-            name: "Prof. Dr. michael",
+            name: "Mrs. Sameena Begum",
             title: "M.A, M.Ed, Ph.D, D.B.M.",
-            designation: "SECRETARY / PRINCIPAL",
-            image: "https://media.licdn.com/dms/image/v2/D5603AQHJuSLkggIs5w/profile-displayphoto-shrink_400_400/B56ZUHecCxGUAg-/0/1739587176190?e=1745452800&v=beta&t=CnzYXByka9jiA6a96cIk9Ppi6RgYlAi7FRWFGNFpyzY",
+            designation: "PRINCIPAL",
+            image: "https://avatars.githubusercontent.com/u/142196359?v=4",
             description:
-                "Prof. Dr. Another Name has played a crucial role in education with a strong commitment...",
+                "Mrs. Sameena Begum is a visionary leader who inspires excellence in both students and staff. With her unwavering dedication, strong leadership, and compassionate approach, she creates a nurturing and disciplined environment that fosters academic success and personal growth. Her commitment to education, innovation, and the holistic development of every student makes her a guiding force in shaping the future of our school.",
         },
     ];
 
     return (
-        <div className="md:p-[2em] md:pb-0 md:pt-0">
-            <div className="p-[1.5em] space-y-8">
+        <div className="md:p-[7em] md:pb-0 md:pt-0">
+            <div className="p-[2em] space-y-10">
                 {profiles.map((profile, index) => (
                     <ProfileCard key={index} {...profile} />
                 ))}
