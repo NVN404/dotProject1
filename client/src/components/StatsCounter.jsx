@@ -38,7 +38,7 @@ const StatsCounter = () => {
     ];
 
     return (
-        <div className="w-full bg-blue-600 p-6 rounded-2xl shadow-lg flex flex-col md:flex-row justify-around items-center text-center space-y-6 md:space-y-0 md:space-x-6">
+        <div className="w-full bg-[#003cff] p-6 rounded-2xl shadow-lg flex flex-col md:flex-row justify-around items-center text-center space-y-6 md:space-y-0 md:space-x-6">
             {stats.map((stat, index) => (
                 <div key={index} className="w-1/4 border-r last:border-none border-white/50">
                     <Counter value={stat.value} label={stat.label} />

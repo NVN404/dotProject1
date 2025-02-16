@@ -34,11 +34,11 @@ const Academics = () => {
                     <img src={section.image} alt={section.title} className="w-full h-150 object-cover" />
                     <div className="p-4 flex flex-col flex-grow">
                         <h2 className="text-lg font-bold text-gray-800">{section.title}</h2>
-                        <h3 className="text-sm text-blue-600 font-semibold">{section.subtitle}</h3>
+                        <h3 className="text-sm text-[#003cff] font-semibold">{section.subtitle}</h3>
                         <p className="text-gray-600 mt-2 flex-grow">{section.description}</p>
                         <button
                             onClick={() => router.push(section.link)}
-                            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition self-start">
+                            className="mt-4 px-4 py-2 bg-[#003cff] text-white rounded-lg hover:bg-blue-700 transition self-start">
                             Read More
                         </button>
                     </div>
