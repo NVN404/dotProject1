@@ -34,7 +34,7 @@ const Profiles = () => {
             name: "Mrs. Sameena Begum",
             title: "M.A, M.Ed, Ph.D, D.B.M.",
             designation: "PRINCIPAL",
-            image: "https://avatars.githubusercontent.com/u/142196359?v=4",
+            image: "",
             description:
                 "Mrs. Sameena Begum is a visionary leader who inspires excellence in both students and staff. With her unwavering dedication, strong leadership, and compassionate approach, she creates a nurturing and disciplined environment that fosters academic success and personal growth. Her commitment to education, innovation, and the holistic development of every student makes her a guiding force in shaping the future of our school.",
         },
