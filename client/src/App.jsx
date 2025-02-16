@@ -6,6 +6,7 @@ import Profiles from './components/Profiles';
 import StatsCounter from './components/StatsCounter';
 import MainCarousel from './components/Carousel';
 import Toppers from './components/Toppers';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <StatsCounter />
       <Academics />
       <Toppers />
+      <Footer />
     </div>
   );
 };
