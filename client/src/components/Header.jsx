@@ -10,7 +10,7 @@ const Header = () => {
         <div className='w-[35%] flex justify-center items-center'>
           <span className='w-[80%] flex justify-between'>
             <FaLocationDot className='w-[20%] text-2xl pr-[0.3em] text-[#003cff]' />
-            <p>Lakkur ,    Dobbespet,  Nelamangala Taluk,  Bengalore Rural District-562111</p>
+            <p>Lakkur ,    Dobbespet,  Nelamangala Taluk,  Bengalore Rural District-562111</p>
           </span>
         </div>
         <div className='h-[10em] w-[7em]'>
