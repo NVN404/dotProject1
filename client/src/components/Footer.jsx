@@ -5,9 +5,9 @@ import { FaPhone } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className="h-[30dvh] bg-[#003cff] w-full relative flex flex-col justify-between">
+    <div className="h-[30dvh] bg-[#003cff] w-full flex flex-col justify-between">
       {/* Main Content with 4 Columns */}
-      <div className="flex flex-wrap justify-around p-4 w-full">
+      <div className="flex flex-wrap justify-around w-full">
         <div className="w-full md:w-1/4 p-2">
           <h3 className="text-white text-lg font-bold">
             Dobbespet Public School

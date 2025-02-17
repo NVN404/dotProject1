@@ -10,7 +10,7 @@ const images = [
 
 const toppers = [
   { name: 'Vilas R Naik', rank: '1st Rank', percentage: 'Percentage: 97%' },
-  { name: 'Jane Smith', rank: '2nd Rank', percentage: 'Percentage: 94%' },
+  { name: 'Nikhil R Nambiar', rank: '2nd Rank', percentage: 'Percentage: 96%' },
   { name: 'Mike Johnson', rank: '3rd Rank', percentage: 'Percentage: 93%' },
   { name: 'Emily Brown', rank: '4th Rank', percentage: 'Percentage: 92%' },
   { name: 'Chris White', rank: '5th Rank', percentage: 'Percentage: 91%' }
@@ -20,7 +20,7 @@ const toppers = [
 const Topper = () => {
   return (
     <div className="flex flex-col items-center my-10">
-      <p className='text-3xl text-yellow-400 p-6 bg-[#003cff] rounded-full mb-4'>Academic Stars</p>
+      <p className='h-[2em] w-[10em] text-3xl font-semibold text-white p-[1.5em] bg-[#003cff] rounded-[5em] mb-[1em] flex justify-center items-center'>Academic Stars</p>
 
       {/* Main Topper Card */}
       <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">

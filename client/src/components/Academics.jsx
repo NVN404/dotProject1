@@ -27,7 +27,7 @@ const Academics = () => {
     ];
 
     return (
-        <div className="md:p-[5em] md:pt-[1.5em]">
+        <div className="md:p-[5em] md:pb-[1em] md:pt-[1.5em]">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-[1.5em] sm:p-6">
             {sections.map((section, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
