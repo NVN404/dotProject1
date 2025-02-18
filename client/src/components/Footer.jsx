@@ -9,10 +9,9 @@ const Footer = () => {
       <div className="h-auto py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
         
         {/* Column 1 */}
-        <div className="flex flex-col items-center sm:items-start px-4">
+        <div className="flex flex-col justify-center items-center px-4">
+          <img src="./DobbespetPublicSchool.png" alt="" className='w-[5em] h-[8em] mb-[0.5em]' />
           <h3 className="text-white text-lg font-bold">Dobbespet Public School</h3>
-          <h3 className="text-white text-lg font-bold">Call us at +91 9148018043</h3>
-          <h3 className="text-white text-lg font-bold">Connect With Us</h3>
         </div>
 
         {/* Column 2 */}
@@ -34,7 +33,7 @@ const Footer = () => {
         {/* Column 3 */}
         <div className="flex flex-col px-4 items-center sm:items-start">
           <h3 className="text-white text-lg font-bold">Quick Links</h3>
-          <ul className="text-white text-sm space-y-1">
+          <ul className="text-yellow-400 text-sm space-y-1">
             <li>Link 1</li>
             <li>Link 2</li>
             <li>Link 3</li>
@@ -44,7 +43,7 @@ const Footer = () => {
         {/* Column 4 */}
         <div className="flex flex-col px-4 items-center sm:items-start">
           <h3 className="text-white text-lg font-bold">Resources</h3>
-          <ul className="text-white text-sm space-y-1">
+          <ul className="text-yellow-400 text-sm space-y-1">
             <li>Link 1</li>
             <li>Link 2</li>
             <li>Link 3</li>
