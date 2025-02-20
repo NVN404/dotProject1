@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoIosMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
+import { FaCopyright } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -22,11 +23,17 @@ const Footer = () => {
           </p>
           <div className="flex items-center text-white gap-2 mt-2">
             <IoIosMail size="1.5em" />
-            <span>example@example.com</span>
+            <span>dpslakkur2010@gmail.com</span>
           </div>
-          <div className="flex items-center text-white gap-2 mt-2">
-            <FaPhone size="1.2em" />
-            <span>+91 9148018043</span>
+          <div className="flex flex-col items-center text-white gap-2 mt-2">
+            <div className='flex items-center justify-between '>
+              <FaPhone size="1.2em" className='mr-[0.5em]' />
+              <span>9535054460</span>
+            </div>
+            <div className='flex items-center justify-between '>
+              <FaPhone size="1.2em" className='mr-[0.5em]' />
+              <span>8553888452</span>
+            </div>
           </div>
         </div>
 
@@ -52,12 +59,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-[#1E60AB] p-3 flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left">
-        <p className="text-white text-sm">
-          &copy; 2025 Dobbespet Public School - Bangalore
+      <div className="w-full h-[6em] md:h-[4em] bg-[#328df5] p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left">
+        <p className=" text-white text-sm flex justify-between items-center">
+          <FaCopyright className='mr-[0.5em]' /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-white text-sm">
-          Website Powered by Dot Labs | *Insert Naveen’s number and email*
+        <p className="text-white text-sm font-bold">
+          Website Powered by Dot Labs
         </p>
       </div>
     </footer>

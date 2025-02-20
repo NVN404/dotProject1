@@ -21,7 +21,7 @@ const MainCarousel = () => {
       interval={2500}
       transitionTime={1000}
       swipeScrollTolerance={5}
-      className='mt-[1em]'
+      className='mt-[2em]'
     >
       <div>
         <img src='/image.png' alt='Image 1' className='h-[75vh] w-[80%] mx-auto object-contain' />
