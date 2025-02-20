@@ -59,11 +59,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full h-[6em] md:h-[4em] bg-[#328df5] p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left">
+      <div className="w-full h-[6em] md:h-[4em] bg-[#328df5] p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left font-bold">
         <p className=" text-white text-sm flex justify-between items-center">
           <FaCopyright className='mr-[0.5em]' /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-white text-sm font-bold">
+        <p className="text-white text-sm ">
           Website Powered by Dot Labs
         </p>
       </div>
