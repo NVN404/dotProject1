@@ -11,6 +11,8 @@ export default {
       },
       fontFamily: {
         custom: ['Merriweather', 'serif'],
+        'abril-fatface': ['Abril Fatface', 'cursive'],
+        'cinzel': ['Cinzel', 'serif'],
       },
     },
   },

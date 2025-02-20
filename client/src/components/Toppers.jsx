@@ -20,10 +20,10 @@ const toppers = [
 const Topper = () => {
   return (
     <div className="flex flex-col items-center my-10">
-      <p className='h-[2.5em] w-[95%] text-4xl font-semibold text-white bg-[#003cff] p-[1em] rounded-[5em] mb-[1em] flex justify-center items-center'>Academic Stars</p>
+      <p className='h-[2.5em] w-[95%] text-4xl font-semibold text-white bg-[#003cff] p-[1em] rounded-[2em] mb-[1em] flex justify-center items-center'>Academic Stars</p>
 
       {/* Main Topper Card */}
-      <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 mb-8 rounded-2xl overflow-hidden shadow-lg">
+      <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-72 md:h-72 mb-8 rounded-2xl overflow-hidden shadow-lg">
         <img src={images[0]} alt="Main" className="w-full h-full object-cover" />
         <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-4 text-center">
           <h2 className="text-lg sm:text-xl font-bold">{toppers[0].name}</h2>

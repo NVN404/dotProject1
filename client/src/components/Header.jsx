@@ -46,7 +46,7 @@ const Header = () => {
 
       {/* Navigation Bar (Only for md+) */}
       <div className="hidden md:flex w-full justify-center px-2">
-        <div className="w-full max-w-[95%] h-auto p-4 bg-[#003cff] text-yellow-400 font-semibold rounded-full flex flex-wrap justify-between items-center">
+        <div className="w-full max-w-[95%] h-auto p-4 bg-[#003cff] text-yellow-400 font-semibold rounded-[1.5em] flex flex-wrap justify-between items-center">
           {/* Left Menu */}
           <ul className="flex w-[30%] text-md justify-evenly items-center">
             <li className="cursor-pointer px-2">HOME</li>
