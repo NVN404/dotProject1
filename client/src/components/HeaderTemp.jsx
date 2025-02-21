@@ -18,8 +18,8 @@ const HeaderTemp = () => {
       }, []);
 
   return (
-    <div className='bg-[#003cff] w-full'>
-        <div className="overflow-hidden bg-[#328df5] text-white font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
+    <div className='bg-[#2973B2] w-full'>
+        <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
             <div ref={marqueeRef} className="flex marquee whitespace-nowrap">
                 <span className="mr-10 text-lg">Dobbespet Public School</span>
                 <span className="flex items-center mr-[2em]">
@@ -39,7 +39,7 @@ const HeaderTemp = () => {
         <header className='w-full md:h-[9em] flex justify-between items-center pl-[1.5em] pr-[3em]'>
             <div>
                 <img src="/DobbespetPublicSchool.png"
-                            className="lg:h-[7.5em] lg:ml-[3em]"
+                            className="lg:h-[7.5em] lg:ml-[3em] filter invert"
                             alt="School Logo"/>
             </div>
             <ul className='flex items-center md:p-[0.8em] text-white font-semibold'>
