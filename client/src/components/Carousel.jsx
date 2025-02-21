@@ -18,21 +18,21 @@ const MainCarousel = () => {
       autoFocus={false}
       thumbWidth={100}
       selectedItem={0}
-      interval={2500}
-      transitionTime={1000}
+      interval={3000}
+      transitionTime={3000}
       swipeScrollTolerance={5}
-      className='mb-[3em] mt-[2em] h-[85vh]'
+      className='mb-[7em] mt-[2em] h-[45vh] w-[100%] md:h-[85vh] lg:mt-[1em] lg:p-[4em] pt-[2em]'
     >
       <div>
-        <img src='/image.png' alt='Image 1' className='h-[85vh] w-[60%] mx-auto ' />
+        <img src='/gal1.jpg' alt='Image 1' className='h-[45vh] md:h-[85vh] w-[60%]  ' />
         <p>Institution Achievement etc</p>
       </div>
       <div>
-        <img src='/image2.jpg' alt='Image 2' className='h-[85vh] w-[60%] mx-auto '/>
+        <img src='/gal2.jpg' alt='Image 2' className='h-[45vh] md:h-[85vh] w-[60%]  '/>
         <p>Institution Achievement etc</p>
       </div>
       <div>
-        <img src='/image3.jpg' alt='Image 3' className='h-[85vh] w-[60%] mx-auto '/>
+        <img src='/gal3.jpg' alt='Image 3' className='h-[45vh] md:h-[85vh] w-[60%]  '/>
         <p>Institution Achievement etc</p>
       </div>
     </Carousel>

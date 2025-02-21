@@ -5,10 +5,7 @@ import { FaPhone, FaCopyright } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-[#2973B2] w-full">
-      {/* Main Content Section */}
       <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left px-4 md:px-10">
-        
-        {/* Column 1 */}
         <div className="flex flex-col justify-center items-center">
           <img 
             src="./DobbespetPublicSchool.png" 
@@ -17,8 +14,6 @@ const Footer = () => {
           />
           <h3 className="text-white text-lg font-bold">Dobbespet Public School</h3>
         </div>
-
-        {/* Column 2 */}
         <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg font-bold">Contact Us</h3>
           <p className="text-white text-sm text-center sm:text-left mt-1">
@@ -39,8 +34,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Column 3 */}
         <div className="flex flex-col items-center sm:items-start">
           <h3 className="text-white text-lg font-bold">Quick Links</h3>
           <ul className="text-yellow-400 text-sm space-y-1 mt-2">
@@ -49,14 +42,10 @@ const Footer = () => {
             <li>Link 3</li>
           </ul>
         </div>
-
-        {/* Column 4 */}
         <div className="flex flex-col items-center sm:items-start">
           <h3 className="text-white text-lg font-bold">About Us</h3>
         </div>
       </div>
-
-      {/* Bottom Bar - Adjusted for Mobile */}
       <div className="w-full bg-white py-4 px-4 md:px-10 flex flex-col sm:flex-row justify-between items-center font-semibold text-center sm:text-left">
         <p className="text-[#2973B2] text-sm flex items-center mb-2 sm:mb-0">
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
