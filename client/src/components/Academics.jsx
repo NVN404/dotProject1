@@ -6,7 +6,7 @@ const Academics = () => {
             subtitle: "Grades I-IV",
             link: "/kindergarten",
             description: "We are a nurturing space where young learners begin their educational journey with curiosity and joy. Our engaging lessons in math, science, language, and social studies help build a strong foundation for lifelong learning. Through creativity and play, we inspire children to explore, grow, and develop essential social skills.",
-            image: "https://static.wixstatic.com/media/f532e4_e696834a0b7641288f130799cd1213c5~mv2.png/v1/fill/w_640,h_420,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/f532e4_e696834a0b7641288f130799cd1213c5~mv2.png", // Replace with actual image URL
+            image: "/gal4.jpg", // Replace with actual image URL
         },
         {
             title: "Middle School",
@@ -14,7 +14,7 @@ const Academics = () => {
             link: "/kindergarten",
 
             description: "Our middle school is a place of discovery, where students develop critical thinking and independence. With a well-rounded curriculum and opportunities in arts, technology, and leadership, we prepare them for future challenges. We foster a supportive environment that encourages curiosity, collaboration, and self-confidence.",
-            image: "https://www.focusonthefamily.com/wp-content/uploads/2019/08/HowToPrepareForMiddleSchool_SliderFriendly.png", // Replace with actual image URL
+            image: "gal5.jpg", // Replace with actual image URL
         },
         {
             title: "High School",
@@ -22,7 +22,7 @@ const Academics = () => {
             link: "/kindergarten",
 
             description: "High school is where students refine their skills, explore their passions, and prepare for the future. Our rigorous academics, diverse electives, and extracurricular activities help students develop independence and leadership. We strive to equip them with the knowledge and confidence needed to succeed in higher education and beyond.",
-            image: "https://www.visualsstock.com/images/Low/5/AK59191.jpg", // Replace with actual image URL
+            image: "gal6.jpg", // Replace with actual image URL
         }
     ];
 
