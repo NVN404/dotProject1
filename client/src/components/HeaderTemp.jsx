@@ -53,12 +53,12 @@ const HeaderTemp = () => {
       </div>
 
       {/* Header Section */}
-      <header className="w-full md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 relative">
+      <header className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 relative">
         {/* Logo */}
         <div>
           <img
             src="/DobbespetPublicSchool.png"
-            className="h-[3em] md:h-[7.5em] lg:ml-[1.5em] invert"
+            className="h-[5em] md:h-[7.5em] lg:ml-[1.5em] invert"
             alt="School Logo"
           />
         </div>
