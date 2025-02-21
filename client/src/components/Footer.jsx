@@ -5,13 +5,17 @@ import { FaCopyright } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#003cff] w-full">
+<<<<<<< HEAD
+    <footer className="bg-black w-full">
+=======
+    <footer className="bg-[#2973B2] w-full">
+>>>>>>> d05e1e6ed87bfee78ec8f778dc4504ebdeb47ea6
       {/* Main Content Section */}
       <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
         
         {/* Column 1 */}
         <div className="flex flex-col justify-center items-center px-4">
-          <img src="./DobbespetPublicSchool.png" alt="" className='w-[7em] h-[11em] mb-[0.5em]' />
+          <img src="./DobbespetPublicSchool.png" alt="" className='w-[7em] h-[11em] mb-[0.5em] invert' />
           <h3 className="text-white text-lg font-bold">Dobbespet Public School</h3>
         </div>
 
@@ -59,11 +63,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-[#328df5] p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left font-bold">
-        <p className=" text-white text-sm flex justify-between items-center">
+      <div className="w-full bg-white p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left font-bold">
+        <p className=" text-[#2973B2] text-sm flex justify-between items-center">
           <FaCopyright className='mr-[0.5em]' /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-white text-sm ">
+        <p className="text-[#2973B2] text-sm ">
           Website Powered by Dot Labs
         </p>
       </div>
