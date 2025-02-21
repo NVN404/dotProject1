@@ -61,7 +61,7 @@ const StatsCounter = () => {
 
     return (
         <div ref={statsRef} className="w-full flex justify-center items-center p-[1em]">
-            <div className="mt-[2em] w-full bg-[#003cff] p-[1.5em] rounded-3xl md:rounded-[5em] shadow-lg flex flex-col md:flex-row justify-around items-center text-center space-y-6 md:space-y-0 md:space-x-6 ">
+            <div className="mt-[2em] w-full bg-[#2973B2] p-[1.5em] rounded-3xl md:rounded-[5em] shadow-lg flex flex-col md:flex-row justify-around items-center text-center space-y-6 md:space-y-0 md:space-x-6 ">
             {stats.map((stat, index) => (
                 <div key={index} className="w-1/4 md:border-r lg:border-r xl:border-r last:border-none border-white/50">
                     <Counter value={stat.value} label={stat.label} trigger={isVisible} />

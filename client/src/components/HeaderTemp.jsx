@@ -32,9 +32,9 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="bg-[#003cff] w-full">
+    <div className="bg-[#2973B2] w-full">
       {/* Marquee Section */}
-      <div className="overflow-hidden bg-white text-[#003cff] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
+      <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
         <div ref={marqueeRef} className="flex marquee whitespace-nowrap">
           <span className="mr-10 text-lg">Dobbespet Public School</span>
           <span className="flex items-center mr-[2em]">
@@ -82,7 +82,7 @@ const HeaderTemp = () => {
         {/* Mobile Sliding Menu */}
         <div
           ref={menuRef}
-          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#003cff] text-white flex flex-col items-center justify-center text-lg space-y-5 z-50"
+          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2] text-white flex flex-col items-center justify-center text-lg space-y-5 z-50"
         >
           {/* Close Button */}
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu}>

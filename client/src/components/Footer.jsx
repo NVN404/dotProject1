@@ -4,7 +4,7 @@ import { FaPhone, FaCopyright } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#003cff] w-full">
+    <footer className="bg-[#2973B2] w-full">
       {/* Main Content Section */}
       <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left px-4 md:px-10">
         
@@ -58,10 +58,10 @@ const Footer = () => {
 
       {/* Bottom Bar - Adjusted for Mobile */}
       <div className="w-full bg-white py-4 px-4 md:px-10 flex flex-col sm:flex-row justify-between items-center font-semibold text-center sm:text-left">
-        <p className="text-[#003cff] text-sm flex items-center mb-2 sm:mb-0">
+        <p className="text-[#2973B2] text-sm flex items-center mb-2 sm:mb-0">
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-[#003cff] text-sm">Website Powered by Dot Labs</p>
+        <p className="text-[#2973B2] text-sm">Website Powered by Dot Labs</p>
       </div>
     </footer>
   );
