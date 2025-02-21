@@ -8,6 +8,7 @@ import MainCarousel from './components/Carousel';
 import Toppers from './components/Toppers';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
+import HeaderTemp from './components/HeaderTemp';
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
         ></div>
       </div>
 
-      <Header />
+      <HeaderTemp />
       <MainCarousel />
       <Profiles />
       <StatsCounter />

@@ -21,18 +21,18 @@ const MainCarousel = () => {
       interval={2500}
       transitionTime={1000}
       swipeScrollTolerance={5}
-      className='mt-[2em]'
+      className='mt-[2em] mb-[3em] h-[85vh]'
     >
       <div>
-        <img src='/image.png' alt='Image 1' className='h-[75vh] w-[80%] mx-auto object-contain' />
+        <img src='/image.png' alt='Image 1' className='h-[85vh] w-[60%] mx-auto ' />
         <p>Institution Achievement etc</p>
       </div>
       <div>
-        <img src='/image2.jpg' alt='Image 2' className='h-[75vh] w-[80%] mx-auto object-contain'/>
+        <img src='/image2.jpg' alt='Image 2' className='h-[85vh] w-[60%] mx-auto '/>
         <p>Institution Achievement etc</p>
       </div>
       <div>
-        <img src='/image3.jpg' alt='Image 3' className='h-[75vh] w-[80%] mx-auto object-contain'/>
+        <img src='/image3.jpg' alt='Image 3' className='h-[85vh] w-[60%] mx-auto '/>
         <p>Institution Achievement etc</p>
       </div>
     </Carousel>

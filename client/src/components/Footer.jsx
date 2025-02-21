@@ -7,16 +7,16 @@ const Footer = () => {
   return (
     <footer className="bg-[#003cff] w-full">
       {/* Main Content Section */}
-      <div className="h-auto py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
+      <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
         
         {/* Column 1 */}
         <div className="flex flex-col justify-center items-center px-4">
-          <img src="./DobbespetPublicSchool.png" alt="" className='w-[5em] h-[8em] mb-[0.5em]' />
+          <img src="./DobbespetPublicSchool.png" alt="" className='w-[7em] h-[11em] mb-[0.5em]' />
           <h3 className="text-white text-lg font-bold">Dobbespet Public School</h3>
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col px-4 items-center sm:items-start">
+        <div className="flex flex-col px-6 justify-center sm:items-start">
           <h3 className="text-white text-lg font-bold">Contact Us</h3>
           <p className="text-white text-sm">
             Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
 
         {/* Column 3 */}
-        <div className="flex flex-col px-4 items-center sm:items-start">
+        <div className="flex flex-col px-6 mt-[2em] lg:items-center sm:items-start">
           <h3 className="text-white text-lg font-bold">Quick Links</h3>
           <ul className="text-yellow-400 text-sm space-y-1">
             <li>Link 1</li>
@@ -48,18 +48,18 @@ const Footer = () => {
         </div>
 
         {/* Column 4 */}
-        <div className="flex flex-col px-4 items-center sm:items-start">
-          <h3 className="text-white text-lg font-bold">Resources</h3>
-          <ul className="text-yellow-400 text-sm space-y-1">
+        <div className="flex flex-col px-6 justify-center sm:items-start">
+          <h3 className="text-white text-lg font-bold">ABOUT US</h3>
+          {/* <ul className="text-yellow-400 text-sm space-y-1">
             <li>Link 1</li>
             <li>Link 2</li>
             <li>Link 3</li>
-          </ul>
+          </ul> */}
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full h-[6em] md:h-[4em] bg-[#328df5] p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left font-bold">
+      <div className="w-full bg-[#328df5] p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left font-bold">
         <p className=" text-white text-sm flex justify-between items-center">
           <FaCopyright className='mr-[0.5em]' /> 2025 Dobbespet Public School - Bangalore
         </p>

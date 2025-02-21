@@ -41,8 +41,8 @@ const Profiles = () => {
     ];
 
     return (
-        <div className="md:p-[7em] md:pb-0 md:pt-0">
-            <div className="p-[2em] space-y-10">
+        <div className="md:p-[7em] md:pb-0 md:pt-0 bg-[#328df5]">
+            <div className="p-[2em]  space-y-10">
                 {profiles.map((profile, index) => (
                     <ProfileCard key={index} {...profile} />
                 ))}
