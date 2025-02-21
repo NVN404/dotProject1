@@ -1,25 +1,39 @@
-import React from 'react';
-
-import { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 import { IoIosMail } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
+import { AiOutlineMenuFold } from "react-icons/ai";
+import { RiCloseLargeLine } from "react-icons/ri";
 
 const HeaderTemp = () => {
-    const marqueeRef = useRef(null);
-    useGSAP(() => {
-        gsap.fromTo(
-          marqueeRef.current,
-          { x: "100%" }, 
-          { x: "-100%", duration: 30, repeat: -1, ease: "linear" }
-        );
-      }, []);
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const marqueeRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.fromTo(
+      marqueeRef.current,
+      { x: "100%" },
+      { x: "-100%", duration: 30, repeat: -1, ease: "linear" }
+    );
+  }, []);
+
+  // Open Menu Animation
+  const openMenu = () => {
+    setIsOpen(true);
+    gsap.to(menuRef.current, { right: "0%", duration: 0.5, ease: "power3.out" });
+  };
+
+  // Close Menu Animation
+  const closeMenu = () => {
+    gsap.to(menuRef.current, { right: "-100%", duration: 0.5, ease: "power3.in", onComplete: () => setIsOpen(false) });
+  };
 
   return (
-    <div className='bg-[#2973B2] w-full'>
-        <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
+    <div className='bg-[#003cff] w-full'>
+        <div className="overflow-hidden bg-[#328df5] text-white font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
             <div ref={marqueeRef} className="flex marquee whitespace-nowrap">
                 <span className="mr-10 text-lg">Dobbespet Public School</span>
                 <span className="flex items-center mr-[2em]">
@@ -39,7 +53,7 @@ const HeaderTemp = () => {
         <header className='w-full md:h-[9em] flex justify-between items-center pl-[1.5em] pr-[3em]'>
             <div>
                 <img src="/DobbespetPublicSchool.png"
-                            className="lg:h-[7.5em] lg:ml-[3em] filter invert"
+                            className="lg:h-[7.5em] lg:ml-[3em]"
                             alt="School Logo"/>
             </div>
             <ul className='flex items-center md:p-[0.8em] text-white font-semibold'>
@@ -55,7 +69,7 @@ const HeaderTemp = () => {
             </ul>
         </header>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderTemp
+export default HeaderTemp;
