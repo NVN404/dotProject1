@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileCard = ({ name, title, designation, image, description }) => {
     return (
-        <div className="mt-[2em] flex flex-col md:flex-row bg-gray-200 shadow-xl rounded-2xl p-8 bt-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+        <div className="mt-[2em] flex flex-col md:flex-row bg-white shadow-xl rounded-2xl p-8 bt-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
             <div className="md:w-1/3 flex justify-center md:justify-start">
                 <img
                     src={image}
@@ -11,7 +11,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
                 />
             </div>
             <div className="md:w-2/3 mt-4 md:mt-0 md:pl-8 flex flex-col justify-center ">
-                <h2 className="text-3xl font-cinzel font-semibold text-black text-center md:text-left">{name}</h2>
+                <h2 className="text-3xl  font-semibold text-black text-center md:text-left">{name}</h2>
                 <p className="text-md text-gray-600 font-semibold mt-2 text-center md:text-left italic">{title}</p>
                 <p className="text-[#003cff] font-bold mt-2 text-center md:text-left uppercase tracking-wide">{designation}</p>
                 <p className="text-gray-600 mt-4 text-center md:text-left leading-relaxed">{description}</p>
@@ -41,8 +41,8 @@ const Profiles = () => {
     ];
 
     return (
-        <div className="md:p-[7em] md:pb-0 md:pt-0 bg-[#328df5]">
-            <div className="p-[2em]  space-y-10">
+        <div className="md:p-[10em] md:pb-0 md:pt-0 ">
+            <div className="p-[2em] pt-[1em] pb-[2.5em] bg-[#166734] lg:rounded-3xl  space-y-10">
                 {profiles.map((profile, index) => (
                     <ProfileCard key={index} {...profile} />
                 ))}

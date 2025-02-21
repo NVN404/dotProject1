@@ -16,7 +16,7 @@ const HeaderTemp = () => {
     gsap.fromTo(
       marqueeRef.current,
       { x: "100%" },
-      { x: "-100%", duration: 0, repeat: -1, ease: "linear" }
+      { x: "-100%", duration: 30, repeat: -1, ease: "linear" }
     );
   }, []);
 
@@ -32,10 +32,9 @@ const HeaderTemp = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="bg-[#328df5] w-full">
+    <div className="bg-[#003cff] w-full">
       {/* Marquee Section */}
-      <div className="overflow-hidden bg-black text-white font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
+      <div className="overflow-hidden bg-white text-[#003cff] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
         <div ref={marqueeRef} className="flex marquee whitespace-nowrap">
           <span className="mr-10 text-lg">Dobbespet Public School</span>
           <span className="flex items-center mr-[2em]">
@@ -59,7 +58,7 @@ const HeaderTemp = () => {
         <div>
           <img
             src="/DobbespetPublicSchool.png"
-            className="h-[5em] md:h-[7.9em] lg:ml-[2em]"
+            className="h-[3em] md:h-[7.5em] lg:ml-[1.5em] invert"
             alt="School Logo"
           />
         </div>
@@ -68,6 +67,7 @@ const HeaderTemp = () => {
         <ul className="hidden md:flex items-center md:p-[0.8em] text-white font-semibold">
           <li className="lg:ml-[4em]">HOME</li>
           <li className="lg:ml-[4em]">ABOUT US</li>
+          <li className="lg:ml-[4em]">CIRCULAR</li>
           <li className="lg:ml-[4em]">ADMISSION</li>
           <li className="lg:ml-[4em]">GALLERY</li>
           <li className="lg:ml-[4em]">ACADEMICS</li>
@@ -82,7 +82,7 @@ const HeaderTemp = () => {
         {/* Mobile Sliding Menu */}
         <div
           ref={menuRef}
-          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#328df5] text-white flex flex-col items-center justify-center text-lg space-y-5 z-50"
+          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#003cff] text-white flex flex-col items-center justify-center text-lg space-y-5 z-50"
         >
           {/* Close Button */}
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu}>
@@ -93,6 +93,7 @@ const HeaderTemp = () => {
           <ul className="flex flex-col space-y-5 text-center">
             <li className="py-2 hover:bg-blue-600 w-full" onClick={closeMenu}>HOME</li>
             <li className="py-2 hover:bg-blue-600 w-full" onClick={closeMenu}>ABOUT US</li>
+            <li className="py-2 hover:bg-blue-600 w-full" onClick={closeMenu}>CIRCULAR</li>
             <li className="py-2 hover:bg-blue-600 w-full" onClick={closeMenu}>ADMISSION</li>
             <li className="py-2 hover:bg-blue-600 w-full" onClick={closeMenu}>GALLERY</li>
             <li className="py-2 hover:bg-blue-600 w-full" onClick={closeMenu}>ACADEMICS</li>
@@ -100,44 +101,6 @@ const HeaderTemp = () => {
           </ul>
         </div>
       </header>
-=======
-    <div className='bg-[#003cff] w-full'>
-        <div className="overflow-hidden bg-[#328df5] text-white font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
-            <div ref={marqueeRef} className="flex marquee whitespace-nowrap">
-                <span className="mr-10 text-lg">Dobbespet Public School</span>
-                <span className="flex items-center mr-[2em]">
-                    <FaPhone size="1.2em" className="mr-[0.5em]" />
-                    <span>9535054460</span>
-                </span>
-                <span className="flex items-center mr-[2em]">
-                    <FaPhone size="1.2em" className='mr-[0.5em]' />
-                    <span>8553888452</span>
-                </span>
-                <span className="flex items-center">
-                    <IoIosMail size="1.5em"  className="mr-[0.5em]" />
-                    <span>dpslakkur2010@gmail.com</span>
-                </span>
-            </div>
-        </div>
-        <header className='w-full md:h-[9em] flex justify-between items-center pl-[1.5em] pr-[3em]'>
-            <div>
-                <img src="/DobbespetPublicSchool.png"
-                            className="lg:h-[7.5em] lg:ml-[3em]"
-                            alt="School Logo"/>
-            </div>
-            <ul className='flex items-center md:p-[0.8em] text-white font-semibold'>
-                <li className='lg:ml-[4em]'>
-                    
-                </li>
-                <li className='lg:ml-[4em]'>HOME</li>
-                <li className='lg:ml-[4em]'>ABOUT US</li>
-                <li className='lg:ml-[4em]'>ADMISSION</li>
-                <li className='lg:ml-[4em]'>GALLERY</li>
-                <li className='lg:ml-[4em]'>ACADEMICS</li>
-                <li className='lg:ml-[4em]'>CONTACT US</li>
-            </ul>
-        </header>
->>>>>>> d05e1e6ed87bfee78ec8f778dc4504ebdeb47ea6
     </div>
   );
 };

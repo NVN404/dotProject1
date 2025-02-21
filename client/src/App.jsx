@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Header from './components/Header';
 import Academics from './components/Academics';
 import Profiles from './components/Profiles';
 import StatsCounter from './components/StatsCounter';
@@ -24,8 +23,8 @@ const App = () => {
       <Profiles />
       <StatsCounter />
       <Academics />
-      <Toppers />
-      <Gallery />
+      {/* <Toppers /> */}
+      {/* <Gallery /> */}
       <Footer />
     </div>
   );

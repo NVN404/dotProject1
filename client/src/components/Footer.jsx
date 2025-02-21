@@ -1,50 +1,49 @@
 import React from 'react';
 import { IoIosMail } from "react-icons/io";
-import { FaPhone } from "react-icons/fa6";
-import { FaCopyright } from "react-icons/fa";
+import { FaPhone, FaCopyright } from "react-icons/fa";
 
 const Footer = () => {
   return (
-<<<<<<< HEAD
-    <footer className="bg-black w-full">
-=======
-    <footer className="bg-[#2973B2] w-full">
->>>>>>> d05e1e6ed87bfee78ec8f778dc4504ebdeb47ea6
+    <footer className="bg-[#003cff] w-full">
       {/* Main Content Section */}
-      <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
+      <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left px-4 md:px-10">
         
         {/* Column 1 */}
-        <div className="flex flex-col justify-center items-center px-4">
-          <img src="./DobbespetPublicSchool.png" alt="" className='w-[7em] h-[11em] mb-[0.5em] invert' />
+        <div className="flex flex-col justify-center items-center">
+          <img 
+            src="./DobbespetPublicSchool.png" 
+            alt="School Logo" 
+            className="w-[6em] h-[10em] mb-2 invert"
+          />
           <h3 className="text-white text-lg font-bold">Dobbespet Public School</h3>
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col px-6 justify-center sm:items-start">
+        <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg font-bold">Contact Us</h3>
-          <p className="text-white text-sm">
+          <p className="text-white text-sm text-center sm:text-left mt-1">
             Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111
           </p>
           <div className="flex items-center text-white gap-2 mt-2">
             <IoIosMail size="1.5em" />
-            <span>dpslakkur2010@gmail.com</span>
+            <span className="text-sm">dpslakkur2010@gmail.com</span>
           </div>
-          <div className="flex flex-col items-center text-white gap-2 mt-2">
-            <div className='flex items-center justify-between '>
-              <FaPhone size="1.2em" className='mr-[0.5em]' />
-              <span>9535054460</span>
+          <div className="flex flex-col text-white gap-2 mt-2">
+            <div className="flex items-center">
+              <FaPhone size="1.2em" className="mr-2" />
+              <span className="text-sm">9535054460</span>
             </div>
-            <div className='flex items-center justify-between '>
-              <FaPhone size="1.2em" className='mr-[0.5em]' />
-              <span>8553888452</span>
+            <div className="flex items-center">
+              <FaPhone size="1.2em" className="mr-2" />
+              <span className="text-sm">8553888452</span>
             </div>
           </div>
         </div>
 
         {/* Column 3 */}
-        <div className="flex flex-col px-6 mt-[2em] lg:items-center sm:items-start">
+        <div className="flex flex-col items-center sm:items-start">
           <h3 className="text-white text-lg font-bold">Quick Links</h3>
-          <ul className="text-yellow-400 text-sm space-y-1">
+          <ul className="text-yellow-400 text-sm space-y-1 mt-2">
             <li>Link 1</li>
             <li>Link 2</li>
             <li>Link 3</li>
@@ -52,24 +51,17 @@ const Footer = () => {
         </div>
 
         {/* Column 4 */}
-        <div className="flex flex-col px-6 justify-center sm:items-start">
-          <h3 className="text-white text-lg font-bold">ABOUT US</h3>
-          {/* <ul className="text-yellow-400 text-sm space-y-1">
-            <li>Link 1</li>
-            <li>Link 2</li>
-            <li>Link 3</li>
-          </ul> */}
+        <div className="flex flex-col items-center sm:items-start">
+          <h3 className="text-white text-lg font-bold">About Us</h3>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="w-full bg-white p-[2em] flex flex-col sm:flex-row justify-center sm:justify-between items-center text-center sm:text-left font-bold">
-        <p className=" text-[#2973B2] text-sm flex justify-between items-center">
-          <FaCopyright className='mr-[0.5em]' /> 2025 Dobbespet Public School - Bangalore
+      {/* Bottom Bar - Adjusted for Mobile */}
+      <div className="w-full bg-white py-4 px-4 md:px-10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+        <p className="text-[#003cff] text-sm flex items-center mb-2 sm:mb-0">
+          <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-[#2973B2] text-sm ">
-          Website Powered by Dot Labs
-        </p>
+        <p className="text-[#003cff] text-sm">Website Powered by Dot Labs</p>
       </div>
     </footer>
   );
