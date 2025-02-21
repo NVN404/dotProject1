@@ -23,7 +23,7 @@ const App = () => {
       <Profiles />
       <StatsCounter />
       <Academics />
-      {/* <Toppers /> */}
+      <Toppers />
       {/* <Gallery /> */}
       <Footer />
     </div>

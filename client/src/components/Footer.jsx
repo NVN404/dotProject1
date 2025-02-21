@@ -57,7 +57,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar - Adjusted for Mobile */}
-      <div className="w-full bg-white py-4 px-4 md:px-10 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+      <div className="w-full bg-white py-4 px-4 md:px-10 flex flex-col sm:flex-row justify-between items-center font-semibold text-center sm:text-left">
         <p className="text-[#003cff] text-sm flex items-center mb-2 sm:mb-0">
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
