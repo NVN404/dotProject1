@@ -21,18 +21,18 @@ const MainCarousel = () => {
       interval={3000}
       transitionTime={3000}
       swipeScrollTolerance={5}
-      className='mb-[7em] mt-[2em] h-[45vh] w-[100%] md:h-[85vh] lg:mt-[1em] lg:p-[4em] pt-[2em]'
+      className='mb-[7em] mt-[2em] h-[40vh] w-[100%] md:h-[85vh] lg:mt-[1em] lg:p-[4em] pt-[2em]'
     >
       <div>
-        <img src='/gal1.jpg' alt='Image 1' className='h-[45vh] md:h-[85vh] w-[60%]  ' />
+        <img src='/gal1.jpg' alt='Image 1' className='h-[40vh] md:h-[85vh] w-[60%]  ' />
         <p>Institution Achievement etc</p>
       </div>
       <div>
-        <img src='/gal2.jpg' alt='Image 2' className='h-[45vh] md:h-[85vh] w-[60%]  '/>
+        <img src='/gal2.jpg' alt='Image 2' className='h-[40vh] md:h-[85vh] w-[60%]  '/>
         <p>Institution Achievement etc</p>
       </div>
       <div>
-        <img src='/gal3.jpg' alt='Image 3' className='h-[45vh] md:h-[85vh] w-[60%]  '/>
+        <img src='/gal3.jpg' alt='Image 3' className='h-[40vh] md:h-[85vh] w-[60%]  '/>
         <p>Institution Achievement etc</p>
       </div>
     </Carousel>
