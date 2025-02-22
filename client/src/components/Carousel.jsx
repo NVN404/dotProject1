@@ -12,9 +12,9 @@ const MainCarousel = () => {
       infiniteLoop={false}
       autoPlay={false}
       stopOnHover={false}
-      swipeable={true}
+      swipeable={false}
       dynamicHeight={false}
-      emulateTouch={true}
+      emulateTouch={false}
       autoFocus={false}
       thumbWidth={100}
       selectedItem={0}
