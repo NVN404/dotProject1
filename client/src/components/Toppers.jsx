@@ -1,51 +1,46 @@
 import React from 'react';
 
-const images = [
-    '/topper.jpg',
-    '/image2.jpg',
-    '/image3.jpg',
-    '/image4.jpg',
-    '/image5.jpg'
-];
-
 const toppers = [
-  { name: 'Vilas R Naik', rank: '1st Rank', percentage: '97%' },
-  { name: 'Nikhil R Nambiar', rank: '2nd Rank', percentage: '96%' },
-  { name: 'Mike Johnson', rank: '3rd Rank', percentage: '93%' },
-  { name: 'Emily Brown', rank: '4th Rank', percentage: '92%' },
-  { name: 'Chris White', rank: '5th Rank', percentage: '91%' }
+  { name: 'Vilas R Naik', rank: '1st Rank', percentage: '97%', image: '/topper.jpg' },
+  { name: 'Nikhil R Nambiar', rank: '2nd Rank', percentage: '96%', image: '/image2.jpg' },
+  { name: 'Mike Johnson', rank: '3rd Rank', percentage: '93%', image: '/image3.jpg' },
+  { name: 'Emily Brown', rank: '4th Rank', percentage: '92%', image: '/image4.jpg' },
+  { name: 'Chris White', rank: '5th Rank', percentage: '91%', image: '/image5.jpg' }
 ];
 
-const Topper = () => {
+const TopperPage = () => {
   return (
-    <div className="flex flex-col items-center my-10 px-4">
-      {/* Section Heading */}
-      <p className="h-[3em] w-full max-w-[600px] text-3xl sm:text-4xl font-bold text-white bg-[#2973B2] p-[1em] rounded-full mb-6 text-center shadow-lg">
-        Academic Stars ✨
-      </p>
+    <div className="mb-[2em] flex flex-col items-center py-10 px-4 bg-gradient-to-br bg-[#2973B2] to-purple-700 min-h-screen">
+      
+      {/* 🎓 Hero Section */}
+      <div className="w-full text-center mb-10">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg">
+          🌟 Academic Toppers 🌟
+        </h1>
+        <p className="text-lg text-white opacity-90 mt-2">
+          Celebrating Excellence & Hard Work 🎉
+        </p>
+      </div>
 
-      {/* Main Topper Card (Smaller) */}
-      <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-xl overflow-hidden shadow-lg border-4 border-[#003cff] transform transition-all hover:scale-105">
-        <img src={images[0]} alt="Main Topper" className="w-full h-full object-cover" />
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white p-3 text-center">
-          <h2 className="text-md sm:text-lg font-bold">{toppers[0].name}</h2>
-          <p className="text-sm">{toppers[0].rank}</p>
-          <p className="text-xs font-light">{toppers[0].percentage}</p>
+      {/* 👑 Main Topper Card (Glassmorphic) */}
+      <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/30 bg-white/10 backdrop-blur-lg transition-transform duration-500 hover:scale-105">
+        <img src={toppers[0].image} alt={toppers[0].name} className="w-full h-full object-cover" />
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-white/20 backdrop-blur-md text-white text-center rounded-b-2xl shadow-md">
+          <h2 className="text-xl font-bold">{toppers[0].name}</h2>
+          <p className="text-md">{toppers[0].rank}</p>
+          <p className="text-sm font-light">{toppers[0].percentage}</p>
         </div>
       </div>
 
-      {/* Other Toppers Row */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
-        {images.slice(1).map((image, index) => (
-          <div 
-            key={index} 
-            className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden shadow-md border-2 border-[#003cff] transform transition-all hover:scale-105"
-          >
-            <img src={image} alt={`Topper ${index + 2}`} className="w-full h-full object-cover" />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent text-white p-2 text-center">
-              <h2 className="text-xs sm:text-md font-bold">{toppers[index + 1].name}</h2>
-              <p className="text-xs sm:text-sm">{toppers[index + 1].rank}</p>
-              <p className="text-[10px] sm:text-xs font-light">{toppers[index + 1].percentage}</p>
+      {/* 🏆 Other Toppers Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
+        {toppers.slice(1).map((topper, index) => (
+          <div key={index} className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-lg border border-white/30 bg-white/10 backdrop-blur-lg transition-transform duration-300 hover:scale-105 hover:rotate-1">
+            <img src={topper.image} alt={topper.name} className="w-full h-full object-cover" />
+            <div className="absolute bottom-0 left-0 right-0 p-3 bg-white/20 backdrop-blur-md text-white text-center rounded-b-xl shadow-md">
+              <h2 className="text-sm font-bold">{topper.name}</h2>
+              <p className="text-xs">{topper.rank}</p>
+              <p className="text-xs font-light">{topper.percentage}</p>
             </div>
           </div>
         ))}
@@ -54,4 +49,4 @@ const Topper = () => {
   );
 };
 
-export default Topper;
+export default TopperPage;

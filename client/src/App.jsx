@@ -22,8 +22,9 @@ const App = () => {
       <MainCarousel />
       <Profiles />
       <StatsCounter />
-      <Academics />
+      
       <Toppers />
+      <Academics />
       {/* <Gallery /> */}
       <Footer />
     </div>

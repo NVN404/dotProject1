@@ -24,9 +24,9 @@ const Counter = ({ value, label, trigger }) => {
     }, [trigger, value]);
 
     return (
-        <div className=" flex flex-col items-center text-white">
-            <h2 className="text-3xl  font-bold">{count}+</h2>
-            <p className="text-sm uppercase tracking-wide">{label}</p>
+        <div className="flex flex-col items-center text-white">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">{count}+</h2>
+            <p className="text-xs md:text-sm lg:text-base uppercase tracking-wide">{label}</p>
         </div>
     );
 };
@@ -60,13 +60,18 @@ const StatsCounter = () => {
     ];
 
     return (
-        <div ref={statsRef} className="w-full flex justify-center items-center p-[1em]">
-            <div className="mt-[2em] w-full bg-[#2973B2] p-[1.5em] rounded-3xl md:rounded-[5em] shadow-lg flex flex-col md:flex-row justify-around items-center text-center space-y-6 md:space-y-0 md:space-x-6 ">
-            {stats.map((stat, index) => (
-                <div key={index} className="w-1/4 md:border-r lg:border-r xl:border-r last:border-none border-white/50">
-                    <Counter value={stat.value} label={stat.label} trigger={isVisible} />
-                </div>
-            ))}
+        <div ref={statsRef} className="w-full mt-[2em] mb-[2em] flex justify-center items-center p-4 md:p-6 lg:p-8 xl:p-10">
+            <div className="w-full bg-[#2973B2] p-6 md:p-10 lg:p-12 rounded-2xl md:rounded-[5em] shadow-lg flex flex-col md:flex-row justify-between items-center text-center space-y-6 md:space-y-0 md:space-x-6">
+                {stats.map((stat, index) => (
+                    <div 
+                        key={index} 
+                        className={`w-full md:w-1/4 px-4 border-white/50 ${
+                            index !== stats.length - 1 ? "border-b md:border-b-0 md:border-r" : ""
+                        }`}
+                    >
+                        <Counter value={stat.value} label={stat.label} trigger={isVisible} />
+                    </div>
+                ))}
             </div>
         </div>
     );
