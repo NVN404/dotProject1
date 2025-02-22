@@ -18,8 +18,8 @@ const MainCarousel = () => {
       autoFocus={false}
       thumbWidth={100}
       selectedItem={0}
-      interval={3000}
-      transitionTime={3000}
+      interval={1000}
+      transitionTime={1000}
       swipeScrollTolerance={5}
       className='mb-[7em] mt-[2em] h-[35vh] w-[100%] md:h-[85vh] lg:mt-[1em] lg:p-[4em] pt-[2em]'
     >
