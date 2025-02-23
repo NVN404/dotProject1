@@ -1,19 +1,20 @@
 import React from 'react';
 import { IoIosMail } from "react-icons/io";
 import { FaPhone, FaCopyright } from "react-icons/fa";
+import AdmissionForm from "./AdmissionForm";
 
 const Footer = () => {
   return (
     <footer className="bg-[#2973B2] w-full">
-      
+
       {/* 🔹 Main Footer Section */}
       <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center sm:text-left px-4 md:px-8 lg:px-12 xl:px-16">
-        
+
         {/* 🎓 Logo Section */}
         <div className="flex flex-col justify-center items-center md:items-start">
-          <img 
-            src="./DobbespetPublicSchool.png" 
-            alt="School Logo" 
+          <img
+            src="./DobbespetPublicSchool.png"
+            alt="School Logo"
             className="w-[6em] h-[10em] mb-2 invert"
           />
           <h3 className="text-white text-lg sm:text-xl font-bold">
@@ -40,6 +41,7 @@ const Footer = () => {
               <FaPhone size="1.2em" className="mr-2" />
               <span className="text-sm md:text-base">8553888452</span>
             </div>
+            <AdmissionForm />
           </div>
         </div>
 
