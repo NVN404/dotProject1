@@ -117,7 +117,9 @@ const HeaderTemp = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          <li className="relative cursor-pointer hover:font-bold">HOME</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+            navigate("/");
+          }}>HOME</li>
           <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
           <li className="relative cursor-pointer hover:font-bold">CIRCULAR</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
@@ -139,13 +141,19 @@ const HeaderTemp = () => {
             <RiCloseLargeLine />
           </button>
           <ul className="flex flex-col space-y-5 text-center">
-            <li onClick={closeMenu}>HOME</li>
+            <li onClick={()=>{
+              navigate("/");
+              closeMenu();
+            }}>HOME</li>
             <li onClick={closeMenu}>ABOUT US</li>
             <li onClick={closeMenu}>CIRCULAR</li>
             <li onClick={handleAdmissionClick}>ADMISSION</li>
             <li onClick={closeMenu}>GALLERY</li>
             <li onClick={closeMenu}>ACADEMICS</li>
-            <li onClick={closeMenu}>CONTACT US</li>
+            <li onClick={()=>{
+              navigate("/contact");
+              closeMenu();
+            }}>CONTACT US</li>
           </ul>
         </div>
       </header>
