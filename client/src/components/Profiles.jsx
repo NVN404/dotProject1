@@ -23,8 +23,8 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
             <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 mt-4 text-center md:text-left leading-relaxed">
             {description}
             </p>
+            </div>
         </div>
-</div>
 
     );
 };
@@ -50,8 +50,8 @@ const Profiles = () => {
     ];
 
     return (
-        <div className="md:p-[10em] md:pb-0 md:pt-0 ">
-            <div className="p-[2em] pt-[1em] pb-[2.5em] bg-[#2973B2] lg:rounded-3xl  space-y-10">
+        <div className="md:p-[10em] md:pb-0 md:pt-0 bg-[#2973B2] ">
+            <div className="p-[2em] pt-[1em] pb-[2.5em]  lg:rounded-3xl  space-y-10">
                 {profiles.map((profile, index) => (
                     <ProfileCard key={index} {...profile} />
                 ))}

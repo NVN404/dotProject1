@@ -35,9 +35,6 @@ const AdmissionForm = () => {
 
     return (
         <>
-            {/* <button onClick={toggleModal} className="bg-blue-600 text-white px-4 py-2 rounded">
-                Admission Inquiry
-            </button> */}
             <li onClick={toggleModal} className="hover:underline cursor-pointer">Admissions</li>
 
             {isOpen && (
