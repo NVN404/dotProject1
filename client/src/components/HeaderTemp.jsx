@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -13,6 +14,7 @@ import { AdmissionContext } from "./context/AdmissionContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeaderTemp = () => {
+  const navigate=useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -121,7 +123,9 @@ const HeaderTemp = () => {
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
           <li className="relative cursor-pointer hover:font-bold">GALLERY</li>
           <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
-          <li className="relative cursor-pointer hover:font-bold">CONTACT US</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+            navigate("/contact");
+          }}>CONTACT US</li>
         </ul>
 
         {/* Mobile Navigation Icon */}
