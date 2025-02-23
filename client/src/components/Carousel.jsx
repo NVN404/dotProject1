@@ -1,41 +1,34 @@
-import React from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const images = ["/gal1.jpg", "/gal2.jpg", "/gal3.jpg"];
 
 const MainCarousel = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <Carousel
-      showArrows={true}
-      showThumbs={false}
-      showStatus={false}
-      showIndicators={true}
-      infiniteLoop={false}
-      autoPlay={false}
-      stopOnHover={false}
-      swipeable={false}
-      dynamicHeight={false}
-      emulateTouch={false}
-      autoFocus={false}
-      thumbWidth={100}
-      selectedItem={0}
-      interval={1000}
-      transitionTime={1000}
-      swipeScrollTolerance={5}
-      className='mb-[7em] mt-[2em] h-[35vh] w-[100%] md:h-[85vh] lg:mt-[1em] lg:p-[4em] pt-[2em]'
-    >
-      <div>
-        <img src='/gal1.jpg' alt='Image 1' className='h-[35vh] md:h-[85vh] w-[60%]  ' />
-        <p>Institution Achievement etc</p>
-      </div>
-      <div>
-        <img src='/gal2.jpg' alt='Image 2' className='h-[35vh] md:h-[85vh] w-[60%]  '/>
-        <p>Institution Achievement etc</p>
-      </div>
-      <div>
-        <img src='/gal3.jpg' alt='Image 3' className='h-[35vh] md:h-[85vh] w-[60%]  '/>
-        <p>Institution Achievement etc</p>
-      </div>
-    </Carousel>
+    <div className="relative w-full h-[35vh] md:h-[85vh] overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={index}
+          src={images[index]}
+          alt={`Slide ${index + 1}`}
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </AnimatePresence>
+    </div>
   );
 };
 
