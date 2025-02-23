@@ -23,13 +23,14 @@ const HeaderTemp = () => {
       marqueeRef.current,
       { x: viewportWidth }, // Start from just outside the right edge
       { 
-        x: `-${marqueeWidth}px`, 
+        x: -marqueeWidth, // FIXED: Removed incorrect template literal usage
         duration: marqueeWidth / 50, // Keeps speed consistent across all screens
         repeat: -1, 
         ease: "linear" 
       }
     );
   }, []);
+  
   
 
   useEffect(() => {
@@ -63,7 +64,12 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="bg-[#2972b200] w-full">
+<div
+  className="w-full"
+  style={{
+    background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
+  }}
+>
       {/* Marquee Section */}
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
         <div className="w-full flex whitespace-nowrap">

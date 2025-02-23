@@ -9,15 +9,15 @@ const MainCarousel = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPrevIndex((prev) => prev); // Store previous index properly
-      setIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+      setPrevIndex(index);
+      setIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, []); // Run only once
+  }, [index]);
 
   return (
-    <div className="absolute w-full h-[35vh] md:h-[85vh] overflow-hidden top-[3em] lg:top-[4em] -z-20">
+    <div className="absolute top-0 left-0 w-full h-full -z-10">
       {/* Previous Image stays visible */}
       <img
         src={images[prevIndex]}
@@ -35,7 +35,7 @@ const MainCarousel = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }} // Smooth fade effect
+          transition={{ duration: 1.5 }}
         />
       </AnimatePresence>
     </div>

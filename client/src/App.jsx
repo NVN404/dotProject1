@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import HeaderTemp from './components/HeaderTemp';
 import AdmissionForm from './components/AdmissionForm';
+import Hero from './components/Hero';
 
 const App = () => {
   return (
@@ -20,9 +21,8 @@ const App = () => {
         </div>
       </div> */}
 
-      <HeaderTemp />
+      <Hero />
 
-      <MainCarousel />
       <Profiles />
       <StatsCounter />
 
