@@ -14,7 +14,7 @@ const TopperPage = () => {
       
       {/* 🎓 Hero Section */}
       <div className="w-full  text-center mb-10">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg">
+        <h1 className="text-3xl sm:text-4xl font-bold text-white drop-shadow-lg">
           🌟 Academic Toppers 🌟
         </h1>
         <p className="text-lg text-white opacity-90 mt-2">
@@ -23,7 +23,7 @@ const TopperPage = () => {
       </div>
 
       {/* 👑 Main Topper Card (Glassmorphic) */}
-      <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-2xl border border-white/30 bg-white/10 backdrop-blur-lg transition-transform duration-500 hover:scale-105">
+      <div className="relative w-64 h-64 sm:w-77 sm:h-77 rounded-2xl overflow-hidden shadow-2xl border border-white/30 bg-white/10 backdrop-blur-lg transition-transform duration-500 hover:scale-105">
         <img src={toppers[0].image} alt={toppers[0].name} className="w-full h-full object-cover" />
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-white/20 backdrop-blur-md text-white text-center rounded-b-2xl shadow-md">
           <h2 className="text-xl font-bold">{toppers[0].name}</h2>

@@ -89,7 +89,7 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="w-full"
+    <div className="w-full "
       style={{
         background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
       }}
@@ -107,7 +107,8 @@ const HeaderTemp = () => {
       </div>
 
       {/* Header Section */}
-      <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
+      <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 
+      ">
         {/* Logo */}
         <div>
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7.5em] lg:ml-[1.5em] invert" alt="School Logo" />
@@ -150,3 +151,6 @@ const HeaderTemp = () => {
 };
 
 export default HeaderTemp;
+
+
+// shadow-[0px_15px_40px_rgba(0,0,0,0.6)]

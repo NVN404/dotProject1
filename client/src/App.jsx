@@ -6,6 +6,7 @@ import StatsCounter from './components/StatsCounter';
 import Toppers from './components/Toppers';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
+import Gallery from './components/Gallery';
 
 import { AdmissionContext } from './components/context/AdmissionContext';
 
@@ -25,6 +26,7 @@ const App = () => {
             <StatsCounter />
             <Toppers />
             <Academics />
+            <Gallery />
             <Footer />
       </AdmissionContext.Provider>
     </div>
