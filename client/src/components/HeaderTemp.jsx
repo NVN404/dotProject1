@@ -138,7 +138,7 @@ const HeaderTemp = () => {
             <li onClick={closeMenu}>HOME</li>
             <li onClick={closeMenu}>ABOUT US</li>
             <li onClick={closeMenu}>CIRCULAR</li>
-            <li onClick={handleAdmissionClick}>ADMISSION</li> {/* Automatically closes */}
+            <li onClick={handleAdmissionClick}>ADMISSION</li>
             <li onClick={closeMenu}>GALLERY</li>
             <li onClick={closeMenu}>ACADEMICS</li>
             <li onClick={closeMenu}>CONTACT US</li>
