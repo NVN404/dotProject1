@@ -10,12 +10,6 @@ import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 
 import { BrowserRouter } from 'react-router-dom';
-import Academics from "./components/Academics";
-import Profiles from "./components/Profiles";
-import StatsCounter from "./components/StatsCounter";
-import Toppers from "./components/Toppers";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
 import NoticeBoard from "./components/NoticeBoard";
 import AdminLogin from "./components/AdminLogin";
 import AdminPanel from "./components/AdminPanel";
@@ -41,6 +35,7 @@ const App = () => {
                 <StatsCounter />
                 <Toppers />
                 <Academics />
+                <Gallery />
                 <Footer />
               </div>
             }

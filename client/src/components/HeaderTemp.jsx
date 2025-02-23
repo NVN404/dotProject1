@@ -125,7 +125,7 @@ const HeaderTemp = () => {
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7.5em] lg:ml-[1.5em] invert" alt="School Logo" />
         </div>
 
-<span className="text-4xl text-white font-dmSerif">Dobbespet Public School</span>
+<span className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl  text-white font-dmSerif">Dobbespet Public School</span>
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{

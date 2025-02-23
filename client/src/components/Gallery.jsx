@@ -16,7 +16,7 @@ const Gallery = () => {
       <div className="absolute top-0 left-0 w-full h-[15%] bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-10"></div>
       <div className="absolute bottom-0 left-0 w-full h-[15%] bg-gradient-to-t from-black/40 to-transparent pointer-events-none z-10"></div>
 
-      <div className="relative h-screen w-[75vw] overflow-hidden">
+      <div className="relative h-screen w-[75vw] md:w-[60vw] lg:w-[60vw] overflow-hidden">
         <div className="absolute top-0 flex flex-col items-center gap-4 animate-scroll-infinite">
           {[...images, ...images].map((src, index) => (
             <img

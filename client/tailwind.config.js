@@ -22,7 +22,7 @@ export default {
         custom: ['Merriweather', 'serif'],
         'abril-fatface': ['Abril Fatface', 'cursive'],
         'cinzel': ['Cinzel', 'serif'],
-        dmSerif: ['"DM Serif Text"', 'serif'],
+        'dmSerif': ['"DM Serif Text"', 'serif'],
       },
     },
   },
