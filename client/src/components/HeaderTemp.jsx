@@ -38,12 +38,10 @@ const HeaderTemp = () => {
       }
     );
 
-    if (!marqueeRef.current || !headerRef.current) return;
-
     gsap.to(headerRef.current, {
       backgroundColor: "#2973B2",
-      position:"fixed",
-      top:0,
+      position: "fixed",
+      top: 0,
       duration: 0.1,
       scrollTrigger: {
         trigger: ".marquee",
@@ -53,8 +51,42 @@ const HeaderTemp = () => {
         toggleActions: "play none none reverse",
       },
     });
-  },[]);
+  }, []);
 
+  useEffect(() => {
+    if (menuRef.current) {
+      if (isOpen) {
+        menuRef.current.removeAttribute("inert");
+      } else {
+        menuRef.current.setAttribute("inert", "");
+      }
+    }
+  }, [isOpen]);
+
+  const openMenu = () => {
+    setIsOpen(true);
+    gsap.to(menuRef.current, { right: "0%", duration: 0.5, ease: "linear" });
+
+    gsap.fromTo(
+      menuItemsRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "linear" }
+    );
+  };
+
+  const closeMenu = () => {
+    gsap.to(menuRef.current, {
+      right: "-100%",
+      duration: 0.5,
+      ease: "linear",
+      onComplete: () => setIsOpen(false),
+    });
+  };
+
+  const handleAdmissionClick = () => {
+    closeMenu(); // Close menu
+    setOpenAdmissionForm(true); // Open admission form
+  };
 
   return (
     <div className="w-full"
@@ -83,33 +115,33 @@ const HeaderTemp = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">HOME</li>
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">ABOUT US</li>
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">CIRCULAR</li>
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full" onClick={() => setOpenAdmissionForm(true)}>ADMISSION</li>
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">GALLERY</li>
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">ACADEMICS</li>
-          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">CONTACT US</li>
+          <li className="relative cursor-pointer hover:font-bold">HOME</li>
+          <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
+          <li className="relative cursor-pointer hover:font-bold">CIRCULAR</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
+          <li className="relative cursor-pointer hover:font-bold">GALLERY</li>
+          <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
+          <li className="relative cursor-pointer hover:font-bold">CONTACT US</li>
         </ul>
 
         {/* Mobile Navigation Icon */}
-        <button className="lg:hidden text-white text-3xl" onClick={() => setIsOpen(true)} aria-label="Open navigation menu">
+        <button className="lg:hidden text-white text-3xl" onClick={openMenu} aria-label="Open navigation menu">
           <AiOutlineMenuFold />
         </button>
 
         {/* Mobile Menu */}
         <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2] text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
-          <button className="absolute top-4 right-6 text-3xl" onClick={() => setIsOpen(false)} aria-label="Close navigation menu">
+          <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
             <RiCloseLargeLine />
           </button>
           <ul className="flex flex-col space-y-5 text-center">
-            <li>HOME</li>
-            <li onClick={() => setIsOpen(false)}>ABOUT US</li>
-            <li onClick={() => setIsOpen(false)}>CIRCULAR</li>
-            <li onClick={() => { setIsOpen(false); setOpenAdmissionForm(true); }}>ADMISSION</li>
-            <li onClick={() => setIsOpen(false)}>GALLERY</li>
-            <li onClick={() => setIsOpen(false)}>ACADEMICS</li>
-            <li onClick={() => setIsOpen(false)}>CONTACT US</li>
+            <li onClick={closeMenu}>HOME</li>
+            <li onClick={closeMenu}>ABOUT US</li>
+            <li onClick={closeMenu}>CIRCULAR</li>
+            <li onClick={handleAdmissionClick}>ADMISSION</li> {/* Automatically closes */}
+            <li onClick={closeMenu}>GALLERY</li>
+            <li onClick={closeMenu}>ACADEMICS</li>
+            <li onClick={closeMenu}>CONTACT US</li>
           </ul>
         </div>
       </header>
