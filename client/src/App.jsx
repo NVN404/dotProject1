@@ -1,17 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 import Academics from './components/Academics';
 import Profiles from './components/Profiles';
 import StatsCounter from './components/StatsCounter';
-import MainCarousel from './components/Carousel';
 import Toppers from './components/Toppers';
 import Footer from './components/Footer';
-import Gallery from './components/Gallery';
-import HeaderTemp from './components/HeaderTemp';
-import AdmissionForm from './components/AdmissionForm';
 import Hero from './components/Hero';
 
+import { AdmissionContext } from './components/context/AdmissionContext';
+
 const App = () => {
+  const [openAdmissionForm,setOpenAdmissionForm]=useState(false);
   return (
     <div className="relative">
       {/* <div className="fixed top-0 left-0 w-full h-full -z-50">
@@ -20,17 +19,14 @@ const App = () => {
         >      
         </div>
       </div> */}
-
-      <Hero />
-
-      <Profiles />
-      <StatsCounter />
-
-      <Toppers />
-      <Academics />
-      {/* <Gallery /> */}
-      <Footer />
-
+      <AdmissionContext.Provider value={{openAdmissionForm,setOpenAdmissionForm}}>
+            <Hero />
+            <Profiles />
+            <StatsCounter />
+            <Toppers />
+            <Academics />
+            <Footer />
+      </AdmissionContext.Provider>
     </div>
   );
 };
