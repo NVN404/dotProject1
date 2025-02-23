@@ -60,19 +60,15 @@ const StatsCounter = () => {
     ];
 
     return (
-        <div ref={statsRef} className="w-full mt-[2em] mb-[2em] flex justify-center items-center p-4 md:p-6 lg:p-8 xl:p-10">
-            <div className="w-full bg-[#2973B2] p-6 md:p-10 lg:p-12 rounded-2xl md:rounded-[5em] shadow-lg flex flex-col md:flex-row justify-between items-center text-center space-y-6 md:space-y-0 md:space-x-6">
-                {stats.map((stat, index) => (
-                    <div 
-                        key={index} 
-                        className={`w-full md:w-1/4 px-4 border-white/50 ${
-                            index !== stats.length - 1 ? "border-b md:border-b-0 md:border-r" : ""
-                        }`}
-                    >
-                        <Counter value={stat.value} label={stat.label} trigger={isVisible} />
-                    </div>
-                ))}
-            </div>
+        <div ref={statsRef} className="w-full mt-[2em] mb-[2em] flex flex-wrap justify-center items-center gap-6 p-4">
+            {stats.map((stat, index) => (
+                <div 
+                    key={index}
+                    className="w-[250px] h-[150px] bg-[#2973B2] p-6 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center"
+                >
+                    <Counter value={stat.value} label={stat.label} trigger={isVisible} />
+                </div>
+            ))}
         </div>
     );
 };
