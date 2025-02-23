@@ -14,13 +14,23 @@ const HeaderTemp = () => {
   const menuItemsRef = useRef([]);
 
   useGSAP(() => {
-    const width = marqueeRef.current.scrollWidth;
+    if (!marqueeRef.current) return;
+  
+    const marqueeWidth = marqueeRef.current.scrollWidth;
+    const viewportWidth = window.innerWidth;
+  
     gsap.fromTo(
       marqueeRef.current,
-      { x: "100%" },
-      { x: `-${width}px`, duration: 20, repeat: -1, ease: "linear" }
+      { x: viewportWidth }, // Start from just outside the right edge
+      { 
+        x: `-${marqueeWidth}px`, 
+        duration: marqueeWidth / 50, // Keeps speed consistent across all screens
+        repeat: -1, 
+        ease: "linear" 
+      }
     );
   }, []);
+  
 
   useEffect(() => {
     if (menuRef.current) {
@@ -36,7 +46,6 @@ const HeaderTemp = () => {
     setIsOpen(true);
     gsap.to(menuRef.current, { right: "0%", duration: 0.5, ease: "linear" });
 
-    // Fade in menu items one by one
     gsap.fromTo(
       menuItemsRef.current,
       { opacity: 0, y: 20 },
@@ -92,7 +101,7 @@ const HeaderTemp = () => {
           {["HOME", "ABOUT US", "CIRCULAR", "ADMISSION", "GALLERY", "ACADEMICS", "CONTACT US"].map((item, index) => (
             <li
               key={index}
-              className="relative cursor-pointer transition duration-300 hover:text-gray-300 after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
+              className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
             >
               {item}
             </li>

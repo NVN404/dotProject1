@@ -8,16 +8,16 @@ const Footer = () => {
     <footer className="bg-[#2973B2] w-full">
 
       {/* 🔹 Main Footer Section */}
-      <div className="h-auto lg:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center sm:text-left px-4 md:px-8 lg:px-12 xl:px-16">
+      <div className="h-auto md:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr]  gap-6 md:gap-[5em] text-center sm:text-left px-4 md:px-8 lg:px-12 xl:px-16">
 
         {/* 🎓 Logo Section */}
-        <div className="flex flex-col justify-center items-center md:items-start">
+        <div className="flex flex-col justify-center items-center">
           <img
             src="./DobbespetPublicSchool.png"
             alt="School Logo"
             className="w-[6em] h-[10em] mb-2 invert"
           />
-          <h3 className="text-white text-lg sm:text-xl font-bold">
+          <h3 className="text-white text-lg sm:text-md font-bold">
             Dobbespet Public School
           </h3>
         </div>
@@ -41,7 +41,7 @@ const Footer = () => {
               <FaPhone size="1.2em" className="mr-2" />
               <span className="text-sm md:text-base">8553888452</span>
             </div>
-            <AdmissionForm />
+            
           </div>
         </div>
 
@@ -50,7 +50,8 @@ const Footer = () => {
           <h3 className="text-white text-lg sm:text-xl font-bold">Quick Links</h3>
           <ul className="text-yellow-400 text-sm md:text-base space-y-1 mt-2">
             <li className="hover:underline cursor-pointer">Home</li>
-            <li className="hover:underline cursor-pointer">Admissions</li>
+            {/* <li className="hover:underline cursor-pointer">Admissions</li> */}
+            <AdmissionForm />
             <li className="hover:underline cursor-pointer">Contact</li>
           </ul>
         </div>

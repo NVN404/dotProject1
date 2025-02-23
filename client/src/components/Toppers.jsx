@@ -13,7 +13,7 @@ const TopperPage = () => {
     <div className="mb-[2em] flex flex-col items-center py-10 px-4 bg-gradient-to-br bg-[#2973B2] to-purple-700 min-h-screen">
       
       {/* 🎓 Hero Section */}
-      <div className="w-full text-center mb-10">
+      <div className="w-full  text-center mb-10">
         <h1 className="text-4xl sm:text-5xl font-bold text-white drop-shadow-lg">
           🌟 Academic Toppers 🌟
         </h1>
