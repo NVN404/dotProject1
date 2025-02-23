@@ -53,10 +53,10 @@ const StatsCounter = () => {
     }, []);
 
     const stats = [
-        { value: 120, label: "State Rank" },
-        { value: 40, label: "Professional Lecturers" },
-        { value: 4, label: "Years of History" },
-        { value: 100, label: "Results Every Year" },
+        { value: 120, label: "State Rank" ,src:"bangalore.png"},
+        { value: 40, label: "Professional Lecturers",src:"teacher.png" },
+        { value: 4, label: "Years of History",src:"history.png" },
+        { value: 100, label: "Results Every Year",src:"result.png" },
     ];
 
     return (
@@ -64,8 +64,9 @@ const StatsCounter = () => {
             {stats.map((stat, index) => (
                 <div 
                     key={index}
-                    className="w-[250px] h-[150px] bg-[#2973B2] p-6 rounded-2xl shadow-lg flex flex-col justify-center items-center text-center"
+                    className="w-[300px] h-[200px] bg-[#2973B2] rounded-2xl shadow-lg flex flex-col justify-center items-center text-center gap-2"
                 >
+                <img src={stat.src} alt="icon" className="invert h-14 w-14"/>
                     <Counter value={stat.value} label={stat.label} trigger={isVisible} />
                 </div>
             ))}
