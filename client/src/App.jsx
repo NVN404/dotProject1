@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 
+import { BrowserRouter } from 'react-router-dom';
+
 import { AdmissionContext } from './components/context/AdmissionContext';
 
 const App = () => {
@@ -20,6 +22,7 @@ const App = () => {
         >      
         </div>
       </div> */}
+      <BrowserRouter>
       <AdmissionContext.Provider value={{openAdmissionForm,setOpenAdmissionForm}}>
             <Hero />
             <Profiles />
@@ -29,6 +32,7 @@ const App = () => {
             <Gallery />
             <Footer />
       </AdmissionContext.Provider>
+      </BrowserRouter>
     </div>
   );
 };
