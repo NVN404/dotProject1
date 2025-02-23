@@ -2,33 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-.text-depth {
-    text-shadow: 
-      2px 2px 4px rgba(0, 0, 0, 0.3), 
-      -2px -2px 4px rgba(255, 255, 255, 0.2);
+@keyframes scroll-down {
+  from {
+    transform: translateY(-100%);
   }
-  
+  to {
+    transform: translateY(100%);
+  }
+}
 
-  .img-3d {
-    transform: perspective(500px) rotateX(10deg) rotateY(5deg);
-    transition: transform 0.3s ease;
+@keyframes scroll-up {
+  from {
+    transform: translateY(100%);
   }
-  .img-3d:hover {
-    transform: perspective(500px) rotateX(0deg) rotateY(0deg);
+  to {
+    transform: translateY(-100%);
   }
-  
-  .text-3d {
-    position: relative;
-    color: white;
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.7);
-    transform: perspective(500px) rotateX(10deg);
-  }
-  
-  .img-depth {
-    box-shadow: 
-      2px 2px 4px rgba(0, 0, 0, 0.3), 
-      4px 4px 8px rgba(0, 0, 0, 0.2), 
-      6px 6px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 10s linear infinite;
+}
+
+.animate-scroll-up {
+  animation: scroll-up 10s linear infinite;
+}
+
   
