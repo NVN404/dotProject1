@@ -14,9 +14,7 @@ const App = () => {
   return (
     <div className="relative">
       <div className="fixed top-0 left-0 w-full h-full -z-50">
-        <div
-          className="bg-[url('./bg.jpg')] bg-cover bg-center w-full h-full opacity-[50%]"
-        >      
+        <div className="bg-[url('/bg.jpg')] bg-cover bg-center w-full h-full opacity-[65%]">      
         </div>
       </div>
       <AdmissionContext.Provider value={{openAdmissionForm,setOpenAdmissionForm}}>
