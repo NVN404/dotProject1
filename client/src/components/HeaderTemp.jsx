@@ -63,7 +63,7 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="bg-[#2973B2] w-full">
+    <div className="bg-[#2972b200] w-full">
       {/* Marquee Section */}
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full">
         <div className="w-full flex whitespace-nowrap">
