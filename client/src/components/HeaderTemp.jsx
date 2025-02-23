@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -13,6 +14,7 @@ import { AdmissionContext } from "./context/AdmissionContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeaderTemp = () => {
+  const navigate=useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +39,13 @@ const HeaderTemp = () => {
         ease: "linear",
       }
     );
+
+    gsap.from(menuItemsRef.current,{
+      x:200,
+      duration:1,
+      delay:1,
+      stagger:0.15
+    })
 
     gsap.to(headerRef.current, {
       backgroundColor: "#2973B2",
@@ -116,13 +125,17 @@ const HeaderTemp = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          <li className="relative cursor-pointer hover:font-bold">HOME</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+            navigate("/");
+          }}>HOME</li>
           <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
           <li className="relative cursor-pointer hover:font-bold">CIRCULAR</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
           <li className="relative cursor-pointer hover:font-bold">GALLERY</li>
           <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
-          <li className="relative cursor-pointer hover:font-bold">CONTACT US</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+            navigate("/contact");
+          }}>CONTACT US</li>
         </ul>
 
         {/* Mobile Navigation Icon */}
@@ -131,18 +144,24 @@ const HeaderTemp = () => {
         </button>
 
         {/* Mobile Menu */}
-        <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2] text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
+        <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2]/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
             <RiCloseLargeLine />
           </button>
-          <ul className="flex flex-col space-y-5 text-center">
-            <li onClick={closeMenu}>HOME</li>
-            <li onClick={closeMenu}>ABOUT US</li>
-            <li onClick={closeMenu}>CIRCULAR</li>
-            <li onClick={handleAdmissionClick}>ADMISSION</li> {/* Automatically closes */}
-            <li onClick={closeMenu}>GALLERY</li>
-            <li onClick={closeMenu}>ACADEMICS</li>
-            <li onClick={closeMenu}>CONTACT US</li>
+          <ul ref={menuItemsRef} className="flex flex-col text-xl space-y-5 text-center">
+            <li onClick={()=>{
+              navigate("/");
+              closeMenu();
+            }} className="mb-[0.5em] hover:text-3xl">HOME</li>
+            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ABOUT US</li>
+            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">CIRCULAR</li>
+            <li onClick={handleAdmissionClick} className="mb-[2em] hover:text-3xl">ADMISSION</li>
+            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">GALLERY</li>
+            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ACADEMICS</li>
+            <li onClick={()=>{
+              navigate("/contact");
+              closeMenu();
+            }} className="mb-[2em]">CONTACT US</li>
           </ul>
         </div>
       </header>
