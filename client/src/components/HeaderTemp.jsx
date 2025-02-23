@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect,useContext } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -7,7 +7,12 @@ import { FaPhone } from "react-icons/fa6";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { RiCloseLargeLine } from "react-icons/ri";
 
+import { AdmissionContext } from "./context/AdmissionContext";
+
 const HeaderTemp = () => {
+
+  const {openAdmissionForm,setOpenAdmissionForm}=useContext(AdmissionContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const marqueeRef = useRef(null);
@@ -104,14 +109,29 @@ const HeaderTemp = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          {["HOME", "ABOUT US", "CIRCULAR", "ADMISSION", "GALLERY", "ACADEMICS", "CONTACT US"].map((item, index) => (
-            <li
-              key={index}
-              className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item}
-            </li>
-          ))}
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+              HOME
+          </li>
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+              ABOUT US
+          </li>
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+              CIRCULAR
+          </li>
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full" onClick={()=>{
+              setOpenAdmissionForm(true);
+          }}>
+              ADMISSION
+          </li>
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+              GALLERY
+          </li>
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+              ACADEMICS
+          </li>
+          <li className="relative cursor-pointer transition duration-300 hover:font-bold after:block after:h-[2px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full">
+              CONTACT US
+          </li>
         </ul>
 
         {/* Mobile Navigation Icon */}
@@ -137,17 +157,61 @@ const HeaderTemp = () => {
             <RiCloseLargeLine />
           </button>
           <ul className="flex flex-col space-y-5 text-center">
-            {["HOME", "ABOUT US", "CIRCULAR", "ADMISSION", "GALLERY", "ACADEMICS", "CONTACT US"].map((item, index) => (
-              <li
-                key={index}
-                ref={(el) => (menuItemsRef.current[index] = el)}
-                className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
-                onClick={closeMenu}
-                role="menuitem"
-              >
-                {item}
-              </li>
-            ))}
+           <li>
+               HOME
+           </li>
+           <li
+               ref={(el) => (menuItemsRef.current[1] = el)}
+               className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
+               onClick={closeMenu}
+               role="menuitem"
+           >
+               ABOUT US
+           </li>
+           <li
+               ref={(el) => (menuItemsRef.current[2] = el)}
+               className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
+               onClick={closeMenu}
+               role="menuitem"
+           >
+               CIRCULAR
+           </li>
+           <li
+           ref={(el) => (menuItemsRef.current[3] = el)}
+           className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
+           onClick={() => {
+               closeMenu();
+               setOpenAdmissionForm(true);
+           }}
+           role="menuitem"
+       >
+           ADMISSION
+       </li>
+
+           <li
+               ref={(el) => (menuItemsRef.current[4] = el)}
+               className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
+               onClick={closeMenu}
+               role="menuitem"
+           >
+               GALLERY
+           </li>
+           <li
+               ref={(el) => (menuItemsRef.current[5] = el)}
+               className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
+               onClick={closeMenu}
+               role="menuitem"
+           >
+               ACADEMICS
+           </li>
+           <li
+               ref={(el) => (menuItemsRef.current[6] = el)}
+               className="py-2 w-full text-white cursor-pointer transition duration-300 hover:bg-blue-600 hover:text-gray-300"
+               onClick={closeMenu}
+               role="menuitem"
+           >
+               CONTACT US
+           </li>
           </ul>
         </div>
       </header>
