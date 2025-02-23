@@ -58,6 +58,8 @@ const HeaderTemp = () => {
         start: "bottom top", // When marquee exits, header color changes
         end: "+=50",
         toggleActions: "play none none reverse",
+        onEnter: () => headerRef.current.classList.add("shadow-[0px_15px_40px_rgba(0,0,0,0.6)]"),
+      onLeaveBack: () => headerRef.current.classList.remove("shadow-[0px_15px_40px_rgba(0,0,0,0.6)]"),
       },
     });
   }, []);
@@ -116,7 +118,7 @@ const HeaderTemp = () => {
       </div>
 
       {/* Header Section */}
-      <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 
+      <header ref={headerRef} className=" w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 
       ">
         {/* Logo */}
         <div>
