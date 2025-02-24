@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import HeaderForOthers from "./HeaderForOthers";
 
 // Initialize Supabase Client
 const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co"; // Replace with actual URL
@@ -27,7 +28,9 @@ export default function NoticeBoard() {
     }, []);
 
     return (
-        <div className="flex justify-center items-center h-min bg-[#0c3547] p-14">
+        <div>
+            <HeaderForOthers />
+            <div className="flex justify-center items-center h-min bg-[#0c3547] p-14">
             <div 
                 className="relative w-[600px] max-w-full p-6 bg-[#f4e1c1] border-[6px] border-[#b07f39] rounded-xl shadow-xl"
                 style={{
@@ -60,6 +63,7 @@ export default function NoticeBoard() {
                     )}
                 </div>
             </div>
+        </div>
         </div>
     );
 }

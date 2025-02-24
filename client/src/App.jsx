@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Footer from './components/Footer';
-import Hero from './components/Hero';
 
 import Home from './components/Home';
 import ContactUs from './components/ContactUs';
+import Gallery from './components/Gallery';
 
 import { AdmissionContext } from './components/context/AdmissionContext';
-import HeaderTemp from './components/HeaderTemp';
+import NoticeBoard from './components/NoticeBoard';
 
 const App = () => {
   const [openAdmissionForm, setOpenAdmissionForm] = useState(false);
@@ -23,10 +23,11 @@ const App = () => {
       <AdmissionContext.Provider value={{ openAdmissionForm, setOpenAdmissionForm }}>
         {/* Wrap everything inside BrowserRouter */}
         <BrowserRouter>
-          <Hero />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/circular" element={<NoticeBoard />} />
           </Routes>
           <Footer />
         </BrowserRouter>   

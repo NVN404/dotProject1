@@ -4,8 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-import { IoIosMail } from "react-icons/io";
-import { FaPhone } from "react-icons/fa6";
 import { AiOutlineMenuFold } from "react-icons/ai";
 import { RiCloseLargeLine } from "react-icons/ri";
 
@@ -13,7 +11,7 @@ import { AdmissionContext } from "./context/AdmissionContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HeaderTemp = () => {
+const HeaderForOthers = () => {
   const navigate=useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
@@ -47,19 +45,6 @@ const HeaderTemp = () => {
       stagger:0.15
     })
 
-    gsap.to(headerRef.current, {
-      backgroundColor: "#2973B2",
-      position: "fixed",
-      top: 0,
-      duration: 0.1,
-      scrollTrigger: {
-        trigger: ".marquee",
-        scroller: "body",
-        start: "bottom top", // When marquee exits, header color changes
-        end: "+=50",
-        toggleActions: "play none none reverse",
-      },
-    });
   }, []);
 
   useEffect(() => {
@@ -98,23 +83,7 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="w-full"
-      style={{
-        background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
-      }}
-    >
-      {/* Marquee Section */}
-      <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
-        <div ref={marqueeRef} className="w-full flex whitespace-nowrap">
-          <div className="flex items-center gap-10">
-            <span className="text-lg">Dobbespet Public School</span>
-            <span className="flex items-center"><FaPhone size="1.2em" className="mr-2" />9535054460</span>
-            <span className="flex items-center"><FaPhone size="1.2em" className="mr-2" />8553888452</span>
-            <span className="flex items-center"><IoIosMail size="1.5em" className="mr-2" />dpslakkur2010@gmail.com</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="w-full bg-[#2973B2]">
       {/* Header Section */}
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
         {/* Logo */}
@@ -129,9 +98,7 @@ const HeaderTemp = () => {
             navigate("/");
           }}>HOME</li>
           <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
-            navigate("/circular");
-          }}>CIRCULAR</li>
+          <li className="relative cursor-pointer hover:font-bold">CIRCULAR</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
           <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
@@ -155,10 +122,7 @@ const HeaderTemp = () => {
               closeMenu();
             }} className="mb-[0.5em] hover:text-3xl">HOME</li>
             <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ABOUT US</li>
-            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl" onClick={()=>{
-              navigate("/circular");
-              closeMenu();
-            }}>CIRCULAR</li>
+            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">CIRCULAR</li>
             <li onClick={handleAdmissionClick} className="mb-[2em] hover:text-3xl">ADMISSION</li>
             <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ACADEMICS</li>
             <li onClick={()=>{
@@ -172,4 +136,4 @@ const HeaderTemp = () => {
   );
 };
 
-export default HeaderTemp;
+export default HeaderForOthers;
