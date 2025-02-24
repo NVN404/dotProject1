@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 import Footer from './components/Footer';
 
@@ -10,8 +11,14 @@ import Gallery from './components/Gallery';
 import { AdmissionContext } from './components/context/AdmissionContext';
 import NoticeBoard from './components/NoticeBoard';
 
+import AdminLogin from "./components/AdminLogin";
+import AdminPanel from "./components/AdminPanel";
+
+
 const App = () => {
   const [openAdmissionForm, setOpenAdmissionForm] = useState(false);
+  const isAdmin = localStorage.getItem("admin") === "true";
+
 
   return (
     <div className="relative">
@@ -28,6 +35,13 @@ const App = () => {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/circular" element={<NoticeBoard />} />
+             {/* Admin Login */}
+            <Route path="/admin-login" element={<AdminLogin />} />
+            {/* Admin Panel (Protected Route) */}
+            <Route
+              path="/admin"
+              element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />}
+            />
           </Routes>
           <Footer />
         </BrowserRouter>   
