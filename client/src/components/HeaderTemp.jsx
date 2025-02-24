@@ -58,8 +58,6 @@ const HeaderTemp = () => {
         start: "bottom top", // When marquee exits, header color changes
         end: "+=50",
         toggleActions: "play none none reverse",
-        onEnter: () => headerRef.current.classList.add("shadow-[0px_15px_40px_rgba(0,0,0,0.6)]"),
-      onLeaveBack: () => headerRef.current.classList.remove("shadow-[0px_15px_40px_rgba(0,0,0,0.6)]"),
       },
     });
   }, []);
@@ -100,7 +98,7 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="w-full "
+    <div className="w-full"
       style={{
         background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
       }}
@@ -118,14 +116,13 @@ const HeaderTemp = () => {
       </div>
 
       {/* Header Section */}
-      <header ref={headerRef} className=" w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 
-      ">
+      <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
         {/* Logo */}
-        <div>
-          <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7.5em] lg:ml-[1.5em] invert" alt="School Logo" />
+        <div class="flex flex-col items-center justify-center">
+          <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
+          <span class="text-white text-sm sm:text-md font-bold">Dobbespet Public School</span>
         </div>
 
-<span className="text-3xl sm:text-4xl md:text-4xl lg:text-4xl  text-white font-dmSerif">Dobbespet Public School</span>
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
@@ -173,6 +170,3 @@ const HeaderTemp = () => {
 };
 
 export default HeaderTemp;
-
-
-// shadow-[0px_15px_40px_rgba(0,0,0,0.6)]
