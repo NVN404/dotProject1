@@ -118,9 +118,9 @@ const HeaderTemp = () => {
       {/* Header Section */}
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
         {/* Logo */}
-        <div class="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
-          <span class="text-white text-sm sm:text-md font-bold">Dobbespet Public School</span>
+          <span className="text-white text-sm sm:text-md font-bold">Dobbespet Public School</span>
         </div>
 
         {/* Desktop Navigation */}
