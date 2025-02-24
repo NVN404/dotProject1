@@ -98,7 +98,9 @@ const HeaderForOthers = () => {
             navigate("/");
           }}>HOME</li>
           <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
-          <li className="relative cursor-pointer hover:font-bold">CIRCULAR</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+            navigate("/circular");
+          }}>CIRCULAR</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
           <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
@@ -122,7 +124,10 @@ const HeaderForOthers = () => {
               closeMenu();
             }} className="mb-[0.5em] hover:text-3xl">HOME</li>
             <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ABOUT US</li>
-            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">CIRCULAR</li>
+            <li onClick={()=>{
+                navigate("/circular");
+                closeMenu();
+            }} className="mb-[2em] hover:text-3xl">CIRCULAR</li>
             <li onClick={handleAdmissionClick} className="mb-[2em] hover:text-3xl">ADMISSION</li>
             <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ACADEMICS</li>
             <li onClick={()=>{

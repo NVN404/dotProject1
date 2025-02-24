@@ -155,7 +155,7 @@ const HeaderTemp = () => {
               closeMenu();
             }} className="mb-[0.5em] hover:text-3xl">HOME</li>
             <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ABOUT US</li>
-            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl" onClick={()=>{
+            <li className="mb-[2em] hover:text-3xl" onClick={()=>{
               navigate("/circular");
               closeMenu();
             }}>CIRCULAR</li>
