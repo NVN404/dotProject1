@@ -135,6 +135,9 @@ const HeaderTemp = () => {
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
           <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+            navigate("/gallery");
+          }}>GALLERY</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
             navigate("/contact");
           }}>CONTACT US</li>
         </ul>
@@ -149,18 +152,22 @@ const HeaderTemp = () => {
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
             <RiCloseLargeLine />
           </button>
-          <ul ref={menuItemsRef} className="flex flex-col text-xl space-y-5 text-center">
+          <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center">
             <li onClick={()=>{
               navigate("/");
               closeMenu();
-            }} className="mb-[0.5em] hover:text-3xl">HOME</li>
-            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ABOUT US</li>
-            <li className="mb-[2em] hover:text-3xl" onClick={()=>{
+            }} className="mb-[2em]">HOME</li>
+            <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li>
+            <li className="mb-[2em]" onClick={()=>{
               navigate("/circular");
               closeMenu();
             }}>CIRCULAR</li>
-            <li onClick={handleAdmissionClick} className="mb-[2em] hover:text-3xl">ADMISSION</li>
-            <li onClick={closeMenu} className="mb-[2em] hover:text-3xl">ACADEMICS</li>
+            <li onClick={handleAdmissionClick} className="mb-[2em]">ADMISSION</li>
+            <li onClick={closeMenu} className="mb-[2em]">ACADEMICS</li>
+            <li onClick={()=>{
+              navigate("/gallery");
+              closeMenu();
+            }} className="mb-[2em]">GALLERY</li>
             <li onClick={()=>{
               navigate("/contact");
               closeMenu();

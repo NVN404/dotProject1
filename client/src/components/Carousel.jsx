@@ -17,12 +17,12 @@ const MainCarousel = () => {
   }, [index]);
 
   return (
-    <div className="absolute top-0 left-0 w-full h-full -z-10">
+    <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full -z-10">
       {/* Previous Image stays visible */}
       <img
         src={images[prevIndex]}
         alt={`Slide ${prevIndex + 1}`}
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-[75vh] md:h-full object-cover"
       />
 
       {/* New Image Fades in over it */}
@@ -31,7 +31,7 @@ const MainCarousel = () => {
           key={index}
           src={images[index]}
           alt={`Slide ${index + 1}`}
-          className="absolute top-0 left-0 w-full h-full object-cover"
+          className="absolute top-0 left-0 w-full h-[75vh] md:h-full object-cover"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

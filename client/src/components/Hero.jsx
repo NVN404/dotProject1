@@ -25,7 +25,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div ref={heroRef} className="relative w-full min-h-screen">
+    <div ref={heroRef} className="relative w-full h-[75vh] md:min-h-screen">
 
       {/* Marquee Section */}
       <div ref={marqueeRef} className="relative z-30">
@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
 
       {/* Carousel Positioned Behind Header */}
-      <div className="absolute top-0 left-0 w-full h-full -z-10">
+      <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full -z-10">
         <MainCarousel />
       </div>
     </div>
