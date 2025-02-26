@@ -14,7 +14,7 @@ import { AdmissionContext } from "./context/AdmissionContext";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeaderTemp = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -40,11 +40,11 @@ const HeaderTemp = () => {
       }
     );
 
-    gsap.from(menuItemsRef.current,{
-      x:200,
-      duration:1,
-      delay:1,
-      stagger:0.15
+    gsap.from(menuItemsRef.current, {
+      x: 200,
+      duration: 1,
+      delay: 1,
+      stagger: 0.15
     })
 
     gsap.to(headerRef.current, {
@@ -52,6 +52,7 @@ const HeaderTemp = () => {
       position: "fixed",
       top: 0,
       duration: 0.1,
+      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.7)", 
       scrollTrigger: {
         trigger: ".marquee",
         scroller: "body",
@@ -118,26 +119,28 @@ const HeaderTemp = () => {
       {/* Header Section */}
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
         {/* Logo */}
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center hover:cursor-pointer" onClick={() => {
+          navigate("/");
+        }}>
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
           <span className="text-white text-sm sm:text-md font-bold">Dobbespet Public School</span>
         </div>
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/");
           }}>HOME</li>
           <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/circular");
           }}>CIRCULAR</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
           <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/gallery");
           }}>GALLERY</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
+          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/contact");
           }}>CONTACT US</li>
         </ul>
@@ -153,22 +156,22 @@ const HeaderTemp = () => {
             <RiCloseLargeLine />
           </button>
           <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center">
-            <li onClick={()=>{
+            <li onClick={() => {
               navigate("/");
               closeMenu();
             }} className="mb-[2em]">HOME</li>
             <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li>
-            <li className="mb-[2em]" onClick={()=>{
+            <li className="mb-[2em]" onClick={() => {
               navigate("/circular");
               closeMenu();
             }}>CIRCULAR</li>
             <li onClick={handleAdmissionClick} className="mb-[2em]">ADMISSION</li>
             <li onClick={closeMenu} className="mb-[2em]">ACADEMICS</li>
-            <li onClick={()=>{
+            <li onClick={() => {
               navigate("/gallery");
               closeMenu();
             }} className="mb-[2em]">GALLERY</li>
-            <li onClick={()=>{
+            <li onClick={() => {
               navigate("/contact");
               closeMenu();
             }} className="mb-[2em]">CONTACT US</li>

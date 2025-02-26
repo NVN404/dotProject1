@@ -83,11 +83,13 @@ const HeaderForOthers = () => {
   };
 
   return (
-    <div className="w-full bg-[#2973B2]">
+    <div className="w-full bg-[#2973B2] shadow-[0px_8px_20px_rgba(0,0,0,0.7)]">
       {/* Header Section */}
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
         {/* Logo */}
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center hover:cursor-pointer" onClick={()=>{
+            navigate("/");
+          }}>
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
           <span className="text-white text-sm sm:text-md font-bold">Dobbespet Public School</span>
         </div>
