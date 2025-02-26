@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import HeaderForOthers from "./HeaderForOthers";
 
 // Initialize Supabase Client
-const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co"; // Replace with actual URL
+const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"; // Replace with actual API Key
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -13,7 +13,7 @@ export default function NoticeBoard() {
     useEffect(() => {
         const fetchNotices = async () => {
             const { data, error } = await supabase
-                .from("notices") // Your table name
+                .from("notices")
                 .select("*");
 
             if (error) {

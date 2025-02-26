@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
+import { createClient } from "@supabase/supabase-js";
 import { useNavigate } from 'react-router-dom';
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -13,7 +14,29 @@ import { AdmissionContext } from "./context/AdmissionContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"; // Replace with actual API Key
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 const HeaderTemp = () => {
+  const [notices, setNotices] = useState([]);
+
+    useEffect(() => {
+        const fetchNotices = async () => {
+            const { data, error } = await supabase
+                .from("notices")
+                .select("*");
+
+            if (error) {
+                console.error("Error fetching notices:", error);
+            } else {
+                console.log("API Response:", data);
+                setNotices(data);
+            }
+        };
+
+        fetchNotices();
+    }, []);
   const navigate = useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
@@ -108,10 +131,7 @@ const HeaderTemp = () => {
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-full flex whitespace-nowrap">
           <div className="flex items-center gap-10">
-            <span className="text-lg">Dobbespet Public School</span>
-            <span className="flex items-center"><FaPhone size="1.2em" className="mr-2" />9535054460</span>
-            <span className="flex items-center"><FaPhone size="1.2em" className="mr-2" />8553888452</span>
-            <span className="flex items-center"><IoIosMail size="1.5em" className="mr-2" />dpslakkur2010@gmail.com</span>
+          {notices.slice(-1)[0].content}
           </div>
         </div>
       </div>
