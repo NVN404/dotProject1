@@ -21,7 +21,7 @@ const MapComponent = () => {
   const markerRef = useRef(null);
 
   return (
-    <MapContainer center={position} zoom={12} className="h-full w-full rounded-md shadow-md -z-50">
+    <MapContainer center={position} zoom={12} className="h-full w-full rounded-md shadow-md z-0">
       <TileLayer
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

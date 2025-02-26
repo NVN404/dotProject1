@@ -1,28 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import HeaderForOthers from "./HeaderForOthers";
 import MapComponent from "./MapComponent";
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:5000/contact-us", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("Your query has been sent successfully!");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      alert("Error sending your query. Please try again.");
+    }
+  };
+
   return (
     <div className="w-full min-h-screen">
       <HeaderForOthers />
-      <div className="grid grid-cols-1 lg:grid-cols-2  p-6">
-        
-        {/* Map (Appears on Top for Mobile) */}
-        <div className="h-[300px] md:h-[400px] lg:h-auto rounded-lg overflow-hidden shadow-lg">
+      <div className="grid grid-cols-1 lg:grid-cols-2 p-6">
+        {/* Map Section */}
+        <div className="h-[350px] md:h-[400px] lg:h-auto rounded-lg overflow-hidden shadow-lg">
           <MapComponent />
         </div>
 
-        {/* Contact Form */}
+        {/* Contact Form Section */}
         <div className="bg-[#2973B2] text-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col justify-center">
           <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
-          <form className="space-y-4 text-black">
+          <form className="space-y-4 text-black" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
               placeholder="Your Name"
               spellCheck="false"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              onChange={handleChange}
+              value={formData.name}
               required
             />
             <input
@@ -31,6 +59,8 @@ const ContactUs = () => {
               placeholder="Your Email"
               spellCheck="false"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              onChange={handleChange}
+              value={formData.email}
               required
             />
             <input
@@ -39,6 +69,8 @@ const ContactUs = () => {
               placeholder="Phone Number"
               spellCheck="false"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              onChange={handleChange}
+              value={formData.phone}
               required
             />
             <textarea
@@ -47,6 +79,8 @@ const ContactUs = () => {
               spellCheck="false"
               rows="4"
               className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              onChange={handleChange}
+              value={formData.message}
               required
             ></textarea>
             <div className="flex justify-center">
