@@ -30,40 +30,31 @@ export default function NoticeBoard() {
     return (
         <div>
             <HeaderForOthers />
-            <div className="flex justify-center items-center h-min bg-white p-14">
-            <div 
-                className="relative w-[600px] max-w-full p-6 bg-[#f4e1c1] border-[6px] border-[#b07f39] rounded-xl shadow-xl"
-                style={{
-                    backgroundImage: "url('/path-to-paper-texture.jpg')",
-                    backgroundSize: "cover",
-                    backgroundBlendMode: "multiply"
-                }}
-            >
-                {/* Decorative Pin at the Top */}
-                <div className="absolute top-[-15px] left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-600 rounded-full border-[3px] border-red-900 shadow-lg"></div>
-                
-                <h2 className="text-2xl font-bold text-center text-[#5a3e1b] mb-4 tracking-wide">
-                    📜 Notice Board
-                </h2>
+            <div className="h-[auto] bg-gradient-to-br from-gray-100 to-blue-50 flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
+        <div className="w-full max-w-3xl  p-6 sm:p-8 bg-white rounded-3xl shadow-2xl border border-gray-200">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 text-center mb-6 flex items-center justify-center gap-2">
+                📜 <span>Notice Board</span>
+            </h2>
 
-                <div className="h-60 overflow-y-auto p-3 bg-[#fff7e1] rounded-md shadow-inner border border-[#d6ad60] scrollbar-thin scrollbar-thumb-[#b07f39] scrollbar-track-[#f4e1c1]">
-                    {notices.length > 0 ? (
-                        <ul className="space-y-2 text-[#5a3e1b] font-medium">
-                            {notices.map((notice) => (
-                                <li 
-                                    key={notice.id} 
-                                    className="p-2 border-l-4 border-[#b07f39] bg-[#fffbf2] rounded-md shadow-sm transition-all hover:bg-[#f8e4c2] hover:shadow-md"
-                                >
-                                    <span className="font-semibold">{notice.title}:</span> {notice.content}
-                                </li>
-                            ))}
-                        </ul>
-                    ) : (
-                        <p className="text-center text-gray-600 italic">No notices yet.</p>
-                    )}
-                </div>
+            <div className="h-64 sm:h-72 overflow-y-auto p-4 sm:p-5 bg-gray-50 rounded-xl shadow-inner border border-gray-300 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
+                {notices.length > 0 ? (
+                    <ul className="space-y-4 sm:space-y-5">
+                        {notices.map((notice) => (
+                            <li 
+                                key={notice.id} 
+                                className="p-4 sm:p-5 bg-white rounded-xl shadow-md border-l-4 border-blue-500 hover:shadow-lg transition-all duration-300"
+                            >
+                                <h3 className="font-bold text-blue-700 text-md sm:text-lg">{notice.title}</h3>
+                                <p className="text-gray-700 mt-1 sm:mt-2 leading-relaxed">{notice.content}</p>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="text-center text-gray-500 italic">No notices available.</p>
+                )}
             </div>
         </div>
+    </div>
         </div>
     );
 }
