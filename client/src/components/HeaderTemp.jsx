@@ -131,7 +131,7 @@ const HeaderTemp = () => {
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-full flex whitespace-nowrap">
           <div className="flex items-center gap-10">
-          {notices.slice(-1)[0].content}
+          {notices.length>0 ? notices.slice(-1)[0].content : " "}
           </div>
         </div>
       </div>
