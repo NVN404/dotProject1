@@ -1,15 +1,18 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import {useNavigate} from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone, FaCopyright } from "react-icons/fa";
 import AdmissionForm from "./AdmissionForm";
 
+import { AdmissionContext } from './context/AdmissionContext';
+
 const Footer = () => {
+  const navigate=useNavigate();
+  const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
   return (
     <footer className="bg-[#2973B2] w-full">
-
       {/* 🔹 Main Footer Section */}
       <div className="h-[auto] md:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr]  gap-6 md:gap-[5em] text-center sm:text-left px-4 md:px-8 lg:px-12 xl:px-16">
-
         {/* 🎓 Logo Section */}
         <div className="flex flex-col  items-center">
           <img
@@ -46,13 +49,24 @@ const Footer = () => {
         </div>
 
         {/* 🔗 Quick Links */}
-        <div className="flex flex-col items-center sm:items-start">
-          <h3 className="text-white text-lg sm:text-xl font-bold">Quick Links</h3>
-          <ul className="text-yellow-400 text-sm md:text-base space-y-1 mt-2">
-            <li className="hover:underline cursor-pointer">Home</li>
-            {/* <li className="hover:underline cursor-pointer">Admissions</li> */}
-            <AdmissionForm />
-            <li className="hover:underline cursor-pointer">Contact</li>
+        <div className="text-white flex flex-col items-center sm:items-start">
+          <h3 className="text-lg sm:text-xl font-bold">Quick Links</h3>
+          <ul className="text-sm md:text-base space-y-1 mt-2">
+            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
+                navigate("/")
+            }}>Home</li>
+            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
+                navigate("/circular")
+            }}>Circular</li>
+            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
+                setOpenAdmissionForm(true)
+            }}><AdmissionForm />Admission</li>
+            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
+                navigate("/gallery")
+            }}>Gallery</li>
+            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
+                navigate("/contact")
+            }}>Contact Us</li>
           </ul>
         </div>
 
@@ -71,7 +85,7 @@ const Footer = () => {
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
         <p className="text-[#2973B2] text-sm md:text-base">
-          Website Powered by Dot Labs
+          Website cooked in Dot Labs
         </p>
       </div>
 
