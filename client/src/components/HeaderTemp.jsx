@@ -56,7 +56,7 @@ const HeaderTemp = () => {
       scrollTrigger: {
         trigger: ".marquee",
         scroller: "body",
-        start: "bottom top", // When marquee exits, header color changes
+        start: "bottom top",
         end: "+=50",
         toggleActions: "play none none reverse",
       },
@@ -94,8 +94,8 @@ const HeaderTemp = () => {
   };
 
   const handleAdmissionClick = () => {
-    closeMenu(); // Close menu
-    setOpenAdmissionForm(true); // Open admission form
+    closeMenu();
+    setOpenAdmissionForm(true);
   };
 
   return (
@@ -104,7 +104,7 @@ const HeaderTemp = () => {
         background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
       }}
     >
-      {/* Marquee Section */}
+
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-full flex whitespace-nowrap">
           <div className="flex items-center gap-10">
@@ -116,9 +116,7 @@ const HeaderTemp = () => {
         </div>
       </div>
 
-      {/* Header Section */}
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
-        {/* Logo */}
         <div className="flex flex-col items-center justify-center hover:cursor-pointer" onClick={() => {
           navigate("/");
         }}>
@@ -131,7 +129,7 @@ const HeaderTemp = () => {
           <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/");
           }}>HOME</li>
-          <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
+          {/* <li className="relative cursor-pointer hover:font-bold">ABOUT US</li> */}
           <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/circular");
           }}>CIRCULAR</li>
@@ -160,7 +158,7 @@ const HeaderTemp = () => {
               navigate("/");
               closeMenu();
             }} className="mb-[2em]">HOME</li>
-            <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li>
+            {/* <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li> */}
             <li className="mb-[2em]" onClick={() => {
               navigate("/circular");
               closeMenu();

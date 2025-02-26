@@ -29,7 +29,6 @@ const App = () => {
       </div> */}
 
       <AdmissionContext.Provider value={{ openAdmissionForm, setOpenAdmissionForm }}>
-        {/* Wrap everything inside BrowserRouter */}
         <BrowserRouter>
         <ScrollToTop />
           <Routes>

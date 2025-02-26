@@ -55,7 +55,7 @@ const AdmissionForm = () => {
                             <textarea name="message" placeholder="Message" spellCheck="false" className="w-full p-2 border rounded-lg focus:outline-none" onChange={handleChange} required></textarea>
                             <div className="flex justify-between">
                                 <button type="button" onClick={toggleModal} className="text-white font-semibold">Cancel</button>
-                                <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded font-semibold">Submit</button>
+                                <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 font-semibold">Submit</button>
                             </div>
                         </form>
                     </div>

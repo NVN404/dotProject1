@@ -99,7 +99,7 @@ const HeaderForOthers = () => {
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
             navigate("/");
           }}>HOME</li>
-          <li className="relative cursor-pointer hover:font-bold">ABOUT US</li>
+          {/* <li className="relative cursor-pointer hover:font-bold">ABOUT US</li> */}
           <li className="relative cursor-pointer hover:font-bold" onClick={()=>{
             navigate("/circular");
           }}>CIRCULAR</li>
@@ -128,7 +128,7 @@ const HeaderForOthers = () => {
                       navigate("/");
                       closeMenu();
                     }} className="mb-[2em]">HOME</li>
-                    <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li>
+                    {/* <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li> */}
                     <li className="mb-[2em]" onClick={()=>{
                       navigate("/circular");
                       closeMenu();

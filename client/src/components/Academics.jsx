@@ -6,7 +6,7 @@ const Academics = () => {
             subtitle: "Grades I-IV",
             link: "/kindergarten",
             description: "We are a nurturing space where young learners begin their educational journey with curiosity and joy. Our engaging lessons in math, science, language, and social studies help build a strong foundation for lifelong learning. Through creativity and play, we inspire children to explore, grow, and develop essential social skills.",
-            image: "/gal4.jpg", // Replace with actual image URL
+            image: "/gal4.jpg",
         },
         {
             title: "Middle School",
@@ -14,7 +14,7 @@ const Academics = () => {
             link: "/kindergarten",
 
             description: "Our middle school is a place of discovery, where students develop critical thinking and independence. With a well-rounded curriculum and opportunities in arts, technology, and leadership, we prepare them for future challenges. We foster a supportive environment that encourages curiosity, collaboration, and self-confidence.",
-            image: "gal5.jpg", // Replace with actual image URL
+            image: "gal5.jpg",
         },
         {
             title: "High School",
@@ -22,7 +22,7 @@ const Academics = () => {
             link: "/kindergarten",
 
             description: "High school is where students refine their skills, explore their passions, and prepare for the future. Our rigorous academics, diverse electives, and extracurricular activities help students develop independence and leadership. We strive to equip them with the knowledge and confidence needed to succeed in higher education and beyond.",
-            image: "gal6.jpg", // Replace with actual image URL
+            image: "gal6.jpg",
         }
     ];
 
@@ -38,7 +38,7 @@ const Academics = () => {
                         <p className="text-gray-600 mt-2 flex-grow">{section.description}</p>
                         <button
                             onClick={() => router.push(section.link)}
-                            className="mt-4 px-4 py-2 bg-[#2973B2] text-white rounded-lg hover:bg-blue-700 transition self-start">
+                            className="mt-4 px-4 py-2 bg-[#2973B2] text-white rounded-lg hover:bg-green-500 transition self-start">
                             Read More
                         </button>
                     </div>

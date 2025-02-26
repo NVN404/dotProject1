@@ -18,14 +18,14 @@ const TopperPage = () => {
           🌟 Academic Toppers 🌟
         </h1>
         <p className="text-lg text-white opacity-90 mt-2">
-          Celebrating Excellence & Hard Work 🎉
+          Celebrating Excellence & Hard Work
         </p>
       </div>
 
       {/* 👑 Main Topper Card (Glassmorphic) */}
       <div className="relative w-64 h-64 sm:w-77 sm:h-77 rounded-2xl overflow-hidden shadow-2xl border border-white/30 bg-white/10 backdrop-blur-lg transition-transform duration-500 hover:scale-105">
         <img src={toppers[0].image} alt={toppers[0].name} className="w-full h-full object-cover" />
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-white/20 backdrop-blur-md text-white text-center rounded-b-2xl shadow-md">
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-white/5 backdrop-blur-md text-white text-center rounded-b-2xl shadow-md">
           <h2 className="text-xl font-bold">{toppers[0].name}</h2>
           <p className="text-md">{toppers[0].rank}</p>
           <p className="text-sm font-light">{toppers[0].percentage}</p>
@@ -35,7 +35,7 @@ const TopperPage = () => {
       {/* 🏆 Other Toppers Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {toppers.slice(1).map((topper, index) => (
-          <div key={index} className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-lg border border-white/30 bg-white/10 backdrop-blur-lg transition-transform duration-300 hover:scale-105 hover:rotate-1">
+          <div key={index} className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden shadow-lg border border-white/30 bg-white/5 backdrop-blur-lg transition-transform duration-300 hover:scale-105 hover:rotate-1">
             <img src={topper.image} alt={topper.name} className="w-full h-full object-cover" />
             <div className="absolute bottom-0 left-0 right-0 p-3 bg-white/20 backdrop-blur-md text-white text-center rounded-b-xl shadow-md">
               <h2 className="text-sm font-bold">{topper.name}</h2>
