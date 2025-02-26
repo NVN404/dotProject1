@@ -83,7 +83,7 @@ const HeaderForOthers = () => {
   };
 
   return (
-    <div className="w-full bg-[#2973B2] shadow-[0px_8px_20px_rgba(0,0,0,0.7)]">
+    <div className="w-full bg-[#2973B2] shadow-[0px_8px_20px_rgba(0,0,0,0.7)] ">
       {/* Header Section */}
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
         {/* Logo */}

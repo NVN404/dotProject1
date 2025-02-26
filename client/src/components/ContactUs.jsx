@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HeaderForOthers from "./HeaderForOthers";
 import MapComponent from "./MapComponent";
+import Panel from "./Panel";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -33,6 +34,9 @@ const ContactUs = () => {
   return (
     <div className="w-full min-h-screen">
       <HeaderForOthers />
+
+<Panel src="./gal2.jpg" content="Contact Us" />
+
       <div className="grid grid-cols-1 lg:grid-cols-2 p-6">
         {/* Map Section */}
         <div className="h-[350px] md:h-[400px] lg:h-auto rounded-lg overflow-hidden shadow-lg">
