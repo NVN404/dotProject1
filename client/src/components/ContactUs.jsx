@@ -34,7 +34,7 @@ const ContactUs = () => {
   return (
     <div className="w-full min-h-screen">
       <HeaderForOthers />
-<div className=" mt-[7em] md:mt-[9em]">
+<div className="mt-[7em] md:mt-[9em]">
   
         <Panel src="./gal2.jpg" content="Contact Us" />
   
