@@ -21,7 +21,15 @@ const MapComponent = () => {
   const markerRef = useRef(null);
 
   return (
-    <MapContainer center={position} zoom={12} className="h-full w-full rounded-md shadow-md z-0">
+    <MapContainer
+      center={position}
+      zoom={12}
+      className="h-full w-full rounded-md shadow-md z-0"
+      scrollWheelZoom={false}  // Disable scroll zoom
+      doubleClickZoom={false}  // Disable double-click zoom
+      touchZoom={false}  // Disable pinch zoom
+      zoomControl={true} // Enable zoom control buttons
+    >
       <TileLayer
         url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
