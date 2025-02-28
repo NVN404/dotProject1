@@ -57,7 +57,7 @@ const HeaderTemp = () => {
       { x: viewportWidth },
       {
         x: -marqueeWidth,
-        duration: marqueeWidth / 50,
+        duration: marqueeWidth / 25,
         repeat: -1,
         ease: "linear",
       }
@@ -129,9 +129,12 @@ const HeaderTemp = () => {
     >
 
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
-        <div ref={marqueeRef} className="w-full flex whitespace-nowrap">
+        <div ref={marqueeRef} className="w-min flex whitespace-nowrap">
           <div className="flex items-center gap-10">
-          {notices.length>0 ? notices.slice(-1)[0].content : " "}
+          <span className="text-xl font-semibold">{notices.length>0 ? notices.slice(-1)[0].content : " "}</span>
+          <span className="flex items-center gap-2 text-xl font-semibold"><IoIosMail />dpslakkur2010@gmail.com</span>
+          <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />9535054460</span>
+          <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />8553888452</span>
           </div>
         </div>
       </div>

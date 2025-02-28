@@ -1,51 +1,50 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navigate } from "react-router-dom";
+import React, { useState, useMemo, lazy, Suspense, useEffect } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import { AdmissionContext } from "./components/context/AdmissionContext";
 
-import Home from './components/Home';
-import ContactUs from './components/ContactUs';
-import Gallery from './components/Gallery';
-
-import { AdmissionContext } from './components/context/AdmissionContext';
-import NoticeBoard from './components/NoticeBoard';
-
-import AdminLogin from "./components/AdminLogin";
-import AdminPanel from "./components/AdminPanel";
-
+// Lazy-loaded components for better performance
+const Home = lazy(() => import("./components/Home"));
+const ContactUs = lazy(() => import("./components/ContactUs"));
+const Gallery = lazy(() => import("./components/Gallery"));
+const NoticeBoard = lazy(() => import("./components/NoticeBoard"));
+const AdminLogin = lazy(() => import("./components/AdminLogin"));
+const AdminPanel = lazy(() => import("./components/AdminPanel"));
 
 const App = () => {
   const [openAdmissionForm, setOpenAdmissionForm] = useState(false);
-  const isAdmin = localStorage.getItem("admin") === "true";
+  const [isAdmin, setIsAdmin] = useState(false);
 
+  useEffect(() => {
+    // Read from localStorage once and store in state
+    setIsAdmin(localStorage.getItem("admin") === "true");
+  }, []);
+
+  // Memoizing the context value to prevent unnecessary renders
+  const admissionContextValue = useMemo(
+    () => ({ openAdmissionForm, setOpenAdmissionForm }),
+    [openAdmissionForm]
+  );
 
   return (
     <div className="relative">
-      {/* <div className="fixed top-0 left-0 w-full h-full -z-10">
-        <div className="bg-[url('/bg.jpg')] bg-cover bg-center w-full h-full opacity-[65%]">      
-        </div>
-      </div> */}
-
-      <AdmissionContext.Provider value={{ openAdmissionForm, setOpenAdmissionForm }}>
+      <AdmissionContext.Provider value={admissionContextValue}>
         <BrowserRouter>
-        <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/circular" element={<NoticeBoard />} />
-             {/* Admin Login */}
-            <Route path="/admin-login" element={<AdminLogin />} />
-            {/* Admin Panel (Protected Route) */}
-            <Route
-              path="/admin"
-              element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />}
-            />
-          </Routes>
+          <ScrollToTop />
+          <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<ContactUs />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/circular" element={<NoticeBoard />} />
+              <Route path="/admin-login" element={<AdminLogin />} />
+              <Route path="/admin" element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />} />
+            </Routes>
+          </Suspense>
           <Footer />
-        </BrowserRouter>   
+        </BrowserRouter>
       </AdmissionContext.Provider>
     </div>
   );
