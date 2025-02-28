@@ -55,7 +55,7 @@ const StatsCounter = () => {
     const stats = [
         { value: 120, label: "State Rank" ,src:"bangalore.png"},
         { value: 40, label: "Professional Lecturers",src:"teacher.png" },
-        { value: 4, label: "Years of History",src:"history.png" },
+        { value: 12, label: "Years of History",src:"history.png" },
         { value: 100, label: "Results Every Year",src:"result.png" },
     ];
 
