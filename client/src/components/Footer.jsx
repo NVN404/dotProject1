@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#2973B2] w-full">
       {/* 🔹 Main Footer Section */}
-      <div className="h-[auto] md:h-[45vh] py-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr]  gap-6 md:gap-[5em] text-center sm:text-left px-4 md:px-8 lg:px-12 xl:px-16">
+      <div className="h-[auto] md:h-64 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr]  gap-6 md:gap-[5em] text-center sm:text-left px-6 md:px-10 lg:px-14 xl:px-18">
         {/* 🎓 Logo Section */}
         <div className="flex flex-col  items-center">
           <img

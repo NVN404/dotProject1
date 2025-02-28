@@ -7,11 +7,11 @@ const supabase = createClient(
     "https://hdxtuvuiwsmeflrzfyzy.supabase.co",
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"
 );
-
 const AdminPanel = () => {
     const [notices, setNotices] = useState([]);
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,6 +19,7 @@ const AdminPanel = () => {
             const { data, error } = await supabase.from("notices").select("*");
             if (error) console.error("Error fetching notices:", error);
             else setNotices(data || []);
+            setLoading(false);
         };
         fetchNotices();
     }, []);
@@ -59,7 +60,7 @@ const AdminPanel = () => {
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen">
+        <div className="bg-gray-100 min-h-screen mt-[7em] md:mt-[9em]">
             <HeaderForOthers />
             <div className="container mx-auto p-4 sm:p-6 lg:p-8">
                 <div className="flex flex-col md:flex-row justify-between items-center bg-white p-4 rounded-lg shadow-md">
@@ -102,7 +103,11 @@ const AdminPanel = () => {
                 {/* Notices List */}
                 <div className="bg-white p-4 sm:p-6 mt-6 rounded-lg shadow-md">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Notices</h3>
-                    {notices.length > 0 ? (
+                    {loading ? (
+                        <div className="flex justify-center items-center py-6">
+                            <div className="w-8 h-8 border-4 border-blue-500 border-dotted rounded-full animate-spin"></div>
+                        </div>
+                    ) : notices.length > 0 ? (
                         <ul className="space-y-4">
                             {notices.map((notice) => (
                                 <li
