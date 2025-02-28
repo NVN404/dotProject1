@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg sm:text-xl font-bold">Contact Us</h3>
           <p className="text-white text-sm md:text-base text-center sm:text-left mt-1 flex items-center">
-          <FaLocationDot size="1.5em" className='mr-2'/>
+          <FaLocationDot className='mr-2 text-[2em] md:text-[1.7em] lg:text-[1.7em]'/>
             Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111
           </p>
           <div className="flex items-center text-white mt-2">
