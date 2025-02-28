@@ -22,7 +22,7 @@ const App = () => {
     setIsAdmin(localStorage.getItem("admin") === "true");
 
     // Force loader to stay for at least 5 seconds
-    const timer = setTimeout(() => setLoading(false), 3000);
+    const timer = setTimeout(() => setLoading(false), 2500);
 
     return () => clearTimeout(timer);
   }, []);

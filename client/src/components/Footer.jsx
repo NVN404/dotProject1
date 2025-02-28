@@ -15,7 +15,7 @@ const Footer = () => {
       {/* 🔹 Main Footer Section */}
       <div className="py-8 px-6 md:px-10 lg:px-14 xl:px-18 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr] gap-6 md:gap-[5em] text-center sm:text-left">
         {/* 🎓 Logo Section */}
-        <div className="flex flex-col items-center sm:items-start">
+        <div className="flex flex-col items-center ">
           <img
             src="./DobbespetPublicSchool.png"
             alt="School Logo"
@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg sm:text-xl font-bold">Contact Us</h3>
           <div className="flex items-center text-white mt-2">
-          <FaLocationDot size="1.7em" className="mr-1 md:mr-2" />
+          <FaLocationDot size="1.7em" className="mr-1 sm:mr-2 text-xl" />
           <span className="text-sm md:text-base"> Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111</span>
           </div>
           <div className="flex items-center text-white mt-2">
