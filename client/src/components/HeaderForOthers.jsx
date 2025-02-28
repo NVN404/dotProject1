@@ -99,7 +99,7 @@ const HeaderForOthers = () => {
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
             <RiCloseLargeLine />
           </button>
-          <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center space-y-6">
+          <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center">
             <li onClick={() => { navigate("/"); closeMenu(); }}>HOME</li>
             <li onClick={() => { navigate("/circular"); closeMenu(); }}>CIRCULAR</li>
             <li onClick={handleAdmissionClick}>ADMISSION</li>
