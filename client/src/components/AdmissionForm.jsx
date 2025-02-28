@@ -55,7 +55,7 @@ const AdmissionForm = () => {
         <>
             {openAdmissionForm && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div ref={formRef} className="bg-[#2973B2] p-6 rounded-lg w-80">
+                    <div ref={formRef} className="bg-[#2973B2] p-6 rounded-lg w-80 md:w-[96]">
                         <h2 className="text-xl font-bold mb-4 text-center text-white">ADMISSION ENQUIRY</h2>
                         <form onSubmit={handleSubmit} className="space-y-3 text-black">
                             <input type="text" name="name" placeholder="Your Name" spellCheck="false" className="w-full p-2 border rounded-lg focus:outline-none" onChange={handleChange} required />
