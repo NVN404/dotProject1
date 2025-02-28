@@ -100,12 +100,12 @@ const HeaderForOthers = () => {
             <RiCloseLargeLine />
           </button>
           <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center">
-            <li onClick={() => { navigate("/"); closeMenu(); }}>HOME</li>
-            <li onClick={() => { navigate("/circular"); closeMenu(); }}>CIRCULAR</li>
-            <li onClick={handleAdmissionClick}>ADMISSION</li>
-            <li onClick={closeMenu}>ACADEMICS</li>
-            <li onClick={() => { navigate("/gallery"); closeMenu(); }}>GALLERY</li>
-            <li onClick={() => { navigate("/contact"); closeMenu(); }}>CONTACT US</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/"); closeMenu(); }}>HOME</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/circular"); closeMenu(); }}>CIRCULAR</li>
+            <li className="mb-[2em]" onClick={handleAdmissionClick}>ADMISSION</li>
+            <li className="mb-[2em]" onClick={closeMenu}>ACADEMICS</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/gallery"); closeMenu(); }}>GALLERY</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/contact"); closeMenu(); }}>CONTACT US</li>
           </ul>
         </div>
       </header>
