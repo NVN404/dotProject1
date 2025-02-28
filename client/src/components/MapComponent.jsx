@@ -27,7 +27,7 @@ const MapComponent = () => {
       className="h-full w-full rounded-md shadow-md z-0"
       scrollWheelZoom={false}  // Disable scroll zoom
       doubleClickZoom={false}  // Disable double-click zoom
-      touchZoom={false}  // Disable pinch zoom
+      touchZoom={true}  // Disable pinch zoom
       zoomControl={true} // Enable zoom control buttons
     >
       <TileLayer
