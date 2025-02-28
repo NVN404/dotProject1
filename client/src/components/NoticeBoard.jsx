@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import HeaderForOthers from "./HeaderForOthers";
+import Panel from "./Panel"
 
 // Initialize Supabase Client
 const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co";
@@ -30,7 +31,8 @@ export default function NoticeBoard() {
     return (
         <div>
             <HeaderForOthers /><div className="mt-[7em] md:mt-[9em]">
-
+            <div className="mt-[7em] md:mt-[9em]">
+            <Panel src="/gal5.jpg" content="Circulars"/>
                 <div className="h-[auto] bg-gradient-to-br from-gray-100 to-blue-50 flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
                     <div className="w-full max-w-3xl  p-6 sm:p-8 bg-white rounded-3xl shadow-2xl border border-gray-200">
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 text-center mb-6 flex items-center justify-center gap-2">
@@ -55,6 +57,7 @@ export default function NoticeBoard() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );
