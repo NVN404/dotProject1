@@ -47,13 +47,6 @@ const App = () => {
         <AdmissionContext.Provider value={admissionContextValue}>
           <BrowserRouter>
             <ScrollToTop />
-            <Suspense
-              fallback={
-                <div className="flex justify-center items-center h-screen">
-                  Loading...
-                </div>
-              }
-            >
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<ContactUs />} />
@@ -62,7 +55,6 @@ const App = () => {
                 <Route path="/admin-login" element={<AdminLogin />} />
                 <Route path="/admin" element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />} />
               </Routes>
-            </Suspense>
             <Footer />
           </BrowserRouter>
         </AdmissionContext.Provider>
