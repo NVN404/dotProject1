@@ -40,7 +40,7 @@ const ContactUs = () => {
   
         <div className="grid grid-cols-1 lg:grid-cols-2 p-6">
           {/* Map Section */}
-          <div className="h-[350px] md:h-[400px] lg:h-auto rounded-lg overflow-hidden shadow-lg">
+          <div className="h-[350px] md:h-[400px] lg:h-[auto] rounded-lg overflow-hidden shadow-lg">
             <MapComponent />
           </div>
   
