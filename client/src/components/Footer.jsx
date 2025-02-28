@@ -1,21 +1,21 @@
-import React,{useContext} from 'react';
-import {useNavigate} from "react-router-dom";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone, FaCopyright } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import AdmissionForm from "./AdmissionForm";
-
-import { AdmissionContext } from './context/AdmissionContext';
+import { AdmissionContext } from "./context/AdmissionContext";
 
 const Footer = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
+
   return (
     <footer className="bg-[#2973B2] w-full">
       {/* 🔹 Main Footer Section */}
-      <div className="h-[auto] md:h-64 py-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr]  gap-6 md:gap-[5em] text-center sm:text-left px-6 md:px-10 lg:px-14 xl:px-18">
+      <div className="py-8 px-6 md:px-10 lg:px-14 xl:px-18 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_2fr_1fr_1fr] gap-6 md:gap-[5em] text-center sm:text-left">
         {/* 🎓 Logo Section */}
-        <div className="flex flex-col  items-center">
+        <div className="flex flex-col items-center sm:items-start">
           <img
             src="./DobbespetPublicSchool.png"
             alt="School Logo"
@@ -30,14 +30,14 @@ const Footer = () => {
         <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg sm:text-xl font-bold">Contact Us</h3>
           <p className="text-white text-sm md:text-base text-center sm:text-left mt-1 flex items-center">
-          <FaLocationDot className='mr-2 text-[2em] md:text-[1.7em] lg:text-[1.7em]'/>
+            <FaLocationDot className="mr-2 text-2xl md:text-3xl" />
             Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111
           </p>
           <div className="flex items-center text-white mt-2">
-            <IoIosMail size="1.5em" className='mr-1' />
+            <IoIosMail size="1.5em" className="mr-2" />
             <span className="text-sm md:text-base">dpslakkur2010@gmail.com</span>
           </div>
-          <div className="flex flex-col text-white gap-2 mt-2">
+          <div className="flex flex-col text-white gap-1 mt-2">
             <div className="flex items-center">
               <FaPhone size="1.2em" className="mr-2" />
               <span className="text-sm md:text-base">9535054460</span>
@@ -46,7 +46,6 @@ const Footer = () => {
               <FaPhone size="1.2em" className="mr-2" />
               <span className="text-sm md:text-base">8553888452</span>
             </div>
-            
           </div>
         </div>
 
@@ -54,21 +53,37 @@ const Footer = () => {
         <div className="text-white flex flex-col items-center sm:items-start">
           <h3 className="text-lg sm:text-xl font-bold">Quick Links</h3>
           <ul className="text-sm md:text-base space-y-1 mt-2">
-            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
-                navigate("/")
-            }}>Home</li>
-            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
-                navigate("/circular")
-            }}>Circular</li>
-            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
-                setOpenAdmissionForm(true)
-            }}><AdmissionForm />Admission</li>
-            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
-                navigate("/gallery")
-            }}>Gallery</li>
-            <li className="hover:text-yellow-400 cursor-pointer" onClick={()=>{
-                navigate("/contact")
-            }}>Contact Us</li>
+            <li
+              className="hover:text-yellow-400 cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              Home
+            </li>
+            <li
+              className="hover:text-yellow-400 cursor-pointer"
+              onClick={() => navigate("/circular")}
+            >
+              Circular
+            </li>
+            <li
+              className="hover:text-yellow-400 cursor-pointer"
+              onClick={() => setOpenAdmissionForm(true)}
+            >
+              <AdmissionForm />
+              Admission
+            </li>
+            <li
+              className="hover:text-yellow-400 cursor-pointer"
+              onClick={() => navigate("/gallery")}
+            >
+              Gallery
+            </li>
+            <li
+              className="hover:text-yellow-400 cursor-pointer"
+              onClick={() => navigate("/contact")}
+            >
+              Contact Us
+            </li>
           </ul>
         </div>
 
@@ -90,7 +105,6 @@ const Footer = () => {
           Website cooked in Dot Labs
         </p>
       </div>
-
     </footer>
   );
 };
