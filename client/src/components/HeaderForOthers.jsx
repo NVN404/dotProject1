@@ -94,7 +94,7 @@ const HeaderForOthers = () => {
         {/* Mobile Menu */}
         <div
           ref={menuRef}
-          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2]/60 backdrop-blur-md text-white flex flex-col items-center justify-center space-y-6 transition-all"
+          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2]/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all"
         >
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
             <RiCloseLargeLine />
