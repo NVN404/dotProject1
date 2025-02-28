@@ -60,21 +60,24 @@ const Gallery = () => {
         </div>
 
         {/* Desktop Grid Gallery */}
-        <div className="hidden md:grid grid-cols-5 gap-4 p-4 w-full mx-auto">
-          {images.map((img, index) => (
-            <div
-              key={index}
-              className={`relative overflow-hidden rounded-lg shadow-lg h-48 w-full ${index % 5 === 1 || index % 5 === 3 ? "mt-8" : index % 5 === 2 ? "mt-4" : ""
-                }`}
-            >
-              <img
-                src={img}
-                alt={`Gallery ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Desktop Grid Gallery */}
+<div className="hidden md:grid grid-cols-4 gap-4 p-4 w-full mx-auto">
+  {images.map((img, index) => (
+    <div
+      key={index}
+      className={`relative overflow-hidden rounded-lg shadow-lg h-52 w-full ${
+        index % 4 === 1 || index % 4 === 3 ? "mt-8" : index % 4 === 2 ? "mt-4" : ""
+      }`}
+    >
+      <img
+        src={img}
+        alt={`Gallery ${index + 1}`}
+        className="w-full h-full object-cover rounded-lg transition duration-300 ease-in-out hover:brightness-75 hover:cursor-pointer hover:scale-110"
+      />
+    </div>
+  ))}
+</div>
+
       </div>
     </div>
   );

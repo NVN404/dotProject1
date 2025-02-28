@@ -2,6 +2,7 @@ import React,{useContext} from 'react';
 import {useNavigate} from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone, FaCopyright } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 import AdmissionForm from "./AdmissionForm";
 
 import { AdmissionContext } from './context/AdmissionContext';
@@ -28,11 +29,12 @@ const Footer = () => {
         {/* 📞 Contact Section */}
         <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg sm:text-xl font-bold">Contact Us</h3>
-          <p className="text-white text-sm md:text-base text-center sm:text-left mt-1">
+          <p className="text-white text-sm md:text-base text-center sm:text-left mt-1 flex items-center">
+          <FaLocationDot size="1.5em"/>
             Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111
           </p>
-          <div className="flex items-center text-white gap-2 mt-2">
-            <IoIosMail size="1.5em" />
+          <div className="flex items-center text-white mt-2">
+            <IoIosMail size="1.5em" className='mr-1' />
             <span className="text-sm md:text-base">dpslakkur2010@gmail.com</span>
           </div>
           <div className="flex flex-col text-white gap-2 mt-2">
