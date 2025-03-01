@@ -124,7 +124,7 @@ const Academics = () => {
   const ActiveComponent = activePage !== null ? sections[activePage].component : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 mb-[3.5em]">
+    <div className="min-h-screen bg-gray-50 mb-[3.5em] md:mb-0">
       {/* Card View */}
       {activePage === null ? (
         <div className="card-container md:p-[5em] md:pb-[1em] md:pt-[1.5em] p-4 sm:p-6">
