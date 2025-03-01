@@ -32,7 +32,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
 const Profiles = () => {
     const profiles = [
         {
-            name: "Mr. Zubair Ahamed",
+            name: "Mr. Zubair Ahmed",
             title: "M.Ed, D.H.M.",
             designation: "SECRETARY",
             image: "/Secretory.jpg",
