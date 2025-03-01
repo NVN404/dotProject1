@@ -8,12 +8,18 @@ import Academics from './Academics';
 
 const Home = () => {
   return (
-    <div>
+    <div className='snap-mandatory'>
         <Hero />
-        <Profiles />
+        <div className='snap-center'>
+          <Profiles />
+        </div>
         <StatsCounter />
-        <TopperPage />
-        <Academics />
+        <div className='snap-center'>
+          <TopperPage />
+        </div>
+        <div className='snap-center'>
+          <Academics />
+        </div>
     </div>
   )
 }

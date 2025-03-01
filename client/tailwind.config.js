@@ -23,6 +23,7 @@ export default {
         'abril-fatface': ['Abril Fatface', 'cursive'],
         'cinzel': ['Cinzel', 'serif'],
         'dmSerif': ['"DM Serif Text"', 'serif'],
+        'newsreader': ['"Newsreader"', 'serif'],
       },
     },
   },
