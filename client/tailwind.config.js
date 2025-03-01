@@ -25,6 +25,9 @@ export default {
         'dmSerif': ['"DM Serif Text"', 'serif'],
         'newsreader': ['"Newsreader"', 'serif'],
       },
+      colors:{
+        'background':'#2973B2',
+      }
     },
   },
   plugins: [],

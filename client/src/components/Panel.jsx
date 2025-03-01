@@ -1,10 +1,10 @@
 import react from 'react';
 const Panel = ({ src, content }) => {
   return (
-    <div className="relative w-full h-[18.5rem] md:h-96 bg-black mt-[7em] md:mt-[9em]">
-      <img src={src} alt="Landscape" className="w-full h-full object-cover rounded-lg opacity-50" />
-      <div className="absolute left-[1em] md:left-[2em] top-3/4 transform -translate-y-1/2  text-white text-4xl font-semibold p-4 rounded-lg border-l-4 border-blue-500 font-cinzel ">
-        {content}
+    <div className="relative w-full h-[18.5rem] md:h-96 bg-black mt-[7em] md:mt-[9em] mb-20 z-40">
+      <img src={src} alt="Landscape" className="w-full h-full object-cover rounded-lg opacity-75" />
+      <div className="absolute top-full transform -translate-y-1/2 p-10 bg-background shadow-2xl drop-shadow-lg ring-1 ring-gray-900/10">
+        <span className='text-white text-7xl font-[Helvetica] font-extrabold'>{content.toUpperCase()}</span>
       </div>
     </div>
   );
