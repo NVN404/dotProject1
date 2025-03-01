@@ -25,7 +25,7 @@ const Gallery = () => {
   return (
     <div>
       <HeaderForOthers />
-      <div className="">
+      <div className="mt-[7em] md:mt-0 lg:mt-0 ">
 
         {/* Panel is only visible on large screens */}
         <div className="hidden lg:block">
