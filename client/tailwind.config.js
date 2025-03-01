@@ -24,6 +24,8 @@ export default {
         'cinzel': ['Cinzel', 'serif'],
         'dmSerif': ['"DM Serif Text"', 'serif'],
         'newsreader': ['"Newsreader"', 'serif'],
+        'helvetica': ["Helvetica", "Arial", "sans-serif"], 
+
       },
       colors:{
         'background':'#2973B2',

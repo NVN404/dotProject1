@@ -35,8 +35,8 @@ const Gallery = () => {
         {/* Mobile scrolling gallery with overlay text */}
         <div className="md:hidden flex justify-center items-center h-[80vh] w-full overflow-hidden relative">
           {/* "Gallery" text overlay */}
-          <span className="absolute top-5 left-1/2 transform -translate-x-1/2 text-5xl font-extrabold font-cinzel text-white z-20 [text-shadow:_2px_2px_6px_rgba(0,0,0,0.7)]">
-            Gallery
+          <span className="absolute top-5 left-1/2 transform -translate-x-1/2 text-5xl font-extrabold font-helvetica text-white z-20 [text-shadow:_2px_2px_6px_rgba(0,0,0,0.7)]">
+            GALLERY
           </span>
 
 
@@ -59,7 +59,6 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Desktop Grid Gallery */}
         {/* Desktop Grid Gallery */}
 <div className="hidden md:grid grid-cols-4 gap-4 p-4 w-full mx-auto">
   {images.map((img, index) => (
