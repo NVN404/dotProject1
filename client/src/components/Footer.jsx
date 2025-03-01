@@ -21,7 +21,7 @@ const Footer = () => {
             alt="School Logo"
             className="w-[6em] h-[10em] mb-2 invert"
           />
-          <h3 className="text-white text-lg sm:text-md font-bold">
+          <h3 className="text-white text-lg sm:text-md font-bold font-newsreader">
             Dobbespet Public School
           </h3>
         </div>

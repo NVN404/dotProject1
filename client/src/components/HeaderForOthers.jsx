@@ -73,7 +73,7 @@ const HeaderForOthers = () => {
           onClick={() => navigate("/")}
         >
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
-          <span className="text-white text-sm md:text-md font-bold text-center">Dobbespet Public School</span>
+          <span className="text-white text-lg sm:text-lg font-bold font-newsreader">Dobbespet Public School</span>
         </div>
 
         {/* Desktop Navigation */}
