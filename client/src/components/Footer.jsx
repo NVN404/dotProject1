@@ -74,6 +74,12 @@ const Footer = () => {
             </li>
             <li
               className="hover:text-yellow-400 cursor-pointer"
+              onClick={() => navigate("/academics")}
+            >
+              Academics
+            </li>
+            <li
+              className="hover:text-yellow-400 cursor-pointer"
               onClick={() => navigate("/gallery")}
             >
               Gallery
