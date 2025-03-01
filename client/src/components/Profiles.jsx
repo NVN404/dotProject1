@@ -33,7 +33,7 @@ const Profiles = () => {
     const profiles = [
         {
             name: "Mr. Zubair Ahamed",
-            title: "M.A, M.Ed, M.Sc., MBA, Ph.D, P.G.D.P.M.I.R, F.M.S.P.I, D.B.M.",
+            title: "M.Ed, D.H.M.",
             designation: "SECRETARY",
             image: "/Secretory.jpg",
             description:
@@ -41,7 +41,7 @@ const Profiles = () => {
         },
         {
             name: "Mrs. Sameena Begum",
-            title: "M.A, M.Ed, Ph.D, D.B.M.",
+            title: "M.Sc., M.Ed",
             designation: "PRINCIPAL",
             image: "/Principal.jpg",
             description:
