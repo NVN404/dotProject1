@@ -22,7 +22,7 @@ const App = () => {
     setIsAdmin(localStorage.getItem("admin") === "true");
 
     // Force loader to stay for at least 5 seconds
-    const timer = setTimeout(() => setLoading(false), 2500);
+    const timer = setTimeout(() => setLoading(false), 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -40,7 +40,7 @@ const App = () => {
           <img
             src="./DobbespetPublicSchool.png"
             alt="DobbespetPublicSchool"
-            className="h-32 md: md:h-40 animate-heartbeat invert"
+            className="h-[15em] md:h-[20em] animate-heartbeat invert"
           />
         </div>
       ) : (
