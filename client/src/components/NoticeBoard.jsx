@@ -21,7 +21,7 @@ export default function NoticeBoard() {
                 console.error("Error fetching notices:", error);
             } else {
                 console.log("API Response:", data);
-                setNotices(data);
+                setNotices(data.reverse());
             }
         };
 
@@ -34,9 +34,9 @@ export default function NoticeBoard() {
             <div className="">
             <Panel src="/gal3.jpg" content="Circulars"/>
                 <div className="h-[auto] bg-gradient-to-br from-gray-100 to-blue-50 flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
-                    <div className="w-full max-w-3xl  p-6 sm:p-8 bg-white rounded-3xl shadow-2xl border border-gray-200">
+                    <div className="w-full max-w-3xl  p-6 sm:p-8 bg-[#2973B2] rounded-3xl shadow-2xl border border-gray-200">
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 text-center mb-6 flex items-center justify-center gap-2">
-                            📜 <span>Notice Board</span>
+                             <span className="text-white text-4xl sm:text-5xl font-[Helvetica]">NOTICE BOARD</span>
                         </h2>
                         <div className="h-[55dvh] sm:h-[55dvh] overflow-y-auto p-4 sm:p-5 bg-gray-50 rounded-xl shadow-inner border border-gray-300 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
                             {notices.length > 0 ? (
@@ -60,5 +60,7 @@ export default function NoticeBoard() {
             </div>
             </div>
         </div>
+
+
     );
 }

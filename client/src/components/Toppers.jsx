@@ -10,16 +10,13 @@ const toppers = [
 
 const TopperPage = () => {
   return (
-    <div className="mb-[2em] flex flex-col items-center py-10 px-4 bg-gradient-to-br bg-[#2973B2] to-purple-700 min-h-screen">
+    <div className="mb-[2em] flex flex-col items-center py-10 px-4 bg-gradient-to-br bg-[#2973B2] to-purple-700 min-h-[80dvh]">
       
       {/* 🎓 Hero Section */}
       <div className="w-full  text-center mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold text-white drop-shadow-lg">
-          🌟 Academic Toppers 🌟
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg font-[Helvetica]">
+          ACADEMIC TOPPERS
         </h1>
-        <p className="text-lg text-white opacity-90 mt-2">
-          Celebrating Excellence & Hard Work
-        </p>
       </div>
 
       {/* 👑 Main Topper Card (Glassmorphic) */}
