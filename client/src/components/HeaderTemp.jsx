@@ -149,21 +149,21 @@ const HeaderTemp = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/");
           }}>HOME</li>
           {/* <li className="relative cursor-pointer hover:font-bold">ABOUT US</li> */}
-          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/circular");
           }}>CIRCULAR</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={handleAdmissionClick}>ADMISSION</li>
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/academics");
           }}>ACADEMICS</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/gallery");
           }}>GALLERY</li>
-          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/contact");
           }}>CONTACT US</li>
         </ul>
