@@ -31,7 +31,7 @@ export default function NoticeBoard() {
     return (
         <div>
             <HeaderForOthers /><div className="mt-[7em] md:mt-[9em]">
-            <div className="mt-[7em] md:mt-[9em]">
+            <div className="">
             <Panel src="/gal3.jpg" content="Circulars"/>
                 <div className="h-[auto] bg-gradient-to-br from-gray-100 to-blue-50 flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
                     <div className="w-full max-w-3xl  p-6 sm:p-8 bg-white rounded-3xl shadow-2xl border border-gray-200">

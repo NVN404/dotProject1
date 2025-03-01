@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { AdmissionContext } from "./components/context/AdmissionContext";
+import AcademicsComp from "./components/AcademicsComp";
 
 // Lazy-loaded components for better performance
 const Home = lazy(() => import("./components/Home"));
@@ -52,6 +53,7 @@ const App = () => {
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/circular" element={<NoticeBoard />} />
+                <Route path="/academics" element={<AcademicsComp />} />
                 <Route path="/admin-login" element={<AdminLogin />} />
                 <Route path="/admin" element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />} />
               </Routes>

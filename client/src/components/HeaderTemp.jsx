@@ -157,7 +157,9 @@ const HeaderTemp = () => {
             navigate("/circular");
           }}>CIRCULAR</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
-          <li className="relative cursor-pointer hover:font-bold">ACADEMICS</li>
+          <li className="relative cursor-pointer hover:font-bold" onClick={() => {
+            navigate("/academics");
+          }}>ACADEMICS</li>
           <li className="relative cursor-pointer hover:font-bold" onClick={() => {
             navigate("/gallery");
           }}>GALLERY</li>
@@ -187,7 +189,10 @@ const HeaderTemp = () => {
               closeMenu();
             }}>CIRCULAR</li>
             <li onClick={handleAdmissionClick} className="mb-[2em]">ADMISSION</li>
-            <li onClick={closeMenu} className="mb-[2em]">ACADEMICS</li>
+            <li className="mb-[2em]" onClick={() => {
+              navigate("/academics")
+              closeMenu();
+            }}>ACADEMICS</li>
             <li onClick={() => {
               navigate("/gallery");
               closeMenu();

@@ -81,7 +81,7 @@ const HeaderForOthers = () => {
           <li className="cursor-pointer hover:font-bold" onClick={() => navigate("/")}>HOME</li>
           <li className="cursor-pointer hover:font-bold" onClick={() => navigate("/circular")}>CIRCULAR</li>
           <li className="cursor-pointer hover:font-bold" onClick={handleAdmissionClick}>ADMISSION</li>
-          <li className="cursor-pointer hover:font-bold">ACADEMICS</li>
+          <li className="cursor-pointer hover:font-bold" onClick={() => navigate("/academics")}>ACADEMICS</li>
           <li className="cursor-pointer hover:font-bold" onClick={() => navigate("/gallery")}>GALLERY</li>
           <li className="cursor-pointer hover:font-bold" onClick={() => navigate("/contact")}>CONTACT US</li>
         </ul>
@@ -103,7 +103,7 @@ const HeaderForOthers = () => {
             <li className="mb-[2em]" onClick={() => { navigate("/"); closeMenu(); }}>HOME</li>
             <li className="mb-[2em]" onClick={() => { navigate("/circular"); closeMenu(); }}>CIRCULAR</li>
             <li className="mb-[2em]" onClick={handleAdmissionClick}>ADMISSION</li>
-            <li className="mb-[2em]" onClick={closeMenu}>ACADEMICS</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/academics"); closeMenu(); }}>ACADEMICS</li>
             <li className="mb-[2em]" onClick={() => { navigate("/gallery"); closeMenu(); }}>GALLERY</li>
             <li className="mb-[2em]" onClick={() => { navigate("/contact"); closeMenu(); }}>CONTACT US</li>
           </ul>
