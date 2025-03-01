@@ -64,7 +64,9 @@ const HeaderForOthers = () => {
   };
 
   return (
-    <div className="w-full fixed top-0 left-0 right-0 bg-[#2973B2] shadow-md z-50">
+    <div className="w-full fixed top-0 left-0 right-0 bg-[#2973B2]  z-50 shadow-[0px_8px_20px_rgba(0,0,0,0.7)]
+
+">
       {/* Header Section */}
       <header className="w-full h-[7em] md:h-[9em] flex items-center justify-between px-4 md:px-[3em]">
         {/* Logo */}
