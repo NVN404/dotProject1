@@ -101,11 +101,6 @@ const Gallery = () => {
 
         {/* Modern Mobile Gallery (unchanged) */}
         <div className="md:hidden min-h-screen text-white relative overflow-x-hidden">
-          <div className="fixed top-0 left-0 right-0 z-20 bg-gray-900/90 backdrop-blur-lg p-4 border-b border-gray-800">
-            <h1 className="text-4xl font-extrabold font-helvetica bg-clip-text text-transparent bg-gradient-to-r from-[#2973B2] to-[#5BA8E6] text-center">
-              GALLERY
-            </h1>
-          </div>
           <div ref={mobileGalleryRef} className="pt-20 pb-10 px-4 flex flex-col gap-8">
             {images.map((src, index) => (
               <div
