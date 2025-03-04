@@ -113,7 +113,7 @@ const Gallery = () => {
                   alt={`Gallery ${index + 1}`}
                   className="w-full h-[60vh] object-cover transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/80 via-[#2973B2]/5 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/90 via-[#2973B2]/0 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-6 left-6 right-6">
                     <h3 className="text-2xl font-bold text-white drop-shadow-md">
                       Image {index + 1}
