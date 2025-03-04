@@ -152,7 +152,7 @@ const Gallery = () => {
                 className="w-full h-full object-cover rounded-lg transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110"
               />
               {/* Blue Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/80 via-[#2973B2]/5 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/80 via-[#2973B2]/0 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-lg font-bold text-white drop-shadow-md">
                     Image {index + 1}
