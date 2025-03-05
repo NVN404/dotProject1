@@ -5,6 +5,7 @@ import Profiles from './Profiles';
 import StatsCounter from './StatsCounter';
 import TopperPage from './Toppers';
 import Academics from './Academics';
+import Motto from './motto';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
           <Profiles />
         </div>
         <StatsCounter />
+        <Motto />
         <div className='snap-center'>
           <TopperPage />
         </div>
