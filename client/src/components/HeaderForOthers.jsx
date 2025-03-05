@@ -79,11 +79,14 @@ const HeaderForOthers = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden lg:flex items-center text-white font-semibold space-x-8">
+        <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => navigate("/")}>HOME</li>
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
+            navigate("/aboutus");
+          }}>ABOUT US</li>
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => navigate("/academics")}>ACADEMICS</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => navigate("/circular")}>CIRCULAR</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={handleAdmissionClick}>ADMISSION</li>
-          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => navigate("/academics")}>ACADEMICS</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => navigate("/gallery")}>GALLERY</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => navigate("/contact")}>CONTACT US</li>
         </ul>
@@ -103,9 +106,10 @@ const HeaderForOthers = () => {
           </button>
           <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center">
             <li className="mb-[2em]" onClick={() => { navigate("/"); closeMenu(); }}>HOME</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/aboutus"); closeMenu(); }}>ABOUT US</li>
+            <li className="mb-[2em]" onClick={() => { navigate("/academics"); closeMenu(); }}>ACADEMICS</li>
             <li className="mb-[2em]" onClick={() => { navigate("/circular"); closeMenu(); }}>CIRCULAR</li>
             <li className="mb-[2em]" onClick={handleAdmissionClick}>ADMISSION</li>
-            <li className="mb-[2em]" onClick={() => { navigate("/academics"); closeMenu(); }}>ACADEMICS</li>
             <li className="mb-[2em]" onClick={() => { navigate("/gallery"); closeMenu(); }}>GALLERY</li>
             <li className="mb-[2em]" onClick={() => { navigate("/contact"); closeMenu(); }}>CONTACT US</li>
           </ul>

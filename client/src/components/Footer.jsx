@@ -108,7 +108,7 @@ const Footer = () => {
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
         <p className="text-[#2973B2] text-sm md:text-base">
-          Website cooked in Dot Labs
+          Cooked in Dot Labs
         </p>
       </div>
     </footer>

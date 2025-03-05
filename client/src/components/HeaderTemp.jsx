@@ -131,7 +131,10 @@ const HeaderTemp = () => {
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-min flex whitespace-nowrap">
           <div className="flex items-center gap-10">
-          <span className="text-xl font-semibold">{notices.length>0 ? notices.slice(-1)[0].content : " "}</span>
+          <span className="flex justify-center items-center">
+          <span className="text-xl font-semibold mr-2">{notices.length>0 ? notices.slice(-1)[0].content : " "}</span>
+          <button className="bg-[#2973B2] text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center">Click me</button>
+          </span>
           <span className="flex items-center gap-2 text-xl font-semibold"><IoIosMail />dpslakkur2010@gmail.com</span>
           <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />9535054460</span>
           <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />8553888452</span>
@@ -152,14 +155,16 @@ const HeaderTemp = () => {
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/");
           }}>HOME</li>
-          {/* <li className="relative cursor-pointer hover:font-bold">ABOUT US</li> */}
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
+            navigate("/aboutus");
+          }}>ABOUT US</li>
+          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
+            navigate("/academics");
+          }}>ACADEMICS</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/circular");
           }}>CIRCULAR</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={handleAdmissionClick}>ADMISSION</li>
-          <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
-            navigate("/academics");
-          }}>ACADEMICS</li>
           <li className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer" onClick={() => {
             navigate("/gallery");
           }}>GALLERY</li>
@@ -183,16 +188,20 @@ const HeaderTemp = () => {
               navigate("/");
               closeMenu();
             }} className="mb-[2em]">HOME</li>
-            {/* <li onClick={closeMenu} className="mb-[2em]">ABOUT US</li> */}
+            <li onClick={() => {
+              navigate("/aboutus");
+              closeMenu();
+            }} className="mb-[2em]">ABOUT US</li>
+            <li className="mb-[2em]" onClick={() => {
+              navigate("/academics")
+              closeMenu();
+            }}>ACADEMICS</li>
             <li className="mb-[2em]" onClick={() => {
               navigate("/circular");
               closeMenu();
             }}>CIRCULAR</li>
             <li onClick={handleAdmissionClick} className="mb-[2em]">ADMISSION</li>
-            <li className="mb-[2em]" onClick={() => {
-              navigate("/academics")
-              closeMenu();
-            }}>ACADEMICS</li>
+            
             <li onClick={() => {
               navigate("/gallery");
               closeMenu();

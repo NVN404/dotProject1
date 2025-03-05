@@ -47,7 +47,12 @@ const MapComponent = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={position} ref={markerRef} icon={customIcon}>
-        <Popup>📍 Dobbespet Public School</Popup>
+        <Popup>
+          <div className="w-[12.8em] flex items-center justify-between">
+          <span><img src="/DobbespetPublicSchool.png" alt="DobbespetPublicSchool" className="h-5" /></span>
+          <span>Dobbespet Public School</span>
+          </div>
+        </Popup>
       </Marker>
       <AutoOpenPopup markerRef={markerRef} />
     </MapContainer>
