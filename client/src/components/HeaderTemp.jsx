@@ -20,23 +20,25 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const HeaderTemp = () => {
   const [notices, setNotices] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const fetchNotices = async () => {
-            const { data, error } = await supabase
-                .from("notices")
-                .select("*");
+  useEffect(() => {
+    const fetchNotices = async () => {
+      const { data, error } = await supabase
+        .from("notices")
+        .select("*");
 
-            if (error) {
-                console.error("Error fetching notices:", error);
-            } else {
-                console.log("API Response:", data);
-                setNotices(data);
-            }
-        };
+      if (error) {
+        console.error("Error fetching notices:", error);
+      } else {
+        console.log("API Response:", data);
+        setNotices(data);
+        setLoading(false);
+      }
+    };
 
-        fetchNotices();
-    }, []);
+    fetchNotices();
+  }, []);
   const navigate = useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
@@ -75,7 +77,7 @@ const HeaderTemp = () => {
       position: "fixed",
       top: 0,
       duration: 0.1,
-      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.7)", 
+      boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.7)",
       scrollTrigger: {
         trigger: ".marquee",
         scroller: "body",
@@ -131,13 +133,26 @@ const HeaderTemp = () => {
       <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-min flex whitespace-nowrap">
           <div className="flex items-center gap-10">
-          <span className="flex justify-center items-center">
-          <span className="text-xl font-semibold mr-2">{notices.length>0 ? notices.slice(-1)[0].content : " "}</span>
-          <button className="bg-[#2973B2] text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center">Click me</button>
-          </span>
-          <span className="flex items-center gap-2 text-xl font-semibold"><IoIosMail />dpslakkur2010@gmail.com</span>
-          <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />9535054460</span>
-          <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />8553888452</span>
+            <span className="flex justify-center items-center">
+            {loading ? (
+  <div className="flex justify-center items-center">
+    <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+  </div>
+) : (
+  <>
+    <span className="text-xl font-semibold mr-2">
+      {notices.length > 0 ? notices.slice(-1)[0].content : " "}
+    </span>
+    <button className="bg-[#2973B2] text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center">
+      Click me
+    </button>
+  </>
+)}
+
+</span>
+              <span className="flex items-center gap-2 text-xl font-semibold"><IoIosMail />dpslakkur2010@gmail.com</span>
+              <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />9535054460</span>
+              <span className="flex items-center gap-2 text-xl font-semibold"><FaPhone />8553888452</span>
           </div>
         </div>
       </div>
@@ -201,7 +216,7 @@ const HeaderTemp = () => {
               closeMenu();
             }}>CIRCULAR</li>
             <li onClick={handleAdmissionClick} className="mb-[2em]">ADMISSION</li>
-            
+
             <li onClick={() => {
               navigate("/gallery");
               closeMenu();
