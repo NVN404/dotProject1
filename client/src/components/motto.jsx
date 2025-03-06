@@ -31,7 +31,7 @@ const Motto = () => {
         <div className="flex flex-col gap-6">
           <span className="text-5xl font-helvetica font-[900]">MISSION</span>
           <p className="text-2xl text-[#2973B2] font-semibold">Nurturing curiosity, excellence, and lifelong learning in every student.</p>
-          <p className="text-md text-[#3A3A3A]">Delhi Public School Bangalore  is dedicated to providing a comprehensive education programme for its students</p>
+          <p className="text-md text-[#3A3A3A]">Dobbespet Public School is dedicated to providing a comprehensive education programme for its students</p>
         </div>
         <img src="./img3.png" className="h-[auto] mt-[10em]" />
 
