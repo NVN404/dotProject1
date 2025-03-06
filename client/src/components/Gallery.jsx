@@ -94,18 +94,9 @@ const Gallery = () => {
                 <img
                   src={src}
                   alt={`Gallery ${index + 1}`}
-                  className="w-full h-[60vh] object-cover transition-transform duration-500"
+                  className="w-full h-auto object-cover transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/90 via-[#2973B2]/0 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <h3 className="text-2xl font-bold text-white drop-shadow-md">
-                      Image {index + 1}
-                    </h3>
-                    <p className="text-sm text-gray-100 drop-shadow-md">
-                      Creative Showcase
-                    </p>
-                  </div>
-                </div>
+                
               </div>
             ))}
           </div>
@@ -120,30 +111,14 @@ const Gallery = () => {
             <div
               key={index}
               className="desktop-gallery-item relative overflow-hidden rounded-lg shadow-lg h-52 w-full group cursor-pointer"
-              style={{
-                marginTop:
-                  index % 4 === 1 || index % 4 === 3
-                    ? "2rem"
-                    : index % 4 === 2
-                    ? "1rem"
-                    : "0",
-              }}
+              
             >
               <img
                 src={img}
                 alt={`Gallery ${index + 1}`}
                 className="w-full h-full object-cover rounded-lg transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/80 via-[#2973B2]/0 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-lg font-bold text-white drop-shadow-md">
-                    Image {index + 1}
-                  </h3>
-                  <p className="text-sm text-gray-100 drop-shadow-md">
-                    Creative Showcase
-                  </p>
-                </div>
-              </div>
+              
             </div>
           ))}
         </div>
