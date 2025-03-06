@@ -1,35 +1,36 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import HeaderForOthers from "./HeaderForOthers";
 import Panel from "./Panel";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { createClient } from "@supabase/supabase-js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Gallery = () => {
-  const images = [
-    "/gal1.jpg",
-    "/gal2.jpg",
-    "/gal2.jpg",
-    "/gal2.jpg",
-    "/gal2.jpg",
-    "/gal3.jpg",
-    "/gal3.jpg",
-    "/gal3.jpg",
-    "/gal4.jpg",
-    "/gal4.jpg",
-    "/gal5.jpg",
-    "/gal5.jpg",
-    "/gal5.jpg",
-    "/gal6.jpg",
-    "/gal6.jpg",
-  ];
+const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"; // Replace with actual API Key
+const supabase = createClient(supabaseUrl, supabaseKey);
 
+const Gallery = () => {
+  const [images, setImages] = useState([]);
   const mobileGalleryRef = useRef(null);
   const desktopGalleryRef = useRef(null);
 
   useEffect(() => {
-    // Mobile image animations (unchanged)
+    const fetchImages = async () => {
+      const { data, error } = await supabase.from("gallery").select("image_url");
+      if (error) {
+        console.error("Error fetching images:", error);
+      } else {
+        setImages(data.map(item => item.image_url));
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  useEffect(() => {
+    // Mobile image animations
     gsap.utils.toArray(".mobile-gallery-item").forEach((item, index) => {
       gsap.fromTo(
         item,
@@ -50,26 +51,9 @@ const Gallery = () => {
           delay: index * 0.1,
         }
       );
-
-      item.addEventListener("mouseenter", () => {
-        gsap.to(item, {
-          scale: 1.05,
-          boxShadow: "0 20px 40px rgba(41, 115, 178, 0.3)", // #2973B2 shadow
-          duration: 0.4,
-          ease: "power2.out",
-        });
-      });
-      item.addEventListener("mouseleave", () => {
-        gsap.to(item, {
-          scale: 1,
-          boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
-          duration: 0.4,
-          ease: "power2.out",
-        });
-      });
     });
 
-    // Desktop image animations (updated with overlay)
+    // Desktop image animations
     gsap.utils.toArray(".desktop-gallery-item").forEach((item, index) => {
       gsap.fromTo(
         item,
@@ -88,18 +72,17 @@ const Gallery = () => {
         }
       );
     });
-  }, []);
+  }, [images]);
 
   return (
     <div className="bg-white">
       <HeaderForOthers />
       <div className="mt-[7em] md:mt-0 lg:mt-0 ">
-        {/* Panel is only visible on large screens */}
         <div className="hidden lg:block">
-          <Panel src="/gal1.jpg" content="Gallery" />
+          <Panel src="./gal3.jpg" content="Gallery" />
         </div>
 
-        {/* Modern Mobile Gallery (unchanged) */}
+        {/* Mobile Gallery */}
         <div className="md:hidden min-h-screen text-white relative overflow-x-hidden">
           <div ref={mobileGalleryRef} className="pt-20 pb-10 px-4 flex flex-col gap-8">
             {images.map((src, index) => (
@@ -128,7 +111,7 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Desktop Grid Gallery with Blue Overlay */}
+        {/* Desktop Grid Gallery */}
         <div
           ref={desktopGalleryRef}
           className="hidden md:grid grid-cols-4 gap-4 p-4 w-full mx-auto"
@@ -151,7 +134,6 @@ const Gallery = () => {
                 alt={`Gallery ${index + 1}`}
                 className="w-full h-full object-cover rounded-lg transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110"
               />
-              {/* Blue Overlay Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#2973B2]/80 via-[#2973B2]/0 to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
                   <h3 className="text-lg font-bold text-white drop-shadow-md">
