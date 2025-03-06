@@ -4,8 +4,6 @@ import gsap from "gsap";
 import { motion } from "framer-motion";
 import HeaderForOthers from "./HeaderForOthers";
 import Panel from "./Panel";
-import Gallery from "./Gallery";
-
 gsap.registerPlugin();
 
 const AboutUs = () => {
@@ -58,7 +56,7 @@ const AboutUs = () => {
 
         {/* History Section */}
         <div className="section w-full mx-auto text-center">
-          <section className="relative bg-yellow-300 py-16 px-4 sm:px-6 md:px-12 rounded-xl shadow-xl">
+          <section className="relative bg-[#2973B2] py-16 px-4 sm:px-6 md:px-12 rounded-xl shadow-xl">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
               {/* Image Section */}
               <motion.div
@@ -76,7 +74,7 @@ const AboutUs = () => {
 
               {/* Text Section */}
               <motion.div
-                className="text-gray-900 space-y-4 sm:space-y-6 text-center md:text-left"
+                className="text-white space-y-4 sm:space-y-6 text-center md:text-left"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}

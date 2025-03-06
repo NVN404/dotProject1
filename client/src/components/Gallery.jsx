@@ -88,7 +88,7 @@ const Gallery = () => {
             {images.map((src, index) => (
               <div
                 key={index}
-                className="mobile-gallery-item relative rounded-3xl overflow-hidden shadow-lg group cursor-pointer"
+                className="mobile-gallery-item relative  overflow-hidden shadow-lg group cursor-pointer"
                 style={{ boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
               >
                 <img
@@ -105,18 +105,18 @@ const Gallery = () => {
         {/* Desktop Grid Gallery */}
         <div
           ref={desktopGalleryRef}
-          className="hidden md:grid grid-cols-4 gap-4 p-4 w-full mx-auto"
+          className="hidden md:grid grid-cols-4 gap-3 p-4 w-full mx-auto"
         >
           {images.map((img, index) => (
             <div
               key={index}
-              className="desktop-gallery-item relative overflow-hidden rounded-lg shadow-lg h-52 w-full group cursor-pointer"
+              className="desktop-gallery-item relative overflow-hidden shadow-lg h-52 w-full group cursor-pointer"
               
             >
               <img
                 src={img}
                 alt={`Gallery ${index + 1}`}
-                className="w-full h-full object-cover rounded-lg transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110"
+                className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110"
               />
               
             </div>
