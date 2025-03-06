@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import { AdmissionContext } from "./components/context/AdmissionContext";
+import { SelectedNoticeContext } from "./components/context/SelectedNoticeContext";
 import AcademicsComp from "./components/AcademicsComp";
 import AboutUs from "./components/AboutUs";
 
@@ -19,6 +20,7 @@ const App = () => {
   const [openAdmissionForm, setOpenAdmissionForm] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [selectedNoticeId, setSelectedNoticeId] = useState(null);
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem("admin") === "true");
@@ -46,9 +48,12 @@ const App = () => {
           />
         </div>
       ) : (
-        <AdmissionContext.Provider value={admissionContextValue}>
-          <BrowserRouter>
-            <ScrollToTop />
+        <SelectedNoticeContext.Provider
+          value={{selectedNoticeId, setSelectedNoticeId}}
+        >
+          <AdmissionContext.Provider value={admissionContextValue}>
+            <BrowserRouter>
+              <ScrollToTop />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<ContactUs />} />
@@ -57,11 +62,17 @@ const App = () => {
                 <Route path="/academics" element={<AcademicsComp />} />
                 <Route path="/aboutus" element={<AboutUs />} />
                 <Route path="/admin-login" element={<AdminLogin />} />
-                <Route path="/admin" element={isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />} />
+                <Route
+                  path="/admin"
+                  element={
+                    isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />
+                  }
+                />
               </Routes>
-            <Footer />
-          </BrowserRouter>
-        </AdmissionContext.Provider>
+              <Footer />
+            </BrowserRouter>
+          </AdmissionContext.Provider>
+        </SelectedNoticeContext.Provider>
       )}
     </div>
   );

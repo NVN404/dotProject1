@@ -135,7 +135,7 @@ const Dashboard = () => {
     return (
         <div className="bg-gray-100 min-h-screen p-6">
         <HeaderForOthers />
-            <h2 className="mt-[7em] md:mt-[9em] text-2xl font-extrabold text-gray-700 text-center font-helvetica">ADMIN DASHBOARD</h2>
+            <h2 className="mt-[5em] md:mt-[6em] text-2xl font-extrabold text-gray-700 text-center font-helvetica">ADMIN DASHBOARD</h2>
 
             {/* Upload Image to Gallery */}
             <div className="bg-white p-6 mt-6 rounded-lg shadow-md">

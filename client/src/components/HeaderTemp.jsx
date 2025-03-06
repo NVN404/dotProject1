@@ -11,6 +11,7 @@ import { AiOutlineMenuFold } from "react-icons/ai";
 import { RiCloseLargeLine } from "react-icons/ri";
 
 import { AdmissionContext } from "./context/AdmissionContext";
+import { SelectedNoticeContext } from "./context/SelectedNoticeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const HeaderTemp = () => {
+  const {selectedNoticeId, setSelectedNoticeId}=useContext(SelectedNoticeContext);
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -143,7 +145,12 @@ const HeaderTemp = () => {
     <span className="text-xl font-semibold mr-2">
       {notices.length > 0 ? notices.slice(-1)[0].content : " "}
     </span>
-    <button className="bg-[#2973B2] text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center">
+    <button className="bg-[#2973B2] text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center" onClick={()=>{
+      if (notices.length > 0) {
+        setSelectedNoticeId(notices[notices.length - 1].id);
+        navigate("/circular")
+      }
+    }}>
       Click me
     </button>
   </>
