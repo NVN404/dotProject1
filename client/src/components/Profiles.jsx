@@ -17,10 +17,10 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
             <p className="text-sm sm:text-base md:text-lg text-gray-600 font-semibold mt-2 text-center md:text-left italic">
             {title}
             </p>
-            <p className="text-xs sm:text-sm md:text-md lg:text-lg text-[#003cff] font-bold mt-2 text-center md:text-left uppercase tracking-wide">
+            <p className="text-sm sm:text-md md:text-lg lg:text-xl text-[#2973B2] font-bold mt-2 text-center md:text-left uppercase tracking-wide">
             {designation}
             </p>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 mt-4 text-center md:text-left leading-relaxed">
+            <p className="text-sm sm:text-md md:text-base lg:text-xl text-gray-600 mt-4   leading-relaxed text-justify">
             {description}
             </p>
             </div>
@@ -32,7 +32,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
 const Profiles = () => {
     const profiles = [
         {
-            name: "Mr. Zubair Ahmed",
+            name: "Zubair Ahmed",
             title: "M.Ed, D.H.M.",
             designation: "SECRETARY",
             image: "/Secretory.jpg",
@@ -40,7 +40,7 @@ const Profiles = () => {
                 "Mr. Zubair Ahamed is a dedicated and hardworking professional who plays a vital role in ensuring the smooth operation of our institution. With his exceptional organizational skills, commitment to excellence, and friendly demeanor, he efficiently manages administrative tasks while always being approachable and supportive to students, teachers, and staff. His dedication to the school's growth and success makes him an invaluable part of our team.",
         },
         {
-            name: "Mrs. Sameena Begum",
+            name: "Sameena Begum",
             title: "M.Sc., M.Ed",
             designation: "PRINCIPAL",
             image: "/Principal.jpg",

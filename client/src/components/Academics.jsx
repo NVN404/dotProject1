@@ -69,10 +69,10 @@ const Academics = () => {
   const ActiveComponent = activePage !== null ? sections[activePage].component : null;
 
   return (
-    <div className="min-h-screen bg-gray-50 mb-14 md:mb-0">
+    <div className="h-auto md:min-h-screen my-10  md:my-0">
       {activePage === null ? (
         <div className="card-container md:p-20 p-4 sm:p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6">
             {sections.map((section, index) => (
               <div key={index} className="card bg-white rounded-2xl shadow-lg flex flex-col min-h-full overflow-hidden">
                 <img src={section.image} alt={section.title} className="w-full h-48 sm:h-56 md:h-64 object-cover" />
