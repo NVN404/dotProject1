@@ -15,7 +15,7 @@ const Home = () => {
           <Profiles />
         </div>
         <StatsCounter />
-        <Motto />
+        {/* <Motto /> */}
         <div className='snap-center'>
           <TopperPage />
         </div>
