@@ -56,19 +56,21 @@ export default function NoticeBoard() {
                                             </h3>
                                             
                                             {/* Conditionally Render Image */}
-                                            {selectedNoticeId === notice.id && notice.image_url && (
+                                            {selectedNoticeId === notice.id && (
                                                 <div className="mt-2 relative">
-                                                    <img
+                                                    <p>{notice.content}</p>
+                                                    {notice.image_url?<img
                                                         src={notice.image_url}
                                                         alt="Notice"
                                                         className="rounded-lg shadow-md max-w-full h-auto"
-                                                    />
+                                                    />:""}
+                                                    
                                                     {/* Close Button */}
                                                     <button
                                                         className="absolute top-1 right-1 bg-white p-1 rounded-full shadow-md"
                                                         onClick={() => setSelectedNoticeId(null)}
                                                     >
-                                                        <RiCloseLargeLine size="1.5em" className="text-red-500" />
+                                                        <RiCloseLargeLine size="1.5em" className="text-red-500 " />
                                                     </button>
                                                 </div>
                                             )}

@@ -8,26 +8,52 @@ import { createClient } from "@supabase/supabase-js";
 gsap.registerPlugin(ScrollTrigger);
 
 const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"; // Replace with actual API Key
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"; // Replace with actual API Key
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Gallery = () => {
+  const [imageStyles, setImageStyles] = useState([]);
   const [images, setImages] = useState([]);
   const mobileGalleryRef = useRef(null);
   const desktopGalleryRef = useRef(null);
 
   useEffect(() => {
     const fetchImages = async () => {
-      const { data, error } = await supabase.from("gallery").select("image_url");
+      const { data, error } = await supabase
+        .from("gallery")
+        .select("image_url");
       if (error) {
         console.error("Error fetching images:", error);
       } else {
-        setImages(data.map(item => item.image_url));
+        setImages(data.map((item) => item.image_url));
       }
     };
 
     fetchImages();
   }, []);
+
+  useEffect(() => {
+    const updateImageStyles = () => {
+      const newStyles = images.map((img) => {
+        const imgElement = new Image();
+        imgElement.src = img;
+        return new Promise((resolve) => {
+          imgElement.onload = () => {
+            resolve(
+              imgElement.naturalHeight > imgElement.naturalWidth
+                ? "row-span-2"
+                : ""
+            );
+          };
+        });
+      });
+
+      Promise.all(newStyles).then((styles) => setImageStyles(styles));
+    };
+
+    updateImageStyles();
+  }, [images]);
 
   useEffect(() => {
     // Mobile image animations
@@ -84,41 +110,48 @@ const Gallery = () => {
 
         {/* Mobile Gallery */}
         <div className="md:hidden min-h-screen text-white relative overflow-x-hidden">
-          <div ref={mobileGalleryRef} className="pt-20 pb-10 px-4 flex flex-col gap-8">
-            {images.map((src, index) => (
-              <div
-                key={index}
-                className="mobile-gallery-item relative  overflow-hidden shadow-lg group cursor-pointer"
-                style={{ boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
-              >
-                <img
-                  src={src}
-                  alt={`Gallery ${index + 1}`}
-                  className="w-full h-auto object-cover transition-transform duration-500"
-                />
-                
+          <div
+            ref={mobileGalleryRef}
+            className="pt-20 pb-10 px-4 flex flex-col gap-8"
+          >
+            {!images || images.length === 0 ? (
+              <div className="flex justify-center items-center">
+                <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
               </div>
-            ))}
+            ) : (
+              images.map((src, index) => (
+                <div
+                  key={index}
+                  className="mobile-gallery-item relative  overflow-hidden shadow-lg group cursor-pointer"
+                  style={{ boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)" }}
+                >
+                  <img
+                    src={src}
+                    alt={`Gallery ${index + 1}`}
+                    className="w-min h-min object-cover transition-transform duration-500"
+                  />
+                </div>
+              ))
+            )}
           </div>
         </div>
 
         {/* Desktop Grid Gallery */}
         <div
           ref={desktopGalleryRef}
-          className="hidden md:grid grid-cols-4 gap-3 p-4 w-full mx-auto"
+          className="hidden md:grid grid-cols-4 gap-3 p-4 w-full mx-auto grid-flow-row"
         >
           {images.map((img, index) => (
             <div
               key={index}
-              className="desktop-gallery-item relative overflow-hidden shadow-lg h-52 w-full group cursor-pointer"
-              
+              className={`desktop-gallery-item relative overflow-hidden shadow-lg h-full w-full group cursor-pointer  ${imageStyles[index]}`}
             >
               <img
+                key={index}
                 src={img}
                 alt={`Gallery ${index + 1}`}
-                className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110"
+                className={`w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110`}
               />
-              
             </div>
           ))}
         </div>

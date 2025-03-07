@@ -23,7 +23,7 @@ const AboutUs = () => {
       <Panel src="/gal3.jpg" content="About us" />
       <div className="min-h-screen bg-gray-50 py-20 px-4 sm:px-6 md:px-12 lg:px-24 space-y-24">
         {/* Mission Section */}
-        <div className="section flex flex-col md:flex-row items-center gap-10 md:gap-16 max-w-6xl mx-auto">
+        <div className="section flex flex-col md:flex-row items-center gap-10 md:gap-16 max-w-6xl mx-auto ">
           <motion.div 
             className="md:w-1/2 w-full flex justify-center"
             initial={{ opacity: 0, y: 40 }}
@@ -37,7 +37,7 @@ const AboutUs = () => {
             />
           </motion.div>
           <motion.div 
-            className="md:w-1/2 w-full bg-[#2973B2] shadow-xl rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left"
+            className="md:w-1/2 w-full bg-[#2973B2] rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left shadow-custom"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -56,7 +56,7 @@ const AboutUs = () => {
 
         {/* History Section */}
         <div className="section w-full mx-auto text-center">
-          <section className="relative bg-[#2973B2] py-16 px-4 sm:px-6 md:px-12 rounded-xl shadow-xl">
+          <section className="relative bg-white py-16 px-4 sm:px-6 md:px-12 rounded-xl shadow-custom">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
               {/* Image Section */}
               <motion.div
@@ -74,7 +74,7 @@ const AboutUs = () => {
 
               {/* Text Section */}
               <motion.div
-                className="text-white space-y-4 sm:space-y-6 text-center md:text-left"
+                className="text-[#2973B2] space-y-4 sm:space-y-6 text-center md:text-left"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -102,7 +102,7 @@ const AboutUs = () => {
         {/* Vision Section */}
         <div className="section flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16 max-w-6xl mx-auto">
           <motion.div 
-            className="md:w-1/2 w-full bg-[#2973B2] shadow-xl rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left"
+            className="md:w-1/2 w-full bg-[#2973B2] rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left shadow-custom"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
