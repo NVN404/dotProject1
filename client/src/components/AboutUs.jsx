@@ -33,11 +33,11 @@ const AboutUs = () => {
             <img
               src="/gal1.jpg"
               alt="Our Mission"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-lg"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-custom"
             />
           </motion.div>
           <motion.div 
-            className="md:w-1/2 w-full bg-[#2973B2] rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left shadow-custom"
+            className="md:w-1/2 w-full bg-[#2973B2] rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left shadow-lg"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -56,7 +56,7 @@ const AboutUs = () => {
 
         {/* History Section */}
         <div className="section w-full mx-auto text-center">
-          <section className="relative bg-white py-16 px-4 sm:px-6 md:px-12 rounded-xl shadow-custom">
+          <section className="relative bg-white py-16 px-4 sm:px-6 md:px-12 rounded-xl shadow-2xl">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
               {/* Image Section */}
               <motion.div
@@ -68,7 +68,7 @@ const AboutUs = () => {
                 <img
                   src="/gal1.jpg"
                   alt="Our History"
-                  className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-lg"
+                  className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-custom"
                 />
               </motion.div>
 
@@ -102,7 +102,7 @@ const AboutUs = () => {
         {/* Vision Section */}
         <div className="section flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16 max-w-6xl mx-auto">
           <motion.div 
-            className="md:w-1/2 w-full bg-[#2973B2] rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left shadow-custom"
+            className="md:w-1/2 w-full bg-[#2973B2] rounded-lg p-6 sm:p-8 md:p-12 text-center md:text-left shadow-lg"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -126,7 +126,7 @@ const AboutUs = () => {
             <img
               src="/gal2.jpg"
               alt="Our Vision"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-lg"
+              className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-custom"
             />
           </motion.div>
         </div>

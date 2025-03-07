@@ -7,6 +7,7 @@ import { AdmissionContext } from "./components/context/AdmissionContext";
 import { SelectedNoticeContext } from "./components/context/SelectedNoticeContext";
 import AcademicsComp from "./components/AcademicsComp";
 import AboutUs from "./components/AboutUs";
+import Admission from "./components/Admission";
 
 // Lazy-loaded components for better performance
 const Home = lazy(() => import("./components/Home"));
@@ -59,6 +60,7 @@ const App = () => {
                 <Route path="/contact" element={<ContactUs />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/circular" element={<NoticeBoard />} />
+                <Route path="/admission" element={<Admission />} />
                 <Route path="/academics" element={<AcademicsComp />} />
                 <Route path="/aboutus" element={<AboutUs />} />
                 <Route path="/admin-login" element={<AdminLogin />} />

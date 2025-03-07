@@ -67,9 +67,8 @@ const Footer = () => {
             </li>
             <li
               className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => setOpenAdmissionForm(true)}
+              onClick={() => navigate("/admission")}
             >
-              <AdmissionForm />
               Admission
             </li>
             <li

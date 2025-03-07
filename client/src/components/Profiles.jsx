@@ -2,7 +2,7 @@ import React from "react";
 
 const ProfileCard = ({ name, title, designation, image, description }) => {
     return (
-        <div className="mt-[2em] flex flex-col md:flex-row bg-white shadow-xl rounded-2xl p-4 md:p-6 lg:p-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+        <div className="mt-[2em] flex flex-col md:flex-row bg-white shadow-lg rounded-2xl p-4 md:p-6 lg:p-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
         <div className="md:w-1/3 flex justify-center md:justify-start">
             <img
             src={image}

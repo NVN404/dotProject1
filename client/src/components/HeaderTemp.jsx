@@ -121,8 +121,8 @@ const HeaderTemp = () => {
   };
 
   const handleAdmissionClick = () => {
+    navigate('/admission');
     closeMenu();
-    setOpenAdmissionForm(true);
   };
 
   return (

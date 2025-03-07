@@ -60,7 +60,7 @@ const HeaderForOthers = () => {
 
   const handleAdmissionClick = () => {
     closeMenu();
-    setOpenAdmissionForm(true);
+    navigate("/admission")
   };
 
   return (
