@@ -13,7 +13,7 @@ const Academics = () => {
 
   const sections = [
     {
-      title: "Primary",
+      title: "Primary School",
       subtitle: "Grades I-V",
       description: "We are a nurturing space where young learners begin their educational journey with curiosity and joy. Our engaging lessons in math, science, language, and social studies help build a strong foundation for lifelong learning.",
       image: "/gal4.jpg",
@@ -74,12 +74,12 @@ const Academics = () => {
         <div className="card-container md:p-20 p-4 sm:p-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6">
             {sections.map((section, index) => (
-              <div key={index} className="card bg-white rounded-2xl shadow-lg flex flex-col min-h-full overflow-hidden">
-                <img src={section.image} alt={section.title} className="w-full  sm:h-56 md:h-64 object-cover shadow-custom" />
+              <div key={index} className="card bg-white rounded-2xl shadow-2xl flex flex-col min-h-full overflow-hidden">
+                <img src={section.image} alt={section.title} className="w-full  sm:h-56 md:h-64 object-cover shadow-2xl" />
                 <div className="p-4 sm:p-6 flex flex-col flex-grow">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{section.title}</h2>
                   <h3 className="text-sm sm:text-base text-[#2973B2] font-semibold">{section.subtitle}</h3>
-                  <p className="text-gray-600 text-sm sm:text-base mt-2 flex-grow">{section.description}</p>
+                  <p className="text-gray-600 text-justify text-sm sm:text-base mt-2 flex-grow">{section.description}</p>
                   <button
                     onClick={() => handleReadMore(index)}
                     className="mt-4 px-4 py-2 bg-[#2973B2] text-white rounded-lg hover:bg-green-500 transition duration-300 text-sm sm:text-base"

@@ -37,7 +37,7 @@ export default function NoticeBoard() {
             <HeaderForOthers />
             <div className="mt-[7em] md:mt-[9em]">
                 <Panel src="/gal3.jpg" content="Circulars" />
-                <div className="h-[auto] bg-gradient-to-br from-gray-100 to-blue-50 flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
+                <div className="h-[auto] flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
                     <div className="w-full max-w-3xl p-6 sm:p-8 bg-[#2973B2] rounded-3xl shadow-2xl border border-gray-200">
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 text-center mb-6 flex items-center justify-center gap-2">
                             <span className="text-white text-4xl sm:text-5xl font-[Helvetica]">NOTICE BOARD</span>
@@ -67,10 +67,10 @@ export default function NoticeBoard() {
                                                     
                                                     {/* Close Button */}
                                                     <button
-                                                        className="absolute top-1 right-1 bg-white p-1 rounded-full shadow-md"
+                                                        className="absolute top-1 right-1 rounded-full shadow-md bg-[#2973B2] text-white p-2 rounded-full hover:bg-green-500 transition duration-300 "
                                                         onClick={() => setSelectedNoticeId(null)}
                                                     >
-                                                        <RiCloseLargeLine size="1.5em" className="text-red-500 " />
+                                                        <RiCloseLargeLine size="16" className="" />
                                                     </button>
                                                 </div>
                                             )}

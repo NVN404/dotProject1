@@ -128,7 +128,7 @@ const Gallery = () => {
                   <img
                     src={src}
                     alt={`Gallery ${index + 1}`}
-                    className="w-min h-min object-cover transition-transform duration-500"
+                    className="w-min h-min object-cover transition-transform duration-500 shadow-custom"
                   />
                 </div>
               ))
@@ -150,7 +150,7 @@ const Gallery = () => {
                 key={index}
                 src={img}
                 alt={`Gallery ${index + 1}`}
-                className={`w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110`}
+                className={`w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110 shadow-custom`}
               />
             </div>
           ))}
