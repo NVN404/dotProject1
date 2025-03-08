@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HeaderForOthers from "./HeaderForOthers";
 import MapComponent from "./MapComponent";
 import Panel from "./Panel";
+import sendMailTo from "./Server";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -15,35 +16,24 @@ const ContactUs = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/contact-us", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      alert("Your query has been sent successfully!");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } else {
-      alert("Error sending your query. Please try again.");
-    }
+    sendMailTo("New Contact Query", formData);
+    alert("Your contact query has been sent!");
+    setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form
   };
 
   return (
     <div className="w-full min-h-screen">
       <HeaderForOthers />
-<div className="">
-  
+      <div>
         <Panel src="./gal2.jpg" content="Contact Us" />
-  
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 p-6">
-          {/* Map Section */} 
+          {/* Map Section */}
           <div className="h-[350px] md:h-[400px] lg:h-[auto] rounded-sm overflow-hidden shadow-2xl">
             <MapComponent />
           </div>
-  
+
           {/* Contact Form Section */}
           <div className="bg-[#2973B2] text-white p-6 md:p-8 rounded-lg shadow-custom flex flex-col justify-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
@@ -99,7 +89,7 @@ const ContactUs = () => {
             </form>
           </div>
         </div>
-</div>
+      </div>
     </div>
   );
 };
