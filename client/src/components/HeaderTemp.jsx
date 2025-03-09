@@ -75,7 +75,7 @@ const HeaderTemp = () => {
     })
 
     gsap.to(headerRef.current, {
-      backgroundColor: "#2973B2",
+      backgroundColor: "#0092DD",
       position: "fixed",
       top: 0,
       duration: 0.1,
@@ -132,7 +132,7 @@ const HeaderTemp = () => {
       }}
     >
 
-      <div className="overflow-hidden bg-white text-[#2973B2] font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
+      <div className="overflow-hidden bg-white text-background font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-min flex whitespace-nowrap">
           <div className="flex items-center gap-10">
             <span className="flex justify-center items-center">
@@ -145,7 +145,7 @@ const HeaderTemp = () => {
     <span className="text-xl font-semibold mr-2">
       {notices.length > 0 ? notices.slice(-1)[0].content : " "}
     </span>
-    <button className="bg-[#2973B2] text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center" onClick={()=>{
+    <button className="bg-background text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center" onClick={()=>{
       if (notices.length > 0) {
         setSelectedNoticeId(notices[notices.length - 1].id);
         navigate("/circular")
@@ -201,7 +201,7 @@ const HeaderTemp = () => {
         </button>
 
         {/* Mobile Menu */}
-        <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2]/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
+        <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-background/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
           <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
             <RiCloseLargeLine />
           </button>

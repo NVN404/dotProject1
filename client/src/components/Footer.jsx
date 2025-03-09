@@ -11,7 +11,7 @@ const Footer = () => {
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
   return (
-    <footer className="bg-[#2973B2] w-full">
+    <footer className="bg-background w-full">
       {/* 🔹 Main Footer Section */}
       <div className="py-8 px-6 md:px-10 lg:px-14 xl:px-18 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_3fr_1fr_1fr] gap-6 md:gap-[5em] text-center sm:text-left">
         {/* 🎓 Logo Section */}
@@ -103,10 +103,10 @@ const Footer = () => {
 
       {/* 🔹 Bottom Copyright Section */}
       <div className="w-full bg-white py-4 px-4 md:px-8 lg:px-12 xl:px-16 flex flex-col sm:flex-row justify-between items-center font-semibold text-center sm:text-left">
-        <p className="text-[#2973B2] text-sm md:text-base flex items-center mb-2 sm:mb-0">
+        <p className="text-background text-sm md:text-base flex items-center mb-2 sm:mb-0">
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-[#2973B2] text-sm md:text-base">
+        <p className="text-background text-sm md:text-base">
           Cooked in Dot Labs
         </p>
       </div>

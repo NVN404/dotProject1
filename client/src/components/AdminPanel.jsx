@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import HeaderForOthers from "./HeaderForOthers";
 
-const supabaseUrl = "YOUR_SUPABASE_URL";
-const supabaseKey = "YOUR_SUPABASE_ANON_KEY";
 const supabase = createClient(
     "https://hdxtuvuiwsmeflrzfyzy.supabase.co",
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE"
-);
+); 
 const Dashboard = () => {
+    const navigate = useNavigate();
     const [galleryImages, setGalleryImages] = useState([]);
     const [images, setImages] = useState([]);
     const [previews, setPreviews] = useState([]);
@@ -135,7 +135,10 @@ const Dashboard = () => {
     return (
         <div className="bg-gray-100 min-h-screen p-6">
         <HeaderForOthers />
-            <h2 className="mt-[5em] md:mt-[6em] text-2xl font-extrabold text-gray-700 text-center font-helvetica">ADMIN DASHBOARD</h2>
+            <div className="flex w-full mt-[10em] md:mt-[11em]">
+                <h2 className=" text-2xl font-extrabold text-gray-700 text-center font-helvetica">ADMIN DASHBOARD</h2>
+                <button className="border border-red-600 px-12 py-6 rounded-3xl bg-red-600 text-white text-2xl">Logout</button>
+            </div>
 
             {/* Upload Image to Gallery */}
             <div className="bg-white p-6 mt-6 rounded-lg shadow-md">

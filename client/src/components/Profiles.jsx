@@ -17,7 +17,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
             <p className="text-sm sm:text-base md:text-lg text-gray-600 font-semibold mt-2 text-center md:text-left italic">
             {title}
             </p>
-            <p className="text-sm sm:text-md md:text-lg lg:text-xl text-[#2973B2] font-bold mt-2 text-center md:text-left uppercase tracking-wide">
+            <p className="text-sm sm:text-md md:text-lg lg:text-xl text-background font-bold mt-2 text-center md:text-left uppercase tracking-wide">
             {designation}
             </p>
             <p className="text-sm sm:text-md md:text-base lg:text-xl text-gray-600 mt-4   leading-relaxed text-justify">
@@ -50,7 +50,7 @@ const Profiles = () => {
     ];
 
     return (
-        <div className="md:p-[10em] md:pb-0 md:pt-0 bg-[#2973B2] ">
+        <div className="md:p-[10em] md:pb-0 md:pt-0 bg-background ">
             <div className="p-[2em] pt-[1em] pb-[2.5em]  lg:rounded-3xl  space-y-10">
                 {profiles.map((profile, index) => (
                     <ProfileCard key={index} {...profile} />

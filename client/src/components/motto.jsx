@@ -41,7 +41,7 @@ const Motto = () => {
               whileHover={{ scale: 1.05 }}>
               {section.title}
             </motion.span>
-            <p className="text-xl text-[#2973B2] font-semibold">{section.text}</p>
+            <p className="text-xl text-background font-semibold">{section.text}</p>
             <p className="text-md text-white leading-relaxed">{section.desc}</p>
           </div>
           <motion.img

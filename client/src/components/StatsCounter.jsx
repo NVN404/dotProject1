@@ -64,7 +64,7 @@ const StatsCounter = () => {
             {stats.map((stat, index) => (
                 <div 
                     key={index}
-                    className="w-[300px] h-[200px] bg-[#2973B2] rounded-2xl shadow-lg flex flex-col justify-center items-center text-center gap-2"
+                    className="w-[300px] h-[200px] bg-background rounded-2xl shadow-lg flex flex-col justify-center items-center text-center gap-2"
                 >
                 <img src={stat.src} alt="icon" className="invert h-14 w-14"/>
                     <Counter value={stat.value} label={stat.label} trigger={isVisible} />

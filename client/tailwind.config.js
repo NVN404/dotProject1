@@ -28,7 +28,7 @@ export default {
 
       },
       colors:{
-        'background':'#2973B2',
+        'background':'#0092dd',
       },
       boxShadow: {
         'custom': '0px 8px 20px rgba(0, 0, 0, 0.7)',
