@@ -6,21 +6,21 @@ const sections = [
     title: "MOTTO",
     text: "Inspiring young minds to learn, grow, and succeed",
     desc: "Our motto is to ignite young minds with a passion for learning, growth, and success. We believe in fostering resilience, integrity, and creativity to shape future leaders.",
-    bg: "bg-[#DCEEFF]",
+    bg: "bg-[#E0ECFF]",
     img: "",
   },
   {
     title: "VISION",
     text: "Shaping a future where knowledge and character go hand in hand.",
     desc: "We envision a future where every student is empowered with knowledge, skills, and values to become responsible global citizens. We aim to inspire excellence and leadership in every learner.",
-    bg: "bg-[#BFD8FF]",
+    bg: "bg-[#B8D4FF]",
     img: "",
   },
   {
     title: "MISSION",
     text: "Nurturing curiosity, excellence, and lifelong learning in every student.",
     desc: "Our mission is to provide a nurturing environment where students develop academically, socially, and emotionally. We strive to create a community that fosters curiosity, innovation, and lifelong learning.",
-    bg: "bg-[#A5C8FF]",
+    bg: "bg-[#91BBFF]",
     img: "",
   },
 ];
@@ -36,7 +36,7 @@ const Motto = () => {
       {sections.map((section, index) => (
         <motion.div
           key={index}
-          className={`p-8 rounded-3xl shadow-lg ${section.bg} text-[#0A3D62] flex flex-col justify-between gap-4`}
+          className={`p-8 rounded-3xl shadow-lg ${section.bg} text-[#0A3760] flex flex-col justify-between gap-4`}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -50,7 +50,7 @@ const Motto = () => {
               {section.title}
             </motion.span>
             <p className="text-xl text-[#0E5AA7] font-semibold">{section.text}</p>
-            <p className="text-md text-[#0B2C4B] leading-relaxed">{section.desc}</p>
+            <p className="text-md text-[#1E3A5F] leading-relaxed">{section.desc}</p>
           </div>
           <motion.img
             src={section.img}
