@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const images = ["/gal1.jpg", "/gal2.jpg", "/gal3.jpg"];
+const images = ["https://hdxtuvuiwsmeflrzfyzy.supabase.co/storage/v1/object/public/gallery/gallery/1741541509925-WhatsApp%20Image%202025-03-09%20at%2020.47.41%20(5).jpeg",
+   "https://hdxtuvuiwsmeflrzfyzy.supabase.co/storage/v1/object/public/gallery/gallery/1741541507121-WhatsApp%20Image%202025-03-09%20at%2020.47.41%20(11).jpeg",
+    "https://hdxtuvuiwsmeflrzfyzy.supabase.co/storage/v1/object/public/gallery/gallery/1741541505487-WhatsApp%20Image%202025-03-09%20at%2020.47.41%20(15).jpeg"];
 
 const MainCarousel = () => {
   const [index, setIndex] = useState(0);
