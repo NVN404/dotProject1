@@ -3,92 +3,59 @@ import { useNavigate } from "react-router-dom";
 import { IoIosMail } from "react-icons/io";
 import { FaPhone, FaCopyright } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import AdmissionForm from "./AdmissionForm";
 import { AdmissionContext } from "./context/AdmissionContext";
 
 const Footer = () => {
   const navigate = useNavigate();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
+  const quickLinks = [
+    { label: "Home", path: "/" },
+    { label: "About Us", path: "/aboutus" },
+    { label: "Academics", path: "/academics" },
+    { label: "Circular", path: "/circular" },
+    { label: "Admission", path: "/admission" },
+    { label: "Gallery", path: "/gallery" },
+    { label: "Contact Us", path: "/contact" },
+  ];
+
+  const contactDetails = [
+    { icon: FaLocationDot, text: "Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111" },
+    { icon: IoIosMail, text: "dpslakkur2010@gmail.com" },
+    { icon: FaPhone, text: "9535054460" },
+    { icon: FaPhone, text: "8553888452" },
+  ];
+
   return (
     <footer className="bg-background w-full">
       {/* 🔹 Main Footer Section */}
       <div className="py-8 px-6 md:px-10 lg:px-14 xl:px-18 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_3fr_1fr_1fr] gap-6 md:gap-[5em] text-center sm:text-left">
         {/* 🎓 Logo Section */}
-        <div className="flex flex-col items-center ">
-          <img
-            src="./DobbespetPublicSchool.png"
-            alt="School Logo"
-            className="w-[6em] h-[10em] mb-2 invert"
-          />
-          <h3 className="text-white text-lg sm:text-lg font-bold font-newsreader">
-            Dobbespet Public School
-          </h3>
+        <div className="flex flex-col items-center">
+          <img src="./DobbespetPublicSchool.png" alt="School Logo" className="w-[6em] h-[10em] mb-2 invert" />
+          <h3 className="text-white text-lg sm:text-lg font-bold font-newsreader">Dobbespet Public School</h3>
         </div>
 
         {/* 📞 Contact Section */}
         <div className="flex flex-col sm:items-start items-center">
           <h3 className="text-white text-lg sm:text-xl font-bold">Contact Us</h3>
-          <div className="flex items-center text-white mt-2">
-          <FaLocationDot size="1.5em" className="mr-[0.2em] text-lg md:mr-2 md:text-xl" />
-          <span className="text-sm md:text-base"> Lakkur, Dobbespet, Nelamangala Taluk, Bangalore Rural District - 562111</span>
-          </div>
-          <div className="flex items-center text-white mt-2">
-            <IoIosMail size="1.5em" className="mr-2" />
-            <span className="text-sm md:text-base">dpslakkur2010@gmail.com</span>
-          </div>
-          <div className="flex flex-col text-white gap-1 mt-2">
-            <div className="flex items-center">
-              <FaPhone size="1.2em" className="mr-2" />
-              <span className="text-sm md:text-base">9535054460</span>
+          {contactDetails.map(({ icon: Icon, text }, index) => (
+            <div key={index} className="flex items-center text-white mt-2">
+              <Icon size="1.5em" className="mr-2" />
+              <span className="text-sm md:text-base">{text}</span>
             </div>
-            <div className="flex items-center">
-              <FaPhone size="1.2em" className="mr-2" />
-              <span className="text-sm md:text-base">8553888452</span>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* 🔗 Quick Links */}
         <div className="text-white flex flex-col items-center sm:items-start">
           <h3 className="text-lg sm:text-xl font-bold">Quick Links</h3>
           <ul className="text-sm md:text-base space-y-1 mt-2">
-            <li
-              className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => navigate("/")}
-            >
-              Home
-            </li>
-            <li
-              className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => navigate("/circular")}
-            >
-              Circular
-            </li>
-            <li
-              className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => navigate("/admission")}
-            >
-              Admission
-            </li>
-            <li
-              className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => navigate("/academics")}
-            >
-              Academics
-            </li>
-            <li
-              className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => navigate("/gallery")}
-            >
-              Gallery
-            </li>
-            <li
-              className="hover:text-yellow-400 cursor-pointer"
-              onClick={() => navigate("/contact")}
-            >
-              Contact Us
-            </li>
+            {quickLinks.map(({ label, path }) => (
+              <li key={path} className="hover:text-yellow-400 cursor-pointer" onClick={() => navigate(path)}>
+                {label}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -106,7 +73,7 @@ const Footer = () => {
         <p className="text-background text-sm md:text-base flex items-center mb-2 sm:mb-0">
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-background text-sm md:text-base">
+        <p className="text-[#2973B2] text-sm md:text-base">
           Cooked in Dot Labs
         </p>
       </div>

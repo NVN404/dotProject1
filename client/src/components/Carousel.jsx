@@ -5,29 +5,27 @@ const images = ["/gal1.jpg", "/gal2.jpg", "/gal3.jpg"];
 
 const MainCarousel = () => {
   const [index, setIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Preload images
-    const preloadImages = images.map((src) => {
+    let loadedCount = 0;
+    images.forEach((src) => {
       const img = new Image();
       img.src = src;
-      img.onload = () => setLoading(false);
-      return img;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === images.length) setLoading(false);
+      };
     });
 
-    // Start automatic sliding
+    // Automatic sliding
     const interval = setInterval(() => {
-      setPrevIndex(index);
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 3000);
 
-    return () => {
-      clearInterval(interval);
-      preloadImages.forEach((img) => (img.onload = null));
-    };
-  }, [index]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full -z-10 flex justify-center items-center">
@@ -38,14 +36,6 @@ const MainCarousel = () => {
         </div>
       )}
 
-      {/* Previous Image stays visible */}
-      <img
-        src={images[prevIndex]}
-        alt={`Slide ${prevIndex + 1}`}
-        className="absolute top-0 left-0 w-full h-[75vh] md:h-full object-cover"
-      />
-
-      {/* New Image Fades in over it */}
       <AnimatePresence>
         <motion.img
           key={index}

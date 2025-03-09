@@ -4,23 +4,20 @@ const Counter = ({ value, label, trigger }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        if (trigger) {
-            let start = 0;
-            const duration = 2000;
-            const increment = Math.ceil(value / 50);
+        if (!trigger) return;
 
-            const counter = setInterval(() => {
-                start += increment;
-                if (start >= value) {
-                    setCount(value);
-                    clearInterval(counter);
-                } else {
-                    setCount(start);
-                }
-            }, duration / 50);
+        let start = 0;
+        const duration = 2000;
+        const steps = 50;
+        const increment = Math.ceil(value / steps);
 
-            return () => clearInterval(counter);
-        }
+        const counter = setInterval(() => {
+            start += increment;
+            setCount(start >= value ? value : start);
+            if (start >= value) clearInterval(counter);
+        }, duration / steps);
+
+        return () => clearInterval(counter);
     }, [trigger, value]);
 
     return (
@@ -37,37 +34,36 @@ const StatsCounter = () => {
 
     useEffect(() => {
         const observer = new IntersectionObserver(
-            ([entry]) => {
+            ([entry], obs) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true);
+                    obs.disconnect(); // Stop observing once triggered
                 }
             },
             { threshold: 0.5 }
         );
 
-        if (statsRef.current) {
-            observer.observe(statsRef.current);
-        }
+        if (statsRef.current) observer.observe(statsRef.current);
 
         return () => observer.disconnect();
     }, []);
 
     const stats = [
-        { value: 120, label: "State Rank" ,src:"bangalore.png"},
-        { value: 40, label: "Professional Lecturers",src:"teacher.png" },
-        { value: 12, label: "Years of History",src:"history.png" },
-        { value: 100, label: "Results Every Year",src:"result.png" },
+        { value: 120, label: "State Rank", src: "bangalore.png" },
+        { value: 40, label: "Professional Lecturers", src: "teacher.png" },
+        { value: 12, label: "Years of History", src: "history.png" },
+        { value: 100, label: "Results Every Year", src: "result.png" },
     ];
 
     return (
-        <div ref={statsRef} className="w-full mt-[2em] mb-[2em] flex flex-wrap justify-center items-center gap-6 p-4">
-            {stats.map((stat, index) => (
+        <div ref={statsRef} className="w-full mt-8 mb-8 flex flex-wrap justify-center items-center gap-6 p-4">
+            {stats.map(({ value, label, src }, index) => (
                 <div 
                     key={index}
                     className="w-[300px] h-[200px] bg-background rounded-2xl shadow-lg flex flex-col justify-center items-center text-center gap-2"
                 >
-                <img src={stat.src} alt="icon" className="invert h-14 w-14"/>
-                    <Counter value={stat.value} label={stat.label} trigger={isVisible} />
+                    <img src={src} alt={label} className="invert h-14 w-14" />
+                    <Counter value={value} label={label} trigger={isVisible} />
                 </div>
             ))}
         </div>
