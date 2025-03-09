@@ -99,7 +99,8 @@ const Gallery = () => {
                 <img
                   src={img}
                   alt={`Gallery ${index + 1}`}
-                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110 shadow-custom"
+                  className="w-full h-full object-cover transition duration-300 ease-in-out group-hover:brightness-75 group-hover:scale-110 shadow-custom selectDisable"
+                  draggable={false}
                 />
               </div>
             ))}
