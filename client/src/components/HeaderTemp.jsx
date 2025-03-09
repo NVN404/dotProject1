@@ -75,7 +75,7 @@ const HeaderTemp = () => {
     })
 
     gsap.to(headerRef.current, {
-      backgroundColor: "#0066CC",
+      backgroundColor: "#0047A3",
       position: "fixed",
       top: 0,
       duration: 0.1,
