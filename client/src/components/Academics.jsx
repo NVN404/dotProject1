@@ -77,11 +77,11 @@ const Academics = () => {
                 <img src={section.image} alt={section.title} className="w-full sm:h-56 md:h-64 object-cover shadow-2xl" />
                 <div className="p-4 sm:p-6 flex flex-col flex-grow">
                   <h2 className="text-xl sm:text-2xl font-bold text-gray-800">{section.title}</h2>
-                  <h3 className="text-sm sm:text-base text-[#2973B2] font-semibold">{section.subtitle}</h3>
+                  <h3 className="text-sm sm:text-base text-background font-semibold">{section.subtitle}</h3>
                   <p className="text-gray-600 text-justify text-sm sm:text-base mt-2 flex-grow">{section.description}</p>
                   <button
                     onClick={() => handleReadMore(index)}
-                    className="mt-4 px-4 py-2 bg-[#2973B2] text-white rounded-lg hover:bg-green-500 transition duration-300 text-sm sm:text-base"
+                    className="mt-4 px-4 py-2 bg-background text-white rounded-lg hover:bg-green-500 transition duration-300 text-sm sm:text-base"
                   >
                     Read More
                   </button>
@@ -96,7 +96,7 @@ const Academics = () => {
             <button
               ref={cancelButtonRef}
               onClick={handleCancel}
-              className="bg-[#2973B2] text-white p-2 rounded-full hover:bg-green-500 transition duration-300 shadow-md"
+              className="bg-background text-white p-2 rounded-full hover:bg-green-500 transition duration-300 shadow-md"
               aria-label="Close"
             >
               <RiCloseLargeLine size={24} />
@@ -110,7 +110,7 @@ const Academics = () => {
                 <button
                   key={label}
                   onClick={() => handleNavigation(label.toLowerCase())}
-                  className={`px-4 py-2 bg-[#2973B2] text-white rounded-lg transition duration-300 shadow-md sm:px-6 sm:py-3 ${
+                  className={`px-4 py-2 bg-background text-white rounded-lg transition duration-300 shadow-md sm:px-6 sm:py-3 ${
                     isDisabled ? "opacity-50 cursor-not-allowed" : "hover:bg-green-500"
                   }`}
                   disabled={isDisabled}

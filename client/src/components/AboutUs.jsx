@@ -90,7 +90,7 @@ const AboutUs = () => {
                 />
               </motion.div>
               <motion.div
-                className="text-[#2973B2] space-y-4 sm:space-y-6 text-center md:text-left"
+                className="text-background space-y-4 sm:space-y-6 text-center md:text-left"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -143,7 +143,7 @@ const AboutUs = () => {
                 />
               </motion.div>
               <motion.div
-                className="text-[#2973B2] space-y-4 sm:space-y-6 text-center md:text-left"
+                className="text-background space-y-4 sm:space-y-6 text-center md:text-left"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
