@@ -11,9 +11,10 @@ const Footer = () => {
 
   const quickLinks = [
     { label: "Home", path: "/" },
+    { label: "About Us", path: "/aboutus" },
+    { label: "Academics", path: "/academics" },
     { label: "Circular", path: "/circular" },
     { label: "Admission", path: "/admission" },
-    { label: "Academics", path: "/academics" },
     { label: "Gallery", path: "/gallery" },
     { label: "Contact Us", path: "/contact" },
   ];

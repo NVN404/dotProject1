@@ -5,23 +5,23 @@ const sections = [
   {
     title: "MOTTO",
     text: "Inspiring young minds to learn, grow, and succeed",
-    desc: "A motto is a vivid reflection of the mettle that goes into the making of an institution.",
-    bg: "bg-[#D0E7F8]",
-    img: "./img1.png",
+    desc: "Our motto is to ignite young minds with a passion for learning, growth, and success. We believe in fostering resilience, integrity, and creativity to shape future leaders.",
+    bg: "bg-[#DCEEFF]",
+    img: "",
   },
   {
     title: "VISION",
     text: "Shaping a future where knowledge and character go hand in hand.",
-    desc: "Dobbespet Public School aims at all-round development of children into well-disciplined individuals.",
-    bg: "bg-[#98C4E1]",
-    img: "./img2.png",
+    desc: "We envision a future where every student is empowered with knowledge, skills, and values to become responsible global citizens. We aim to inspire excellence and leadership in every learner.",
+    bg: "bg-[#BFD8FF]",
+    img: "",
   },
   {
     title: "MISSION",
     text: "Nurturing curiosity, excellence, and lifelong learning in every student.",
-    desc: "Dobbespet Public School is dedicated to providing a comprehensive education programme for its students.",
-    bg: "bg-[#BCDDF0]",
-    img: "./img3.png",
+    desc: "Our mission is to provide a nurturing environment where students develop academically, socially, and emotionally. We strive to create a community that fosters curiosity, innovation, and lifelong learning.",
+    bg: "bg-[#A5C8FF]",
+    img: "",
   },
 ];
 
@@ -36,7 +36,7 @@ const Motto = () => {
       {sections.map((section, index) => (
         <motion.div
           key={index}
-          className={`p-8 rounded-3xl shadow-lg ${section.bg} text-gray-900 flex flex-col justify-between gap-4`}
+          className={`p-8 rounded-3xl shadow-lg ${section.bg} text-[#0A3D62] flex flex-col justify-between gap-4`}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -49,8 +49,8 @@ const Motto = () => {
             >
               {section.title}
             </motion.span>
-            <p className="text-xl text-[#2973B2] font-semibold">{section.text}</p>
-            <p className="text-md text-gray-800 leading-relaxed">{section.desc}</p>
+            <p className="text-xl text-[#0E5AA7] font-semibold">{section.text}</p>
+            <p className="text-md text-[#0B2C4B] leading-relaxed">{section.desc}</p>
           </div>
           <motion.img
             src={section.img}
