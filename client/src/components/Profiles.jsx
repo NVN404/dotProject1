@@ -1,6 +1,7 @@
 import React from "react";
 
 const ProfileCard = ({ name, title, designation, image, description }) => {
+<<<<<<< Updated upstream
   return (
     <div className="mt-8 flex flex-col md:flex-row bg-white shadow-lg rounded-2xl p-6 lg:p-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
       <img
@@ -24,6 +25,34 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
       </div>
     </div>
   );
+=======
+    return (
+        <div className="mt-[2em] flex flex-col md:flex-row bg-white shadow-lg rounded-2xl p-6 lg:p-8 w-full max-w-7xl mx-auto border border-gray-200 hover:shadow-2xl transition-shadow duration-300">
+        <div className="md:w-1/3 flex justify-center md:justify-start">
+            <img
+            src={image}
+            alt={name}
+            className="w-full h-50 md:w-60 md:h-60 lg:w-64 lg:h-64 object-cover rounded-xl shadow-2xl border border-gray-300 transition-all duration-300"
+            />
+        </div>
+        <div className="md:w-2/3 mt-4 md:mt-0 md:pl-8 flex flex-col justify-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black text-center md:text-left transition-all duration-300">
+            {name}
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 font-semibold mt-2 text-center md:text-left italic">
+            {title}
+            </p>
+            <p className="text-sm sm:text-md md:text-lg lg:text-xl text-background font-bold mt-2 text-center md:text-left uppercase tracking-wide">
+            {designation}
+            </p>
+            <p className="text-sm sm:text-md md:text-base lg:text-xl text-gray-600 mt-4   leading-relaxed text-justify">
+            {description}
+            </p>
+            </div>
+        </div>
+
+    );
+>>>>>>> Stashed changes
 };
 
 const Profiles = () => {
@@ -46,6 +75,7 @@ const Profiles = () => {
     },
   ];
 
+<<<<<<< Updated upstream
   return (
     <div className="md:px-[10em] md:pb-0 md:pt-0 bg-[#2973B2]">
       <div className="p-8 lg:rounded-3xl space-y-10">
@@ -55,6 +85,17 @@ const Profiles = () => {
       </div>
     </div>
   );
+=======
+    return (
+        <div className="md:p-[10em] md:pb-0 md:pt-0 bg-background ">
+            <div className="p-[2em] pt-[1em] pb-[2.5em]  lg:rounded-3xl  space-y-10">
+                {profiles.map((profile, index) => (
+                    <ProfileCard key={index} {...profile} />
+                ))}
+            </div>
+        </div>
+    );
+>>>>>>> Stashed changes
 };
 
 export default Profiles;

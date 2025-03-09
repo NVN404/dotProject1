@@ -49,7 +49,14 @@ const HeaderForOthers = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <div className="w-full fixed top-0 left-0 right-0 bg-[#2973B2] z-50 shadow-[0px_8px_20px_rgba(0,0,0,0.7)]">
+=======
+    <div className="w-full fixed top-0 left-0 right-0 bg-background  z-50 shadow-[0px_8px_20px_rgba(0,0,0,0.7)]
+
+">
+      {/* Header Section */}
+>>>>>>> Stashed changes
       <header className="w-full h-[7em] md:h-[9em] flex items-center justify-between px-4 md:px-[3em]">
         <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => navigate("/")}> 
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
@@ -68,8 +75,17 @@ const HeaderForOthers = () => {
           <AiOutlineMenuFold />
         </button>
 
+<<<<<<< Updated upstream
         <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-[#2973B2]/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
           <button className="absolute top-4 right-6 text-3xl" onClick={() => toggleMenu(false)} aria-label="Close navigation menu">
+=======
+        {/* Mobile Menu */}
+        <div
+          ref={menuRef}
+          className="fixed top-0 right-[-100%] w-[80%] h-screen bg-background/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all"
+        >
+          <button className="absolute top-4 right-6 text-3xl" onClick={closeMenu} aria-label="Close navigation menu">
+>>>>>>> Stashed changes
             <RiCloseLargeLine />
           </button>
           <ul ref={menuItemsRef} className="flex flex-col text-xl justify-center items-center">
