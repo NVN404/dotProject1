@@ -33,7 +33,7 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="bg-[#2973B2] text-white p-6 md:p-8 rounded-lg shadow-custom flex flex-col justify-center">
+        <div className="bg-background text-white p-6 md:p-8 rounded-lg shadow-custom flex flex-col justify-center">
           <h1 className="text-3xl md:text-4xl mb-4 font-extrabold font-helvetica text-center">CONTACT US</h1>
           <form className="space-y-4 text-black" onSubmit={handleSubmit}>
             {["name", "email", "phone"].map((field) => (

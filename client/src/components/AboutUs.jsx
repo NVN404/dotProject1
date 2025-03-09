@@ -70,7 +70,7 @@ const AboutUs = () => {
           image="/gal1.jpg"
           title="Our Mission"
           content="Our mission is to provide a nurturing environment where students develop academically, socially, and emotionally. We strive to create a community that fosters curiosity, innovation, and lifelong learning."
-          bgColor="bg-[#2973B2]"
+          bgColor="bg-background"
         />
 
         {/* About the School Section */}
@@ -122,7 +122,7 @@ const AboutUs = () => {
           image="/gal2.jpg"
           title="Our Vision"
           content="We envision a future where every student is empowered with knowledge, skills, and values to become responsible global citizens. We aim to inspire excellence and leadership in every learner."
-          bgColor="bg-[#2973B2]"
+          bgColor="bg-background"
           reverse
         />
 

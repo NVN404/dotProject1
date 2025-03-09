@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#2973B2] w-full">
+    <footer className="bg-background w-full">
       {/* 🔹 Main Footer Section */}
       <div className="py-8 px-6 md:px-10 lg:px-14 xl:px-18 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[2fr_3fr_1fr_1fr] gap-6 md:gap-[5em] text-center sm:text-left">
         {/* 🎓 Logo Section */}
