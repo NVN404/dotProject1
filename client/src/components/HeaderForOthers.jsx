@@ -51,8 +51,11 @@ const HeaderForOthers = () => {
   return (
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     <div className="w-full fixed top-0 left-0 right-0 bg-[#2973B2] z-50 shadow-[0px_8px_20px_rgba(0,0,0,0.7)]">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     <div className="w-full fixed top-0 left-0 right-0 bg-background  z-50 shadow-[0px_8px_20px_rgba(0,0,0,0.7)]

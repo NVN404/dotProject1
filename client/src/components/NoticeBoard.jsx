@@ -31,11 +31,14 @@ export default function NoticeBoard() {
                 <Panel src="/gal3.jpg" content="Circulars" />
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                 <div className="flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
                     <div className="w-full max-w-3xl p-6 sm:p-8 bg-[#2973B2] rounded-3xl shadow-2xl border border-gray-200">
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-white sm:text-5xl font-[Helvetica] mb-6">
                             NOTICE BOARD
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
                 <div className="h-[auto] flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
@@ -65,7 +68,11 @@ export default function NoticeBoard() {
                                                     <button
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
                                                         className="absolute top-1 right-1 bg-[#2973B2] text-white p-2 rounded-full shadow-md hover:bg-green-500 transition duration-300"
+=======
+                                                        className="absolute top-1 right-1 rounded-full shadow-md bg-background text-white p-2 hover:bg-green-500 transition duration-300 "
+>>>>>>> Stashed changes
 =======
                                                         className="absolute top-1 right-1 rounded-full shadow-md bg-background text-white p-2 hover:bg-green-500 transition duration-300 "
 >>>>>>> Stashed changes
