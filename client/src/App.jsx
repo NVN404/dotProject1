@@ -41,7 +41,7 @@ const App = () => {
   return (
     <div className="relative">
       {loading ? (
-        <div className="fixed top-0 left-0 w-full h-full bg-[#2973B2] flex justify-center items-center z-50">
+        <div className="fixed top-0 left-0 w-full h-full bg-background flex justify-center items-center z-50">
           <img
             src="./DobbespetPublicSchool.png"
             alt="DobbespetPublicSchool"
