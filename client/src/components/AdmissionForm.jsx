@@ -10,14 +10,13 @@ const AdmissionForm = () => {
         message: "",
     });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const handleChange = ({ target: { name, value } }) =>
+        setFormData((prev) => ({ ...prev, [name]: value }));
 
     const handleSubmit = (e) => {
         e.preventDefault();
         sendMailTo("Admission Enquiry", formData);
-        alert("Your admission enquiry has sent to Dobbespet Public School!");
+        alert("Your admission enquiry has been sent to Dobbespet Public School!");
     };
 
     return (
@@ -27,36 +26,19 @@ const AdmissionForm = () => {
                     ADMISSION ENQUIRY
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6 text-black">
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Your Name"
-                        spellCheck="false"
-                        className="w-full p-2 border rounded-lg focus:outline-none"
-                        onChange={handleChange}
-                        value={formData.name}
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                        spellCheck="false"
-                        className="w-full p-2 border rounded-lg focus:outline-none"
-                        onChange={handleChange}
-                        value={formData.email}
-                        required
-                    />
-                    <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        spellCheck="false"
-                        className="w-full p-2 border rounded-lg focus:outline-none"
-                        onChange={handleChange}
-                        value={formData.phone}
-                        required
-                    />
+                    {["name", "email", "phone"].map((field) => (
+                        <input
+                            key={field}
+                            type={field === "email" ? "email" : field === "phone" ? "tel" : "text"}
+                            name={field}
+                            placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
+                            spellCheck="false"
+                            className="w-full p-2 border rounded-lg focus:outline-none"
+                            onChange={handleChange}
+                            value={formData[field]}
+                            required
+                        />
+                    ))}
                     <textarea
                         name="message"
                         placeholder="Message"
@@ -65,7 +47,7 @@ const AdmissionForm = () => {
                         onChange={handleChange}
                         value={formData.message}
                         required
-                    ></textarea>
+                    />
                     <div className="flex justify-center">
                         <button
                             type="submit"
