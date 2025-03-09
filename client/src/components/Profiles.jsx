@@ -9,7 +9,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
         className="w-full md:w-60 md:h-60 lg:w-64 lg:h-64 object-cover rounded-xl shadow-2xl border border-gray-300 transition-all duration-300"
       />
       <div className="md:pl-8 flex flex-col justify-center mt-4 md:mt-0">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black text-center md:text-left">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold md:font-semibold text-black text-center md:text-left">
           {name}
         </h2>
         <p className="text-sm md:text-lg text-gray-600 font-semibold mt-2 text-center md:text-left italic">

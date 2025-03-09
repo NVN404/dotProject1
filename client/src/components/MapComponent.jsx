@@ -34,7 +34,7 @@ const MapComponent = () => {
     <MapContainer
       center={position}
       zoom={12}
-      className="h-full w-full rounded-md shadow-md -z-50"
+      className="h-full w-full rounded-md shadow-xl -z-50"
       scrollWheelZoom={false}
       doubleClickZoom={false}
       touchZoom={true}
