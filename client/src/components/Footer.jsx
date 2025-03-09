@@ -70,10 +70,10 @@ const Footer = () => {
 
       {/* 🔹 Bottom Copyright Section */}
       <div className="w-full bg-white py-4 px-4 md:px-8 lg:px-12 xl:px-16 flex flex-col sm:flex-row justify-between items-center font-semibold text-center sm:text-left">
-        <p className="text-[#2973B2] text-sm md:text-base flex items-center mb-2 sm:mb-0">
+        <p className="text-background text-sm md:text-base flex items-center mb-2 sm:mb-0">
           <FaCopyright className="mr-2" /> 2025 Dobbespet Public School - Bangalore
         </p>
-        <p className="text-[#2973B2] text-sm md:text-base">Cooked in Dot Labs</p>
+        <p className="text-background text-sm md:text-base">Cooked in Dot Labs</p>
       </div>
     </footer>
   );
