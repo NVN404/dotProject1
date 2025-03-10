@@ -80,7 +80,7 @@ const Gallery = () => {
     <div className="bg-white">
       <HeaderForOthers />
       <div className="mt-[7em] md:mt-0 lg:mt-0">
-        <Panel src="./gal3.jpg" content="Gallery" />
+        <Panel src="./gal15.jpg" content="Gallery" />
 
         {loading ? (
           <div className="flex justify-center items-center min-h-[50vh]">

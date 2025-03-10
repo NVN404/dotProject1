@@ -63,11 +63,11 @@ const AboutUs = () => {
   return (
     <div>
       <HeaderForOthers />
-      <Panel src="/gal3.jpg" content="About us" />
+      <Panel src="/gal16.jpg" content="About us" />
       <div className="min-h-screen bg-gray-50 py-20 px-4 sm:px-6 md:px-12 lg:px-24 space-y-24">
         {/* Mission Section */}
         <SectionWithImage
-          image="/gal1.jpg"
+          image="/gal8.jpg"
           title="Our Mission"
           content="Our mission is to provide a nurturing environment where students develop academically, socially, and emotionally. We strive to create a community that fosters curiosity, innovation, and lifelong learning."
           bgColor="bg-background"
@@ -84,7 +84,7 @@ const AboutUs = () => {
                 transition={{ duration: 0.8 }}
               >
                 <img
-                  src="/gal1.jpg"
+                  src="/gal14.jpg"
                   alt="About the School"
                   className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-custom"
                 />
@@ -119,7 +119,7 @@ const AboutUs = () => {
 
         {/* Vision Section */}
         <SectionWithImage
-          image="/gal2.jpg"
+          image="/gal12.jpg"
           title="Our Vision"
           content="We envision a future where every student is empowered with knowledge, skills, and values to become responsible global citizens. We aim to inspire excellence and leadership in every learner."
           bgColor="bg-background"
@@ -137,7 +137,7 @@ const AboutUs = () => {
                 transition={{ duration: 0.8 }}
               >
                 <img
-                  src="/gal1.jpg"
+                  src="/gal13.jpg"
                   alt="Our History"
                   className="w-full max-w-xs sm:max-w-sm md:max-w-lg h-auto object-cover rounded-lg shadow-custom"
                 />

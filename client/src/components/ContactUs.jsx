@@ -25,7 +25,7 @@ const ContactUs = () => {
   return (
     <div className="w-full min-h-screen">
       <HeaderForOthers />
-      <Panel src="./gal2.jpg" content="Contact Us" />
+      <Panel src="./gal10.jpg" content="Contact Us" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 p-6">
         {/* Map Section */}
         <div className="h-[350px] md:h-auto rounded-sm overflow-hidden shadow-2xl">

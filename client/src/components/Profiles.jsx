@@ -7,7 +7,7 @@ const ProfileCard = ({ name, title, designation, image, description }) => {
             <img
             src={image}
             alt={name}
-            className="w-full h-50 md:w-60 md:h-60 lg:w-64 lg:h-64 object-cover rounded-xl shadow-2xl border border-gray-300 transition-all duration-300"
+            className="w-full h-60 md:w-60 lg:w-64 lg:h-64 object-cover rounded-xl shadow-2xl border border-gray-300 transition-all duration-300"
             />
         </div>
         <div className="md:w-2/3 mt-4 md:mt-0 md:pl-8 flex flex-col justify-center">

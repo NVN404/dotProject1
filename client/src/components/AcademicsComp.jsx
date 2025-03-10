@@ -6,7 +6,7 @@ import { PrimarySchoolPage, MiddleSchoolPage, HighSchoolPage } from './SchoolPag
 const AcademicsComp = () => (
   <div>
     <HeaderForOthers />
-    <Panel src="/gal2.jpg" content="Academics" />
+    <Panel src="/gal6.jpg" content="Academics" />
     <div>
       <PrimarySchoolPage />
       <MiddleSchoolPage />

@@ -30,7 +30,7 @@ export default function NoticeBoard() {
     <div>
       <HeaderForOthers />
       <div className="mt-[7em] md:mt-[9em]">
-        <Panel src="/gal3.jpg" content="Circulars" />
+        <Panel src="/gal12.jpg" content="Circulars" />
 
         <div className="flex flex-col items-center py-10 px-4 sm:px-6 md:px-8">
           <div className="w-full max-w-3xl p-6 sm:p-8 bg-background rounded-3xl shadow-2xl border border-gray-200">

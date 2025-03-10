@@ -6,7 +6,7 @@ import HeaderForOthers from "./HeaderForOthers";
 const Admission = () => (
   <>
     <HeaderForOthers />
-    <Panel src="./gal6.jpg" content="Admission" />
+    <Panel src="./gal11.jpg" content="Admission" />
     <AdmissionForm />
   </>
 );
