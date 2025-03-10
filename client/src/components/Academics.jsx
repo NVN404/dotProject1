@@ -12,7 +12,7 @@ const sections = [
     subtitle: "Grades I-V",
     description:
       "We are a nurturing space where young learners begin their educational journey with curiosity and joy. Our engaging lessons in math, science, language, and social studies help build a strong foundation for lifelong learning.",
-    image: "/gal4.jpg",
+    image: "/gal8.jpg",
     component: PrimarySchoolPage,
   },
   {
@@ -20,7 +20,7 @@ const sections = [
     subtitle: "Grades VI-VII",
     description:
       "Our middle school is a place of discovery, where students develop critical thinking and independence. With a well-rounded curriculum and opportunities in arts, technology, and leadership, we prepare them for future challenges.",
-    image: "/gal5.jpg",
+    image: "/gal7.jpg",
     component: MiddleSchoolPage,
   },
   {

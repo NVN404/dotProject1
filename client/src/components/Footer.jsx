@@ -52,7 +52,7 @@ const Footer = () => {
           <h3 className="text-lg sm:text-xl font-bold">Quick Links</h3>
           <ul className="text-sm md:text-base space-y-1 mt-2">
             {quickLinks.map(({ label, path }) => (
-              <li key={path} className="hover:text-yellow-400 cursor-pointer" onClick={() => navigate(path)}>
+              <li key={path} className="hover:text-[#FFD700] cursor-pointer" onClick={() => navigate(path)}>
                 {label}
               </li>
             ))}
