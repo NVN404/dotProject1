@@ -20,7 +20,7 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 const HeaderTemp = () => {
-  const {selectedNoticeId, setSelectedNoticeId}=useContext(SelectedNoticeContext);
+  const { selectedNoticeId, setSelectedNoticeId } = useContext(SelectedNoticeContext);
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -128,8 +128,8 @@ const HeaderTemp = () => {
   return (
     <div className="w-full"
       style={{
-        background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
-      }}
+        background: "linear-gradient(180deg,rgba(2, 0, 20, 1) 0%,rgba(0, 0, 0, 0.95) 40%,rgba(0, 0, 0, 0.8) 65%,rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.6) 85%,rgba(0, 0, 0, 0.5) 90%,rgba(0,0,0,0.4) 96%,rgba(0, 0, 0, 0.3) 97%,rgba(0,0,0,0.2) 98%,rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0) 100%)",
+}}
     >
 
       <div className="overflow-hidden bg-white text-background font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
@@ -235,7 +235,7 @@ const HeaderTemp = () => {
           </ul>
         </div>
       </header>
-    </div>
+    </div >
   );
 };
 
