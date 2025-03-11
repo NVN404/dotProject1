@@ -52,29 +52,29 @@ const Gallery = () => {
     }
   }, [images]);
 
-  useEffect(() => {
-    if (!loading) {
-      gsap.utils.toArray(".gallery-item").forEach((item, index) => {
-        gsap.fromTo(
-          item,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: item,
-              start: "top 85%",
-              end: "bottom 60%",
-              scrub: 2,
-            },
-            delay: index * 0.1,
-          }
-        );
-      });
-    }
-  }, [loading]);
+  // useEffect(() => {
+  //   if (!loading) {
+  //     gsap.utils.toArray(".gallery-item").forEach((item, index) => {
+  //       gsap.fromTo(
+  //         item,
+  //         { opacity: 0, y: 50 },
+  //         {
+  //           opacity: 1,
+  //           y: 0,
+  //           duration: 1,
+  //           ease: "power3.out",
+  //           scrollTrigger: {
+  //             trigger: item,
+  //             start: "top 85%",
+  //             end: "bottom 60%",
+  //             scrub: 2,
+  //           },
+  //           delay: index * 0.1,
+  //         }
+  //       );
+  //     });
+  //   }
+  // }, [loading]);
 
   return (
     <div className="bg-white">
