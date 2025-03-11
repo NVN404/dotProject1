@@ -6,11 +6,11 @@ import ScrollToTop from "./components/ScrollToTop";
 import { AdmissionContext } from "./components/context/AdmissionContext";
 import { SelectedNoticeContext } from "./components/context/SelectedNoticeContext";
 import AcademicsComp from "./components/AcademicsComp";
-import AboutUs from "./components/AboutUs";
 import Admission from "./components/Admission";
 
 // Lazy-loaded components for better performance
 const Home = lazy(() => import("./components/Home"));
+const AboutUs= lazy(()=>import("./components/AboutUs"));
 const ContactUs = lazy(() => import("./components/ContactUs"));
 const Gallery = lazy(() => import("./components/Gallery"));
 const NoticeBoard = lazy(() => import("./components/NoticeBoard"));
