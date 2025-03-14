@@ -41,9 +41,9 @@ export default function NoticeBoard() {
               {notices.length ? (
                 <ul className="space-y-4 sm:space-y-5">
                   {notices.map(({ id, title, content, image_url }) => (
-                    <li key={id} className="p-4 bg-white rounded-xl shadow-md border-l-4 border-blue-500">
+                    <li key={id} className="p-4 bg-white rounded-xl shadow-md border-l-4 border-background">
                       <h3
-                        className="font-bold text-blue-700 text-md sm:text-lg cursor-pointer hover:underline"
+                        className="font-bold text-background text-md sm:text-lg cursor-pointer hover:underline"
                         onClick={() => setSelectedNoticeId(id)}
                       >
                         {title}
