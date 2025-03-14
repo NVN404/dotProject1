@@ -265,7 +265,7 @@ const Dashboard = () => {
       {/* Upload PDF */}
       <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
         <h3 className="text-lg font-semibold text-gray-800 mb-4">
-          upload fee structure document
+          Upload Fee Structure document
         </h3>
         <input
           type="file"
@@ -290,7 +290,7 @@ const Dashboard = () => {
 
       {/* Documents */}
       <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
-        <h3 className="text-lg font-semibold text-gray-800 mb-4"> fee structure Document</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-4"> Fee Structure Document</h3>
         {documents.map((doc) => (
           <div key={doc.id} className="border p-4 rounded-lg mb-4">
             <p>{doc.name}</p>
