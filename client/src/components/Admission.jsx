@@ -29,16 +29,25 @@ const Admission = () => {
     <>
       <HeaderForOthers />
       <Panel src="./gal11.jpg" content="Admission" />
-      <div className="fee-structure-container mx-auto max-w-4xl py-6 px-4 flex justify-center">
-        <p className="text-lg text-black text-center">
-          Click{" "}
+
+      {/* Main Container */}
+      <div className="flex flex-col justify-around items-center py-8 px-4 sm:px-6 lg:px-8">
+        
+        {/* Fee Structure Box */}
+        <div className="bg-background shadow-custom rounded-lg px-3 py-6 md:py-8 md:px-12 max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl text-center">
+          <p className="text-white text-lg md:text-xl font-medium">
+            Click below to download the{" "}
+            <span className="font-semibold text-yellow-400">Fee Structure</span>.
+          </p>
+
+          {/* Download Button */}
           <a
             href={feeStructureUrl} // Fallback if not loaded// Fallback if not loaded
             download="fee_structure.pdf"
-            className="inline-flex items-center px-4 py-2 text-blue-600 bg-blue-100 rounded-full hover:bg-blue-200 hover:text-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md"
+            className="mt-4 inline-flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 text-white font-semibold bg-gradient-to-r from-blue-500 to-background rounded-full shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
           >
             <svg
-              className="w-5 h-5 mr-2"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -52,11 +61,15 @@ const Admission = () => {
               />
             </svg>
             Download Fee Structure
-          </a>{" "}
-          to get the fee details.
-        </p>
+          </a>
+        </div>
+
+        {/* Admission Form */}
+        <div className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl mt-0 sm:mt-0">
+          <AdmissionForm />
+        </div>
+
       </div>
-      <AdmissionForm />
     </>
   );
 };
