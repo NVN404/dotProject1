@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
+import { useNavigate, useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -24,7 +24,7 @@ const HeaderTemp = () => {
   const [notices, setNotices] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const location = useLocation(); // Get current route
+  const location = useLocation();
   const { openAdmissionForm, setOpenAdmissionForm } = useContext(AdmissionContext);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -32,22 +32,24 @@ const HeaderTemp = () => {
   const marqueeRef = useRef(null);
   const headerRef = useRef(null);
   const menuItemsRef = useRef([]);
+  const [activeMenuItem, setActiveMenuItem] = useState(location.pathname);
 
   useEffect(() => {
     const fetchNotices = async () => {
       const { data, error } = await supabase.from("notices").select("*");
-
       if (error) {
         console.error("Error fetching notices:", error);
       } else {
-        console.log("API Response:", data);
         setNotices(data);
         setLoading(false);
       }
     };
-
     fetchNotices();
   }, []);
+
+  useEffect(() => {
+    setActiveMenuItem(location.pathname);
+  }, [location.pathname]);
 
   useGSAP(() => {
     if (!marqueeRef.current || !headerRef.current) return;
@@ -58,12 +60,7 @@ const HeaderTemp = () => {
     gsap.fromTo(
       marqueeRef.current,
       { x: viewportWidth },
-      {
-        x: -marqueeWidth,
-        duration: marqueeWidth / 25,
-        repeat: -1,
-        ease: "linear",
-      }
+      { x: -marqueeWidth, duration: marqueeWidth / 25, repeat: -1, ease: "linear" }
     );
 
     gsap.from(menuItemsRef.current, {
@@ -91,40 +88,30 @@ const HeaderTemp = () => {
 
   useEffect(() => {
     if (menuRef.current) {
-      if (isOpen) {
-        menuRef.current.removeAttribute("inert");
-      } else {
-        menuRef.current.setAttribute("inert", "");
-      }
+      isOpen ? menuRef.current.removeAttribute("inert") : menuRef.current.setAttribute("inert", "true");
     }
   }, [isOpen]);
 
-  const openMenu = () => {
-    setIsOpen(true);
-    gsap.to(menuRef.current, { right: "0%", duration: 0.5, ease: "linear" });
+  const toggleMenu = (state) => {
+    setIsOpen(state);
+    gsap.to(menuRef.current, { right: state ? "0%" : "-100%", duration: 0.5, ease: "linear" });
 
-    gsap.fromTo(
-      menuItemsRef.current,
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "linear" }
-    );
+    if (state) {
+      gsap.fromTo(
+        menuItemsRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "linear" }
+      );
+    }
   };
 
-  const closeMenu = () => {
-    gsap.to(menuRef.current, {
-      right: "-100%",
-      duration: 0.5,
-      ease: "linear",
-      onComplete: () => setIsOpen(false),
-    });
+  const handleNavigation = (path) => {
+    toggleMenu(false);
+    navigate(path);
   };
 
   return (
-    <div className="w-full"
-      style={{
-        background: "linear-gradient(180deg,rgba(2, 0, 20, 1) 0%,rgba(0, 0, 0, 0.95) 40%,rgba(0, 0, 0, 0.8) 65%,rgba(0, 0, 0, 0.7) 80%, rgba(0, 0, 0, 0.6) 85%,rgba(0, 0, 0, 0.5) 90%,rgba(0,0,0,0.4) 96%,rgba(0, 0, 0, 0.3) 97%,rgba(0,0,0,0.2) 98%,rgba(0, 0, 0, 0.1) 99%, rgba(0, 0, 0, 0) 100%)",
-}}
-    >
+    <div className="w-full">
       <div className="overflow-hidden bg-white text-background font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-min flex whitespace-nowrap">
           <div className="flex items-center gap-10">
@@ -136,12 +123,14 @@ const HeaderTemp = () => {
                   <span className="text-xl font-semibold mr-2">
                     {notices.length > 0 ? notices.slice(-1)[0].content : " "}
                   </span>
-                  <button className="bg-background text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center" onClick={() => {
-                    if (notices.length > 0) {
-                      setSelectedNoticeId(notices[notices.length - 1].id);
-                      navigate("/circular");
-                    }
-                  }}>
+                  <button className="bg-background text-white h-[2em] w-[5em] rounded-lg flex items-center justify-center"
+                    onClick={() => {
+                      if (notices.length > 0) {
+                        setSelectedNoticeId(notices[notices.length - 1].id);
+                        navigate("/circular");
+                      }
+                    }}
+                  >
                     Click me
                   </button>
                 </>
@@ -155,9 +144,7 @@ const HeaderTemp = () => {
       </div>
 
       <header ref={headerRef} className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3">
-        <div className="flex flex-col items-center justify-center hover:cursor-pointer" onClick={() => {
-          navigate("/");
-        }}>
+        <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => navigate("/")}>
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
           <span className="text-white text-lg sm:text-lg font-bold font-newsreader">Dobbespet Public School</span>
         </div>
@@ -165,43 +152,38 @@ const HeaderTemp = () => {
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
           {["/", "/aboutus", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
-            <li key={idx}
-              className={`relative cursor-pointer pb-1 transition-all duration-300
-                ${location.pathname === path ? "border-b-2 border-white" : "hover:border-b-2 hover:border-white"}`}
-              onClick={() => navigate(path)}
+            <li
+              key={idx}
+              className={`relative after:absolute after:left-0 after:bottom-[-3px] after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer ${
+                activeMenuItem === path ? "after:w-full" : "after:w-0"
+              }`}
+              onClick={() => handleNavigation(path)}
             >
               {path.slice(1).toUpperCase() || "HOME"}
             </li>
           ))}
         </ul>
+
         {/* Mobile Menu Button */}
-                <button className="lg:hidden text-white text-3xl" onClick={() => toggleMenu(true)} aria-label="Open navigation menu">
-                  <AiOutlineMenuFold />
-                </button>
-        
-                {/* Mobile Menu */}
-                <div
-                  ref={menuRef}
-                  className="fixed top-0 right-[-100%] w-[80%] h-screen bg-background/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all"
-                >
-                  <button className="absolute top-4 right-6 text-3xl" onClick={() => toggleMenu(false)} aria-label="Close navigation menu">
-                    <RiCloseLargeLine />
-                  </button>
-                  <ul className="flex flex-col text-xl justify-center items-center">
-                    {["/", "/aboutus", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
-                      <li
-                        key={idx}
-                        ref={(el) => (menuItemsRef.current[idx] = el)}
-                        className="mb-[2em] cursor-pointer"
-                        onClick={() => handleNavigation(path)}
-                      >
-                        {path.slice(1).toUpperCase() || "HOME"}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+        <button className="lg:hidden text-white text-3xl" onClick={() => toggleMenu(true)} aria-label="Open navigation menu">
+          <AiOutlineMenuFold />
+        </button>
+
+        {/* Mobile Menu */}
+        <div ref={menuRef} className="fixed top-0 right-[-100%] w-[80%] h-screen bg-background/60 backdrop-blur-sm font-bold text-white flex flex-col items-center justify-center text-lg space-y-5 z-50 transition-all">
+          <button className="absolute top-4 right-6 text-3xl" onClick={() => toggleMenu(false)} aria-label="Close navigation menu">
+            <RiCloseLargeLine />
+          </button>
+          <ul className="flex flex-col text-xl justify-center items-center">
+            {["/", "/aboutus", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
+              <li key={idx} ref={(el) => (menuItemsRef.current[idx] = el)} className="mb-[2em] cursor-pointer" onClick={() => handleNavigation(path)}>
+                {path.slice(1).toUpperCase() || "HOME"}
+              </li>
+            ))}
+          </ul>
+        </div>
       </header>
-    </div >
+    </div>
   );
 };
 
