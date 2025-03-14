@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -11,10 +11,17 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HeaderForOthers = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { setOpenAdmissionForm } = useContext(AdmissionContext);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const menuItemsRef = useRef([]);
+  const [activeMenuItem, setActiveMenuItem] = useState(location.pathname);
+
+  useEffect(() => {
+    // Update active menu item when route changes
+    setActiveMenuItem(location.pathname);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (menuRef.current) {
@@ -44,7 +51,7 @@ const HeaderForOthers = () => {
     <div className="w-full fixed top-0 left-0 right-0 bg-background z-50 shadow-[0px_8px_20px_rgba(0,0,0,0.7)]">
       {/* Header Section */}
       <header className="w-full h-[7em] md:h-[9em] flex items-center justify-between px-4 md:px-[3em]">
-        <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => navigate("/")}>
+        <div className="flex flex-col items-center justify-center cursor-pointer" onClick={() => handleNavigation("/")}>
           <img src="/DobbespetPublicSchool.png" className="h-[5em] md:h-[7em] invert" alt="School Logo" />
           <span className="text-white text-lg sm:text-lg font-bold font-newsreader">Dobbespet Public School</span>
         </div>
@@ -54,7 +61,9 @@ const HeaderForOthers = () => {
           {["/", "/aboutus", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
             <li
               key={idx}
-              className="relative after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer"
+              className={`relative after:absolute after:left-0 after:bottom-[-3px] after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer ${
+                activeMenuItem === path ? "after:w-full" : "after:w-0"
+              }`}
               onClick={() => handleNavigation(path)}
             >
               {path.slice(1).toUpperCase() || "HOME"}
