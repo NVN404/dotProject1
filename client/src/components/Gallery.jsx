@@ -3,14 +3,10 @@ import HeaderForOthers from "./HeaderForOthers";
 import Panel from "./Panel";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { createClient } from "@supabase/supabase-js";
+import supabase from "../../supabaseClient";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const supabaseUrl = "https://hdxtuvuiwsmeflrzfyzy.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhkeHR1dnVpd3NtZWZscnpmeXp5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAzMjIzMDQsImV4cCI6MjA1NTg5ODMwNH0.3psdSi8Dv3-Y2_u9_iMYmrKeFq2yyHZjXCX0xUuMNdE";
-const supabase = createClient(supabaseUrl, supabaseKey);
 const Gallery = () => {
   const [imageStyles, setImageStyles] = useState([]);
   const [images, setImages] = useState([]);
@@ -19,7 +15,9 @@ const Gallery = () => {
 
   useEffect(() => {
     const fetchImages = async () => {
-      const { data, error } = await supabase.from("gallery").select("image_url");
+      const { data, error } = await supabase
+        .from("gallery")
+        .select("image_url");
       if (error) {
         console.error("Error fetching images:", error);
       } else {
@@ -33,14 +31,19 @@ const Gallery = () => {
   useEffect(() => {
     const updateImageStyles = async () => {
       const newStyles = await Promise.all(
-        images.map((img) =>
-          new Promise((resolve) => {
-            const imgElement = new Image();
-            imgElement.src = img;
-            imgElement.onload = () => {
-              resolve(imgElement.naturalHeight > imgElement.naturalWidth ? "row-span-2" : "");
-            };
-          })
+        images.map(
+          (img) =>
+            new Promise((resolve) => {
+              const imgElement = new Image();
+              imgElement.src = img;
+              imgElement.onload = () => {
+                resolve(
+                  imgElement.naturalHeight > imgElement.naturalWidth
+                    ? "row-span-2"
+                    : ""
+                );
+              };
+            })
         )
       );
       setImageStyles(newStyles);
