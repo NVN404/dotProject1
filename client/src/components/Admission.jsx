@@ -1,9 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import supabase from "../../supabaseClient";
 import AdmissionForm from "./AdmissionForm";
 import Panel from "./Panel";
 import HeaderForOthers from "./HeaderForOthers";
 
 const Admission = () => {
+  const [feeStructureUrl, setFeeStructureUrl] = useState("");
+
+  useEffect(() => {
+    const fetchFeeStructure = async () => {
+      const { data, error } = await supabase
+        .from("documents")
+        .select("file_url")
+        .eq("name", "dobbespet public school fee structure 2025-2026.pdf") // Match your uploaded file name
+        .single();
+
+      if (error) {
+        console.error("Error fetching fee structure:", error);
+      } else if (data) {
+        setFeeStructureUrl(data.file_url);
+      }
+    };
+
+    fetchFeeStructure();
+  }, []);
+
   return (
     <>
       <HeaderForOthers />
@@ -21,7 +42,7 @@ const Admission = () => {
 
           {/* Download Button */}
           <a
-            href="/dobbespet public school fee structure 2025-2026.pdf"
+            href={feeStructureUrl} // Fallback if not loaded// Fallback if not loaded
             download="fee_structure.pdf"
             className="mt-4 inline-flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 text-white font-semibold bg-gradient-to-r from-blue-500 to-background rounded-full shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
           >
