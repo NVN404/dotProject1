@@ -19,23 +19,25 @@ const ContactUs = () => {
     e.preventDefault();
     sendMailTo("New Contact Query", formData);
     alert("Your contact query has been sent!");
-    setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen ">
       <HeaderForOthers />
       <Panel src="./gal10.jpg" content="Contact Us" />
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 p-6">
         {/* Map Section */}
-        <div className="h-[350px] md:h-auto rounded-sm overflow-hidden shadow-2xl">
+        <div className="relative h-[350px] md:h-[500px] rounded-sm overflow-hidden shadow-2xl z-10">
           <MapComponent />
         </div>
 
         {/* Contact Form Section */}
-        <div className="bg-background text-white p-6 md:p-8 rounded-lg shadow-custom flex flex-col justify-center">
-          <h1 className="text-3xl md:text-4xl mb-4 font-extrabold font-helvetica text-center">CONTACT US</h1>
-          <form className="space-y-4 text-black" onSubmit={handleSubmit}>
+        <div className="bg-gray-800 dark:bg-gray-700 text-white p-6 md:p-8 rounded-lg shadow-custom flex flex-col justify-center z-0">
+          <h1 className="text-3xl md:text-4xl mb-4 font-extrabold font-helvetica text-center">
+            CONTACT US
+          </h1>
+          <form className="space-y-4" onSubmit={handleSubmit}>
             {["name", "email", "phone"].map((field) => (
               <input
                 key={field}
@@ -43,7 +45,7 @@ const ContactUs = () => {
                 name={field}
                 placeholder={`Your ${field.charAt(0).toUpperCase() + field.slice(1)}`}
                 spellCheck="false"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500"
                 onChange={handleChange}
                 value={formData[field]}
                 required
@@ -54,7 +56,7 @@ const ContactUs = () => {
               placeholder="Message"
               spellCheck="false"
               rows="4"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none bg-white dark:bg-gray-600 dark:text-white dark:border-gray-500"
               onChange={handleChange}
               value={formData.message}
               required

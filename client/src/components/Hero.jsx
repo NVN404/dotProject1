@@ -20,15 +20,15 @@ const Hero = () => {
   }, [updateHeight]);
 
   return (
-    <div className="relative w-full h-[75vh] md:min-h-screen">
-      {/* Marquee Section */}
-      <div ref={marqueeRef} className="relative z-30">
-        <HeaderTemp />
+    <div className="relative w-full h-[75vh] md:min-h-screen bg-gray-100 dark:bg-gray-900 snap-start">
+      {/* Carousel in Front */}
+      <div className="absolute top-0 left-0 w-full h-full z-10">
+        <MainCarousel />
       </div>
 
-      {/* Carousel Positioned Behind Header */}
-      <div className="absolute top-0 left-0 w-full h-[75vh] md:h-full -z-10">
-        <MainCarousel />
+      {/* Marquee Section (Behind Carousel) */}
+      <div ref={marqueeRef} className="relative z-20">
+        <HeaderTemp ref={headerRef} />
       </div>
     </div>
   );
