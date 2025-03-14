@@ -1,14 +1,15 @@
 const sendMailTo = (subject, { name, email, phone, message }) => {
   const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
-  const encodedSubject = encodeURIComponent(subject);
-  const encodedBody = encodeURIComponent(body);
-  const recipient = "nikhil.4002.50.82@gmail.com";
+  const mailtoLink = `mailto:nikhil.4002.50.82@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=nikhil.4002.50.82@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  // Gmail compose URL
-  const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodedSubject}&body=${encodedBody}`;
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  // Open Gmail in a new tab
-  window.open(gmailLink, "_blank");
+  if (isMobile) {
+    window.location.href = mailtoLink;
+  } else {
+    window.open(gmailLink, "_blank");
+  }
 };
 
 export default sendMailTo;
