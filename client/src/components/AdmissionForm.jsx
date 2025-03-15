@@ -20,7 +20,7 @@ const AdmissionForm = () => {
     };
 
     return (
-        <div className="flex items-center justify-center bg-opacity-50 mt-24 mb-6">
+        <div className="flex items-center justify-center bg-opacity-50 mt-8 mb-6">
             <div className="bg-background p-6 md:p-10 rounded-lg w-80 md:w-[30rem] shadow-custom">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center text-white">
                     ADMISSION ENQUIRY

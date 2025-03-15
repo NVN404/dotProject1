@@ -14,9 +14,14 @@ const Dashboard = () => {
   const [noticeImage, setNoticeImage] = useState(null);
   const [noticePreview, setNoticePreview] = useState(null);
 
+  const [documents, setDocuments] = useState([]);
+  const [pdfFile, setPdfFile] = useState(null);
+  const [pdfPreview, setPdfPreview] = useState(null);
+
   useEffect(() => {
     fetchGallery();
     fetchNotices();
+    fetchDocuments();
   }, []);
 
   // Fetch gallery images
@@ -33,16 +38,28 @@ const Dashboard = () => {
     else setNotices(data || []);
   };
 
+  // Fetch documents
+  const fetchDocuments = async () => {
+    const { data, error } = await supabase.from("documents").select("*");
+    if (error) console.error("Error fetching documents:", error);
+    else setDocuments(data || []);
+  };
+
   // Handle multiple image selection
   const handleImageChange = (e, type) => {
     if (type === "gallery") {
       const files = Array.from(e.target.files);
       setImages(files);
       setPreviews(files.map((file) => URL.createObjectURL(file)));
-    } else {
+    } else if (type === "notice") {
       if (e.target.files[0]) {
         setNoticeImage(e.target.files[0]);
         setNoticePreview(URL.createObjectURL(e.target.files[0]));
+      }
+    } else if (type === "pdf") {
+      if (e.target.files[0]) {
+        setPdfFile(e.target.files[0]);
+        setPdfPreview(URL.createObjectURL(e.target.files[0]));
       }
     }
   };
@@ -88,10 +105,8 @@ const Dashboard = () => {
   // Delete Gallery Image
   const handleDeleteGalleryImage = async (id, imageUrl) => {
     const fileName = imageUrl.split("/gallery/")[1];
-
     await supabase.storage.from("gallery").remove([`gallery/${fileName}`]);
     await supabase.from("gallery").delete().eq("id", id);
-
     setGalleryImages((prev) => prev.filter((img) => img.id !== id));
   };
 
@@ -138,6 +153,51 @@ const Dashboard = () => {
     }
     await supabase.from("notices").delete().eq("id", id);
     setNotices((prev) => prev.filter((notice) => notice.id !== id));
+  };
+
+  // Upload PDF to Documents
+  const handlePdfUpload = async () => {
+    if (!pdfFile) return alert("No PDF selected!");
+    setUploading(true);
+
+    const filePath = `documents/${Date.now()}-${pdfFile.name}`;
+    const { data, error } = await supabase.storage
+      .from("documents")
+      .upload(filePath, pdfFile);
+
+    if (error) {
+      console.error("Upload error:", error);
+      alert("Failed to upload PDF.");
+      setUploading(false);
+      return;
+    }
+
+    const publicUrl = supabase.storage.from("documents").getPublicUrl(filePath)
+      .data.publicUrl;
+
+    const { data: dbData, error: dbError } = await supabase
+      .from("documents")
+      .insert([{ name: pdfFile.name, file_url: publicUrl }])
+      .select("*")
+      .single();
+
+    if (dbError) {
+      console.error("DB error:", dbError);
+    } else {
+      setDocuments((prev) => [...prev, dbData]);
+    }
+
+    setPdfFile(null);
+    setPdfPreview(null);
+    setUploading(false);
+  };
+
+  // Delete PDF
+  const handleDeletePdf = async (id, fileUrl) => {
+    const fileName = fileUrl.split("/documents/")[1];
+    await supabase.storage.from("documents").remove([`documents/${fileName}`]);
+    await supabase.from("documents").delete().eq("id", id);
+    setDocuments((prev) => prev.filter((doc) => doc.id !== id));
   };
 
   return (
@@ -200,6 +260,51 @@ const Dashboard = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Upload PDF */}
+      <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+          Upload Fee Structure document
+        </h3>
+        <input
+          type="file"
+          accept="application/pdf"
+          onChange={(e) => handleImageChange(e, "pdf")}
+          className="p-3 border rounded-lg"
+        />
+        {pdfPreview && (
+          <div className="mt-2">
+            <p>{pdfFile.name}</p>
+            <iframe src={pdfPreview} className="w-40 h-40" title="PDF Preview" />
+          </div>
+        )}
+        <button
+          onClick={handlePdfUpload}
+          disabled={uploading}
+          className="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg mt-3"
+        >
+          {uploading ? "Uploading..." : "Upload PDF"}
+        </button>
+      </div>
+
+      {/* Documents */}
+      <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-800 mb-4"> Fee Structure Document</h3>
+        {documents.map((doc) => (
+          <div key={doc.id} className="border p-4 rounded-lg mb-4">
+            <p>{doc.name}</p>
+            <a href={doc.file_url} download className="text-blue-600 underline">
+              Download
+            </a>
+            <button
+              onClick={() => handleDeletePdf(doc.id, doc.file_url)}
+              className="bg-red-500 text-white px-3 py-1 rounded mt-2 ml-4"
+            >
+              Delete
+            </button>
+          </div>
+        ))}
       </div>
 
       {/* Add Notice */}

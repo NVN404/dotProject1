@@ -121,7 +121,9 @@ const HeaderTemp = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full"  style={{
+      background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,0.4767) 82%, rgba(0,0,0,0) 100%)",
+    }}>
       <div className="overflow-hidden bg-white text-background font-semibold h-[3em] lg:h-[4em] p-[0.7em] lg:p-[1em] w-full marquee">
         <div ref={marqueeRef} className="w-min flex whitespace-nowrap">
           <div className="flex items-center gap-10">
@@ -165,7 +167,7 @@ const HeaderTemp = () => {
 
       <header
         ref={headerRef}
-        className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3  bg-custom-gradient"
+        className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 bg-custom-gradient"
       >
         <div
           className="flex flex-col items-center justify-center cursor-pointer "
