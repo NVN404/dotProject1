@@ -152,7 +152,7 @@ const AboutUs = () => {
                   Our Journey Through Time
                 </h2>
                 <p className="text-base sm:text-lg leading-relaxed">
-                  Established decades ago, our school has been a beacon of
+                  Established a decade ago, our school has been a beacon of
                   excellence in education. From humble beginnings, we have grown
                   into a renowned institution that values tradition while
                   embracing modern education practices.

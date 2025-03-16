@@ -33,7 +33,7 @@ const Profiles = () => {
   const profiles = [
     {
       name: "Zubair Ahmed",
-      title: "M.Ed, D.H.M.",
+      title: "B.Sc., D.H.M.",
       designation: "SECRETARY",
       image: "/Secretory.jpg",
       description:
@@ -41,7 +41,7 @@ const Profiles = () => {
     },
     {
       name: "Sameena Begum",
-      title: "M.Sc., M.Ed",
+      title: "M.Sc., B.Ed",
       designation: "PRINCIPAL",
       image: "/Principal.jpg",
       description:

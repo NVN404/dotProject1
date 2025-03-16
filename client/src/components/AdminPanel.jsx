@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import supabase from "../../supabaseClient";
 import HeaderForOthers from "./HeaderForOthers";
+import { AdminContext } from "./context/AdminContext";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const [galleryImages, setGalleryImages] = useState([]);
   const [images, setImages] = useState([]);
   const [previews, setPreviews] = useState([]);
@@ -17,6 +21,8 @@ const Dashboard = () => {
   const [documents, setDocuments] = useState([]);
   const [pdfFile, setPdfFile] = useState(null);
   const [pdfPreview, setPdfPreview] = useState(null);
+
+  const { login, setLogin } = useContext(AdminContext);
 
   useEffect(() => {
     fetchGallery();
@@ -200,12 +206,26 @@ const Dashboard = () => {
     setDocuments((prev) => prev.filter((doc) => doc.id !== id));
   };
 
+
+
+  useEffect(() => {
+    if (!login) {
+      navigate("/admin-login");
+    }
+  }, [login, navigate])
+  if (!login) return null;
+
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <HeaderForOthers />
-      <h2 className="mt-[5em] md:mt-[6em] text-2xl font-extrabold text-gray-700 text-center font-helvetica">
-        ADMIN DASHBOARD
-      </h2>
+        <h2 className="mt-[5em] md:mt-[6em] text-2xl font-extrabold text-gray-700 text-center font-helvetica">
+          ADMIN DASHBOARD
+        </h2>
+        <button onClick={() => {
+          setLogin(false);
+        }}
+          className=" bg-red-500 text-white px-4 py-2 rounded-lg text-xl"
+        >Logout</button>
 
       {/* Upload Image to Gallery */}
       <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
@@ -365,6 +385,7 @@ const Dashboard = () => {
       </div>
     </div>
   );
+
 };
 
 export default Dashboard;

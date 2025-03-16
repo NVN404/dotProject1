@@ -1,16 +1,20 @@
+//imports
 import React, { useState, useMemo, lazy, Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
+//components
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import { AdmissionContext } from "./components/context/AdmissionContext";
-import { SelectedNoticeContext } from "./components/context/SelectedNoticeContext";
 import AcademicsComp from "./components/AcademicsComp";
 import Admission from "./components/Admission";
+//contexts
+import { AdmissionContext } from "./components/context/AdmissionContext";
+import { SelectedNoticeContext } from "./components/context/SelectedNoticeContext";
+import { AdminContext } from "./components/context/AdminContext";
 
 // Lazy-loaded components for better performance
 const Home = lazy(() => import("./components/Home"));
-const AboutUs= lazy(()=>import("./components/AboutUs"));
+const AboutUs = lazy(() => import("./components/AboutUs"));
 const ContactUs = lazy(() => import("./components/ContactUs"));
 const Gallery = lazy(() => import("./components/Gallery"));
 const NoticeBoard = lazy(() => import("./components/NoticeBoard"));
@@ -22,6 +26,8 @@ const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [selectedNoticeId, setSelectedNoticeId] = useState(null);
+  const [login, setLogin] = useState(false);
+
 
   useEffect(() => {
     setIsAdmin(localStorage.getItem("admin") === "true");
@@ -50,29 +56,32 @@ const App = () => {
         </div>
       ) : (
         <SelectedNoticeContext.Provider
-          value={{selectedNoticeId, setSelectedNoticeId}}
+          value={{ selectedNoticeId, setSelectedNoticeId }}
         >
           <AdmissionContext.Provider value={admissionContextValue}>
-            <BrowserRouter>
-              <ScrollToTop />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/circular" element={<NoticeBoard />} />
-                <Route path="/admission" element={<Admission />} />
-                <Route path="/academics" element={<AcademicsComp />} />
-                <Route path="/aboutus" element={<AboutUs />} />
-                <Route path="/admin-login" element={<AdminLogin />} />
-                <Route
-                  path="/admin"
-                  element={
-                    isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />
-                  }
-                />
-              </Routes>
-              <Footer />
-            </BrowserRouter>
+            <AdminContext.Provider value={{ login, setLogin }}>
+              <BrowserRouter>
+                <ScrollToTop />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/contact" element={<ContactUs />} />
+                  <Route path="/gallery" element={<Gallery />} />
+                  <Route path="/circular" element={<NoticeBoard />} />
+                  <Route path="/admission" element={<Admission />} />
+                  <Route path="/academics" element={<AcademicsComp />} />
+                  <Route path="/aboutus" element={<AboutUs />} />
+                  <Route path="/admin-login" element={<AdminLogin />} />
+                  <Route
+                    path="/admin"
+                    element={
+                      isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />
+                    }
+                  />
+                </Routes>
+                <Footer />
+              </BrowserRouter>
+            </AdminContext.Provider>
+
           </AdmissionContext.Provider>
         </SelectedNoticeContext.Provider>
       )}

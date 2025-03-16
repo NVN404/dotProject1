@@ -167,7 +167,7 @@ const HeaderTemp = () => {
 
       <header
         ref={headerRef}
-        className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3 bg-custom-gradient"
+        className="w-full h-[7em] md:h-[9em] flex justify-between items-center px-4 md:px-[3em] py-3"
       >
         <div
           className="flex flex-col items-center justify-center cursor-pointer "
