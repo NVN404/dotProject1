@@ -187,7 +187,7 @@ const HeaderTemp = () => {
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
           {[
             "/",
-            "/aboutus",
+            "/about",
             "/academics",
             "/circular",
             "/admission",
@@ -230,7 +230,7 @@ const HeaderTemp = () => {
           <ul className="flex flex-col text-xl justify-center items-center">
             {[
               "/",
-              "/aboutus",
+              "/about",
               "/academics",
               "/circular",
               "/admission",

@@ -69,7 +69,7 @@ const App = () => {
                   <Route path="/circular" element={<NoticeBoard />} />
                   <Route path="/admission" element={<Admission />} />
                   <Route path="/academics" element={<AcademicsComp />} />
-                  <Route path="/aboutus" element={<AboutUs />} />
+                  <Route path="/about" element={<AboutUs />} />
                   <Route path="/admin-login" element={<AdminLogin />} />
                   <Route
                     path="/admin"

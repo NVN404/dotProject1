@@ -58,7 +58,7 @@ const HeaderForOthers = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center text-white font-semibold space-x-6 lg:space-x-8 xl:space-x-12">
-          {["/", "/aboutus", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
+          {["/", "/about", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
             <li
               key={idx}
               className={`relative after:absolute after:left-0 after:bottom-[-3px] after:h-[2px] after:bg-white after:transition-all after:duration-[0.5s] hover:after:w-full cursor-pointer ${
@@ -85,7 +85,7 @@ const HeaderForOthers = () => {
             <RiCloseLargeLine />
           </button>
           <ul className="flex flex-col text-xl justify-center items-center">
-            {["/", "/aboutus", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
+            {["/", "/about", "/academics", "/circular", "/admission", "/gallery", "/contact"].map((path, idx) => (
               <li
                 key={idx}
                 ref={(el) => (menuItemsRef.current[idx] = el)}
