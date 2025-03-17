@@ -34,7 +34,7 @@ const App = () => {
 
     // Force loader to stay for at least 5 seconds
     const timer = setTimeout(() => setLoading(false), 2400);
-z
+
     return () => clearTimeout(timer);
   }, []);
 
