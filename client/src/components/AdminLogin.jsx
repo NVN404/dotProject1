@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import HeaderForOthers from "./HeaderForOthers";
 import supabase from "../../supabaseClient";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-
 import { AdminContext } from "./context/AdminContext";
 
 const AdminLogin = () => {
@@ -12,12 +11,12 @@ const AdminLogin = () => {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
-    const {login,setLogin} = useContext(AdminContext);
+    const { login, setLogin } = useContext(AdminContext);
 
     const handleLogin = () => {
-        if (enteredPassword === password) {
+        if (enteredPassword.trim() === password.trim()) {
             setLogin(true);
-            setTimeout(() => navigate("/admin"), 200);
+            navigate("/admin");
         } else {
             alert("Incorrect Password!");
         }
@@ -27,11 +26,14 @@ const AdminLogin = () => {
         const fetchPassword = async () => {
             const { data, error } = await supabase
                 .from("admin")
-                .select("password");
+                .select("password")
+                .limit(1)
+                .single(); // Ensures only one password is fetched
+
             if (error) {
                 console.error("Error fetching password:", error);
-            } else if (data.length > 0) {
-                setPassword(data[0].password);
+            } else {
+                setPassword(data?.password || ""); // Fallback if password is null
             }
         };
 
@@ -51,7 +53,7 @@ const AdminLogin = () => {
                             value={enteredPassword}
                             onChange={(e) => setEnteredPassword(e.target.value)}
                             onKeyDown={(e) => e.key === "Enter" && handleLogin()}
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
                         />
                         <button
                             type="button"
@@ -63,7 +65,9 @@ const AdminLogin = () => {
                     </div>
                     <button
                         onClick={handleLogin}
-                        className="w-full bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-500 transition font-semibold"
+                        disabled={!enteredPassword.trim()}
+                        className={`w-full px-5 py-3 rounded-lg transition font-semibold 
+                            ${enteredPassword.trim() ? "bg-blue-600 hover:bg-blue-500 text-white" : "bg-gray-400 cursor-not-allowed"}`}
                     >
                         Login
                     </button>

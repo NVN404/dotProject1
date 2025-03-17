@@ -34,7 +34,7 @@ const App = () => {
 
     // Force loader to stay for at least 5 seconds
     const timer = setTimeout(() => setLoading(false), 2400);
-
+z
     return () => clearTimeout(timer);
   }, []);
 
@@ -73,9 +73,7 @@ const App = () => {
                   <Route path="/admin-login" element={<AdminLogin />} />
                   <Route
                     path="/admin"
-                    element={
-                      isAdmin ? <AdminPanel /> : <Navigate to="/admin-login" />
-                    }
+                    element={<AdminPanel />}
                   />
                 </Routes>
                 <Footer />
