@@ -19,8 +19,11 @@ const Dashboard = () => {
   const [noticePreview, setNoticePreview] = useState(null);
 
   const [documents, setDocuments] = useState([]);
+  const [banner, setBanner] = useState([]);
   const [pdfFile, setPdfFile] = useState(null);
+  const [bannerImage, setBannerImage] = useState(null);
   const [pdfPreview, setPdfPreview] = useState(null);
+  const [bannerPreview, setBannerPreview] = useState(null);
 
   const { login, setLogin } = useContext(AdminContext);
 
@@ -28,6 +31,7 @@ const Dashboard = () => {
     fetchGallery();
     fetchNotices();
     fetchDocuments();
+    fetchBanner(); // Added banner fetch
   }, []);
 
   // Fetch gallery images
@@ -51,6 +55,13 @@ const Dashboard = () => {
     else setDocuments(data || []);
   };
 
+  // Fetch banner
+  const fetchBanner = async () => {
+    const { data, error } = await supabase.from("banner").select("*");
+    if (error) console.error("Error fetching banner:", error);
+    else setBanner(data || []);
+  };
+
   // Handle multiple image selection
   const handleImageChange = (e, type) => {
     if (type === "gallery") {
@@ -66,6 +77,11 @@ const Dashboard = () => {
       if (e.target.files[0]) {
         setPdfFile(e.target.files[0]);
         setPdfPreview(URL.createObjectURL(e.target.files[0]));
+      }
+    } else if (type === "banner") {
+      if (e.target.files[0]) {
+        setBannerImage(e.target.files[0]);
+        setBannerPreview(URL.createObjectURL(e.target.files[0]));
       }
     }
   };
@@ -206,7 +222,80 @@ const Dashboard = () => {
     setDocuments((prev) => prev.filter((doc) => doc.id !== id));
   };
 
+  // Upload banner
+  const handleBannerUpload = async () => {
+    if (!bannerImage) return alert("No image selected!");
+    setUploading(true);
 
+    const filePath = `banner/${Date.now()}-${bannerImage.name}`;
+    const { data, error } = await supabase.storage
+      .from("banner")
+      .upload(filePath, bannerImage);
+
+    if (error) {
+      console.error("Upload error:", error);
+      alert("Failed to upload Banner.");
+      setUploading(false);
+      return;
+    }
+
+    const publicUrl = supabase.storage.from("banner").getPublicUrl(filePath)
+      .data.publicUrl;
+
+      const { data: dbData, error: dbError } = await supabase
+      .from("banner")
+      .insert([{ name: bannerImage.name, file_url: publicUrl }])
+      .select("*")
+      .single();
+
+    if (dbError) {
+      console.error("DB error:", dbError);
+    } else {
+      setBanner((prev) => [...prev, dbData]);
+    }
+
+    setBannerImage(null);
+    setBannerPreview(null);
+    setUploading(false);
+  };
+
+  // Delete banner
+  const handleDeleteBanner = async (id, imageUrl) => {
+    try {
+      // Extract the correct filename from the URL
+      const fileName = imageUrl.split("/banner/")[1]; // Get everything after "/banner/"
+      if (!fileName) {
+        console.error("Invalid image URL format");
+        return;
+      }
+  
+      // Remove the file from storage
+      const { error: storageError } = await supabase.storage
+        .from("banner")
+        .remove([`banner/${fileName}`]);
+  
+      if (storageError) {
+        console.error("Error deleting banner from storage:", storageError);
+        return;
+      }
+  
+      // Delete the record from the banner table
+      const { error: dbError } = await supabase
+        .from("banner")
+        .delete()
+        .eq("id", id);
+  
+      if (dbError) {
+        console.error("Error deleting banner from database:", dbError);
+        return;
+      }
+  
+      // Update state only if both operations succeed
+      setBanner((prev) => prev.filter((doc) => doc.id !== id));
+    } catch (error) {
+      console.error("Error in handleDeleteBanner:", error);
+    }
+  };
 
   useEffect(() => {
     if (!login) {
@@ -383,9 +472,61 @@ const Dashboard = () => {
           </div>
         ))}
       </div>
+
+      {/* Upload Banner */}
+      <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">
+          Upload Banner
+        </h3>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => handleImageChange(e, "banner")}
+          className="p-3 border rounded-lg"
+        />
+        {bannerPreview && (
+          <div className="mt-2">
+            <img
+              src={bannerPreview}
+              alt="Banner Preview"
+              className="w-20 h-20 rounded"
+            />
+          </div>
+        )}
+        <button
+          onClick={handleBannerUpload}
+          disabled={uploading}
+          className="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg mt-3"
+        >
+          {uploading ? "Uploading..." : "Upload"}
+        </button>
+      </div>
+
+      {/* Banner */}
+      <div className="bg-white p-6 mt-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">Banner</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {banner.map((image) => (
+            <div key={image.id} className="relative">
+              <img
+                src={image.file_url}
+                alt="Banner"
+                className="rounded-lg shadow-md w-full h-auto"
+              />
+              <button
+                onClick={() =>
+                  handleDeleteBanner(image.id, image.file_url)
+                }
+                className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-lg text-sm"
+              >
+                Delete
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
-
 };
 
 export default Dashboard;
